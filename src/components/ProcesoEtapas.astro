@@ -1,55 +1,57 @@
 ---
 // src/components/ProcesoEtapas.astro
 const etapas = [
-  { title: "Consulta Inicial", desc: "Análisis profundo de su situación y diseño de la estrategia legal a medida." },
-  { title: "Documentación", desc: "Gestión experta de partidas, bonos y acuerdos preliminares de patrimonio." },
-  { title: "Inicio Judicial", desc: "Presentación formal ante el Juzgado de Familia con seguimiento diario y reporte." },
-  { title: "Gestión Procesal", desc: "Control riguroso de plazos, notificaciones y audiencias obligatorias." },
+  { title: "Contacto Inicial", desc: "Análisis profundo de su situación y diseño de la estrategia legal a medida." },
+  { title: "Documentación", desc: "Gestión experta de partidas, documentación y acuerdos preliminares de patrimonio." },
+  { title: "Inicio Judicial", desc: "Presentación formal ante el Juzgado de Familia con seguimiento y reporte." },
+  { title: "Gestión Procesal", desc: "Control riguroso de plazos, notificaciones y audiencias." },
   { title: "Sentencia e Inscripción", desc: "Finalización del proceso con la debida inscripción registral para su tranquilidad." }
 ];
 ---
 
-<section class="py-32 px-6 bg-indigo-950 overflow-hidden">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-24">
-        <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-none">
-            Proceso en <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Marcha</span>
-        </h2>
-        <div class="inline-block px-4 py-1.5 border border-indigo-500/30 bg-indigo-500/10 rounded-full">
-            <p class="text-indigo-300 uppercase tracking-[0.2em] text-[10px] font-black">Hoja de ruta clara para su tranquilidad</p>
-        </div>
+<section class="py-24 px-4 bg-indigo-950 overflow-hidden">
+  <div class="max-w-3xl mx-auto">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+        Proceso en <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Marcha</span>
+      </h2>
+      <p class="text-indigo-300/50 uppercase tracking-[0.2em] text-[10px] font-black italic">Un camino claro hacia su solución legal</p>
     </div>
 
     <div class="relative">
-      <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2"></div>
+      <div class="absolute left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2 z-0"></div>
       
       <div 
-        id="vertical-progress" 
-        class="absolute left-8 md:left-1/2 top-0 w-[3px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 transition-all duration-[3500ms] ease-in-out shadow-[0_0_20px_rgba(99,102,241,0.4)]" 
+        id="main-progress-line" 
+        class="absolute left-1/2 top-0 w-[2px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 transition-all duration-[4000ms] ease-linear z-0"
         style="height: 0%"
       ></div>
 
-      <div class="space-y-16">
+      <div class="space-y-12 relative z-10">
         {etapas.map((etapa, index) => (
-          <div class={`step-card flex flex-col md:flex-row items-center gap-10 opacity-0 translate-y-12 transition-all duration-1000 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+          <div class="step-container opacity-0 translate-y-10 transition-all duration-700">
             
-            <div class="flex-1 w-full group">
-                <div class="bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] hover:border-indigo-500/40 transition-all duration-500 relative backdrop-blur-sm">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-indigo-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    
-                    <h3 class="text-white font-black uppercase tracking-tight text-2xl mb-3">{etapa.title}</h3>
-                    <p class="text-indigo-100/60 text-lg leading-relaxed font-light">{etapa.desc}</p>
+            <div class="relative group">
+              <div class="flex justify-center mb-[-20px] relative z-20">
+                <div class="w-10 h-10 rounded-full bg-indigo-600 border-4 border-indigo-950 flex items-center justify-center shadow-xl">
+                  <span class="text-white font-black text-sm">{index + 1}</span>
                 </div>
+              </div>
+
+              <div class="bg-white/[0.03] border-2 border-white/10 p-8 md:p-12 rounded-[3rem] text-center hover:border-indigo-500/50 transition-all duration-500 backdrop-blur-md relative">
+                
+                <div class="absolute inset-0 rounded-[2.8rem] border border-white/5 pointer-events-none"></div>
+                
+                <h3 class="text-white font-black uppercase tracking-tight text-2xl mb-4">{etapa.title}</h3>
+                <p class="text-indigo-100/60 text-lg leading-relaxed font-light max-w-xl mx-auto">
+                  {etapa.desc}
+                </p>
+
+                <div class="absolute -inset-1 bg-gradient-to-b from-indigo-500/20 to-purple-500/20 rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
+              </div>
             </div>
 
-            <div class="relative z-10">
-                <div class="w-16 h-16 rounded-full bg-indigo-950 border-2 border-white/20 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                    <span class="text-white font-black text-xl">{index + 1}</span>
-                    <div class="absolute inset-0 rounded-full border border-indigo-500/0 group-hover:border-indigo-500/50 group-hover:animate-ping"></div>
-                </div>
-            </div>
-
-            <div class="flex-1 hidden md:block"></div>
           </div>
         ))}
       </div>
@@ -58,25 +60,33 @@ const etapas = [
 </section>
 
 <script>
-  const observerOptions = { threshold: 0.15 };
+  function startAnimation() {
+    const progressLine = document.getElementById('main-progress-line');
+    const steps = document.querySelectorAll('.step-container');
 
+    // Forzamos la visibilidad si hay problemas de carga
+    if (progressLine) progressLine.style.height = '100%';
+    
+    steps.forEach((step, i) => {
+      setTimeout(() => {
+        step.classList.remove('opacity-0', 'translate-y-10');
+        step.classList.add('opacity-100', 'translate-y-0');
+      }, i * 400);
+    });
+  }
+
+  // Ejecutar cuando el scroll llegue o si la página ya cargó arriba
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const progressLine = document.getElementById('vertical-progress');
-        if (progressLine) progressLine.style.height = '100%';
-        
-        const cards = document.querySelectorAll('.step-card');
-        cards.forEach((card, i) => {
-          setTimeout(() => {
-            card.classList.remove('opacity-0', 'translate-y-12');
-            card.classList.add('opacity-100', 'translate-y-0');
-          }, i * 350);
-        });
+        startAnimation();
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
   const section = document.querySelector('section');
   if (section) observer.observe(section);
+  
+  // Backup: si por alguna razón el observer falla, mostrar igual tras 2 segundos
+  setTimeout(startAnimation, 2000);
 </script>
