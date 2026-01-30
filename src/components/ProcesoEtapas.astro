@@ -1,35 +1,55 @@
 ---
 // src/components/ProcesoEtapas.astro
 const etapas = [
-  { title: "Consulta Inicial", desc: "Análisis de su situación particular y estrategia legal personalizada." },
-  { title: "Recolección", desc: "Gestión de partidas, documentación de bienes y acuerdos preliminares." },
-  { title: "Presentación", desc: "Inicio formal del trámite ante el Juzgado de Familia correspondiente." },
-  { title: "Notificación", desc: "Gestión judicial de plazos y cumplimiento de etapas procesales." },
-  { title: "Sentencia", desc: "Obtención del divorcio e inscripción en el Registro Civil." }
+  { title: "Consulta Inicial", desc: "Análisis profundo de su situación y diseño de la estrategia legal a medida." },
+  { title: "Documentación", desc: "Gestión experta de partidas, bonos y acuerdos preliminares de patrimonio." },
+  { title: "Inicio Judicial", desc: "Presentación formal ante el Juzgado de Familia con seguimiento diario y reporte." },
+  { title: "Gestión Procesal", desc: "Control riguroso de plazos, notificaciones y audiencias obligatorias." },
+  { title: "Sentencia e Inscripción", desc: "Finalización del proceso con la debida inscripción registral para su tranquilidad." }
 ];
 ---
 
-<section class="py-24 px-6 relative overflow-hidden bg-indigo-950">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-6xl font-black text-white mb-20 uppercase tracking-tighter text-center">
-      Proceso en <span class="text-indigo-500">Marcha</span>
-    </h2>
+<section class="py-32 px-6 bg-indigo-950 overflow-hidden">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-24">
+        <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-none">
+            Proceso en <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Marcha</span>
+        </h2>
+        <div class="inline-block px-4 py-1.5 border border-indigo-500/30 bg-indigo-500/10 rounded-full">
+            <p class="text-indigo-300 uppercase tracking-[0.2em] text-[10px] font-black">Hoja de ruta clara para su tranquilidad</p>
+        </div>
+    </div>
 
     <div class="relative">
-      <div class="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 hidden md:block"></div>
+      <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2"></div>
       
-      <div id="progress-line" class="absolute top-1/2 left-0 w-0 h-0.5 bg-indigo-500 -translate-y-1/2 transition-all duration-[2000ms] ease-out hidden md:block shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+      <div 
+        id="vertical-progress" 
+        class="absolute left-8 md:left-1/2 top-0 w-[3px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 transition-all duration-[3500ms] ease-in-out shadow-[0_0_20px_rgba(99,102,241,0.4)]" 
+        style="height: 0%"
+      ></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
+      <div class="space-y-16">
         {etapas.map((etapa, index) => (
-          <div class="step-item group flex flex-col items-center text-center opacity-0 translate-y-8 transition-all duration-700" style={`transition-delay: ${index * 200}ms`}>
-            <div class="w-12 h-12 rounded-full bg-indigo-950 border-2 border-white/20 flex items-center justify-center mb-6 group-hover:border-indigo-500 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-500 bg-white/5 relative">
-                <span class="text-white font-black text-sm">{index + 1}</span>
-                {index === 0 && <div class="absolute inset-0 rounded-full bg-indigo-500 animate-ping opacity-20"></div>}
-            </div>
+          <div class={`step-card flex flex-col md:flex-row items-center gap-10 opacity-0 translate-y-12 transition-all duration-1000 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
             
-            <h3 class="text-white font-black uppercase tracking-tighter text-lg mb-3">{etapa.title}</h3>
-            <p class="text-indigo-200/60 text-sm leading-relaxed">{etapa.desc}</p>
+            <div class="flex-1 w-full group">
+                <div class="bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] hover:border-indigo-500/40 transition-all duration-500 relative backdrop-blur-sm">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-indigo-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    
+                    <h3 class="text-white font-black uppercase tracking-tight text-2xl mb-3">{etapa.title}</h3>
+                    <p class="text-indigo-100/60 text-lg leading-relaxed font-light">{etapa.desc}</p>
+                </div>
+            </div>
+
+            <div class="relative z-10">
+                <div class="w-16 h-16 rounded-full bg-indigo-950 border-2 border-white/20 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-white font-black text-xl">{index + 1}</span>
+                    <div class="absolute inset-0 rounded-full border border-indigo-500/0 group-hover:border-indigo-500/50 group-hover:animate-ping"></div>
+                </div>
+            </div>
+
+            <div class="flex-1 hidden md:block"></div>
           </div>
         ))}
       </div>
@@ -38,23 +58,20 @@ const etapas = [
 </section>
 
 <script>
-  // Animación al hacer scroll
-  const observerOptions = {
-    threshold: 0.5
-  };
+  const observerOptions = { threshold: 0.15 };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Alargar la línea
-        const line = document.getElementById('progress-line');
-        if (line) line.style.width = '100%';
+        const progressLine = document.getElementById('vertical-progress');
+        if (progressLine) progressLine.style.height = '100%';
         
-        // Aparecer los pasos
-        const steps = document.querySelectorAll('.step-item');
-        steps.forEach(step => {
-          step.classList.remove('opacity-0', 'translate-y-8');
-          step.classList.add('opacity-100', 'translate-y-0');
+        const cards = document.querySelectorAll('.step-card');
+        cards.forEach((card, i) => {
+          setTimeout(() => {
+            card.classList.remove('opacity-0', 'translate-y-12');
+            card.classList.add('opacity-100', 'translate-y-0');
+          }, i * 350);
         });
       }
     });
