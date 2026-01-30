@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+import PreciosDivorcio from '../components/PreciosDivorcio.astro';
+
+const title = "Costo de un Divorcio en Argentina 2026 | Honorarios y Tasas";
+const description = "Consulte los honorarios profesionales y tasas judiciales para un divorcio express en CABA y PBA. Transparencia total y planes de pago.";
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <link rel="canonical" href="https://www.divorcios.ar/costo-de-un-divorcio" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://www.divorcios.ar/costo-de-un-divorcio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.divorcios.ar/og-image-honorarios.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+</head>
+<body class="bg-indigo-950 text-indigo-100 font-sans selection:bg-indigo-500">
+    <Header />
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <header class="text-center mb-16">
+                <span class="text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Presupuesto Transparente</span>
+                <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8">
+                    ¿Cuánto cuesta un <span class="text-indigo-500">Divorcio?</span>
+                </h1>
+                <p class="text-indigo-200/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    A continuación detallamos los valores de referencia para procesos de divorcio en 2026.
+                </p>
+            </header>
+
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem]">
+                    <h2 class="text-xl font-black text-white uppercase mb-4 tracking-tight">Formas de Pago</h2>
+                    <p class="text-indigo-100/60 text-sm leading-relaxed">
+                        Ofrecemos planes de financiación para nuestros honorarios. El proceso se inicia con una entrega mínima y el saldo se abona en cuotas fijas durante el trámite.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem]">
+                    <h2 class="text-xl font-black text-white uppercase mb-4 tracking-tight">Gastos del Proceso</h2>
+                    <p class="text-indigo-100/60 text-sm leading-relaxed">
+                        Es importante distinguir que la tasa de justicia es un costo ajeno a los honorarios del abogado.
+                    </p>
+                </div>
+            </div>
+
+  <PreciosDivorcio />
+
+            <div class="bg-indigo-600 rounded-[3rem] p-12 text-center shadow-2xl relative overflow-hidden group">
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-black text-white uppercase tracking-tighter mb-4">¿Quiere un presupuesto cerrado?</h3>
+                    <p class="text-indigo-100 mb-8 max-w-xl mx-auto">Envíenos un mensaje y le informaremos el costo total llave en mano para su caso particular.</p>
+                    <a href="https://wa.me/5491141689773" class="inline-flex items-center gap-3 bg-white text-indigo-950 px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-950 hover:text-white transition-all transform hover:scale-105">
+                        Consultar presupuesto por WhatsApp
+                    </a>
+                </div>
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all"></div>
+            </div>
+        </div>
+    </main>
+    
+    <Footer />
+    <WhatsappFlotante />
+</body>
+</html>

@@ -1,0 +1,62 @@
+---
+// src/pages/privacidad.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+import '../styles/global.css';
+---
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <title>Política de Privacidad | divorcios.ar</title>
+    <meta name="description" content="Información sobre el tratamiento de datos personales y compromiso de confidencialidad de divorcios.ar, estudio jurídico especializado en derecho de familia." />
+    <link rel="canonical" href="https://www.divorcios.ar/privacidad" />
+
+    <meta name="robots" content="index, follow" /> <meta property="og:title" content="Política de Privacidad | divorcios.ar" />
+    <meta property="og:description" content="Conozca nuestro compromiso con la protección de sus datos personales." />
+    <meta property="og:url" content="https://www.divorcios.ar/privacidad" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.divorcios.ar/og-image.jpg" />
+</head>
+<body class="bg-indigo-950 text-white font-sans">
+    <Header />
+    
+    <main class="max-w-3xl mx-auto px-6 py-40">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12">Política de <span class="text-indigo-400">Privacidad</span></h1>
+        
+        <div class="space-y-8 text-indigo-100/70 leading-relaxed font-medium text-sm md:text-base">
+            <p>En <strong>divorcios.ar</strong>, la confidencialidad es la base de nuestra práctica profesional. Esta política detalla cómo tratamos su información en cumplimiento con la Ley N° 25.326 de Protección de Datos Personales de la República Argentina.</p>
+
+            <section>
+                <h2 class="text-white font-black uppercase tracking-widest text-xs mb-4">1. Datos Recolectados</h2>
+                <p>Nuestra plataforma recolecta información de dos formas:</p>
+                <ul class="list-disc ml-5 mt-2 space-y-2">
+                    <li><strong>Datos de navegación:</strong> A través de cookies de Google Analytics para entender el tráfico de forma anónima.</li>
+                    <li><strong>Contacto Directo:</strong> Información que usted decide enviarnos voluntariamente a través de WhatsApp o Email.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-white font-black uppercase tracking-widest text-xs mb-4">2. Finalidad</h2>
+                <p>Los datos se utilizan exclusivamente para responder consultas legales y mejorar la experiencia del usuario. No vendemos, cedemos ni compartimos sus datos con terceros con fines comerciales.</p>
+            </section>
+
+            <section>
+                <h2 class="text-white font-black uppercase tracking-widest text-xs mb-4">3. Secreto Profesional</h2>
+                <p>Toda comunicación establecida a través de este sitio está protegida por el secreto profesional abogado-cliente, garantizando la máxima reserva en asuntos de derecho.</p>
+            </section>
+
+            <div class="pt-8 border-t border-white/10">
+                <a href="/" class="text-indigo-400 font-black uppercase text-[10px] tracking-widest hover:text-white transition-colors">← Volver al inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+    
+    <WhatsappFlotante /> 
+</body>
+</html>

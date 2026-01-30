@@ -1,0 +1,44 @@
+---
+// src/components/CookieBanner.astro
+---
+<div id="cookie-banner" class="fixed bottom-24 md:bottom-10 left-6 right-6 md:left-10 md:right-auto md:max-w-[320px] z-[100] transform translate-y-20 opacity-0 transition-all duration-1000 ease-out pointer-events-none">
+    <div class="bg-indigo-950/95 backdrop-blur-2xl border border-white/10 p-7 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        
+        <div class="w-8 h-8 bg-indigo-500/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-2 h-2 rounded-full bg-indigo-400 shadow-[0_0_8px_rgba(129,140,248,0.8)]"></div>
+        </div>
+
+        <p class="text-indigo-100/80 text-[11px] leading-relaxed mb-6 font-medium">
+            En <span class="text-white font-bold">divorcios.ar</span> utilizamos cookies para garantizar la mejor experiencia legal. Al continuar, acepta nuestra 
+            <a href="/terminos" class="text-indigo-400 underline decoration-indigo-500/30 underline-offset-4 hover:text-white transition-all">Política de Privacidad</a>.
+        </p>
+
+        <button id="accept-cookies" class="w-full bg-white text-indigo-950 text-[10px] font-black uppercase tracking-[0.2em] py-4 rounded-2xl hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-xl active:scale-95">
+            Aceptar y Continuar
+        </button>
+    </div>
+</div>
+
+<script>
+    const initCookieBanner = () => {
+        const banner = document.getElementById('cookie-banner');
+        const btn = document.getElementById('accept-cookies');
+
+        if (!banner || !btn) return;
+
+        const cookiesAccepted = localStorage.getItem('cookies-accepted-v1');
+
+        if (!cookiesAccepted) {
+            setTimeout(() => {
+                banner.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        btn.addEventListener('click', () => {
+            localStorage.setItem('cookies-accepted-v1', 'true');
+            banner.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        });
+    };
+
+    initCookieBanner();
+</script>

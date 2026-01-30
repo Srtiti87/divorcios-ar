@@ -1,0 +1,87 @@
+---
+// src/pages/honorarios.astro
+import '../styles/global.css'; 
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+import PreciosDivorcio from '../components/PreciosDivorcio.astro'; // Tu componente actual
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Honorarios Divorcio Express | Transparencia Económica | divorcios.ar</title>
+    <meta name="description" content="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA y PBA. Consulte planes de pago." />
+    
+    <link rel="canonical" href="https://www.divorcios.ar/honorarios" />
+
+    <meta property="og:title" content="Honorarios Divorcio Express | Transparencia Económica" />
+    <meta property="og:description" content="Consulte gastos judiciales y honorarios para su divorcio en CABA y PBA." />
+    <meta property="og:url" content="https://www.divorcios.ar/honorarios" />
+    <meta property="og:type" content="website" />
+</head>
+
+<body class="bg-indigo-950 flex flex-col min-h-screen font-sans">
+    
+    <Header />
+
+    <main class="flex-grow pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase">
+                    Divorcio <span class="text-indigo-400">Conjunto / Unilateral</span>
+                </h1>
+                <p class="text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] mb-8">
+                    Transparencia Económica
+                </p>
+                
+                <div class="max-w-2xl mx-auto bg-white/5 border-l-4 border-indigo-500 p-6 rounded-r-2xl text-left mb-12">
+                    <p class="text-white font-bold mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
+                        Bonificaciones Especiales
+                    </p>
+                    <p class="text-indigo-200/70 text-sm italic">
+                        Contamos con un <strong>mejor precio bonificado</strong> para pagos en efectivo o abonados en hasta dos cuotas. 
+                        <span class="block mt-1 font-bold text-indigo-300">Consulte el presupuesto final según la complejidad de su caso.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <PreciosDivorcio />
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12 mb-20">
+                <section class="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-sm text-left">
+                    <h2 class="text-xl font-bold text-white mb-4 uppercase tracking-tight">Honorarios Profesionales</h2>
+                    <p class="text-indigo-100/70 text-sm leading-relaxed">
+                        Nuestra labor se rige por la Ley de Honorarios Profesionales. Ofrecemos convenios cerrados y planes de pago en cuotas fijas mensuales para su tranquilidad.
+                    </p>
+                </section>
+
+                <section class="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-sm text-left">
+                    <h2 class="text-xl font-bold text-white mb-4 uppercase tracking-tight">Gastos del Proceso</h2>
+                    <p class="text-indigo-100/70 text-sm leading-relaxed">
+                     Tasa de Justicia (a cargo del cliente). Bonos CPACF y aranceles de inscripción en el Registro Civil de Capital Federal INCLUIDOS.
+                    </p>
+                </section>
+            </div>
+
+            <div class="bg-indigo-600/20 border border-indigo-500/30 p-12 rounded-[3rem]">
+                <h2 class="text-3xl font-bold text-white mb-4">¿Desea iniciar hoy mismo?</h2>
+                <p class="text-indigo-200/60 mb-8 max-w-xl mx-auto text-sm italic">Realizamos una evaluación personalizada de su situación para brindarle el presupuesto más ajustado.</p>
+                <a href="https://wa.me/5491141689773" class="inline-block bg-indigo-500 hover:bg-indigo-400 text-white font-black uppercase tracking-widest px-10 py-4 rounded-2xl transition-all shadow-xl hover:scale-105">
+                    Solicitar Presupuesto
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+    <WhatsappFlotante />
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/
+# Permitir que todos los buscadores rastreen el sitio
+User-agent: *
+Allow: /
+
+# Bloquear archivos de sistema y configuración
+Disallow: /npm/
+Disallow: /node_modules/
+Disallow: /dist/
+
+# Indicar la ubicación del Sitemap generado por el plugin de Astro
+Sitemap: https://www.divorcios.ar/sitemap-index.xml

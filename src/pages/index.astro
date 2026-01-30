@@ -1,0 +1,71 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Confianza from '../components/Confianza.astro';
+import Servicios from '../components/Servicios.astro';
+import PreciosDivorcio from '../components/PreciosDivorcio.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import '../styles/global.css';
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="es" />
+    
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <title>Divorcios.ar | Abogados Divorcios Especialistas en Derecho de Familia CABA</title>
+    <meta name="description" content="Estudio jurídico líder en divorcios en Capital Federal. Divorcio express, división de bienes y cuidado personal. Atención profesional y confidencial en CABA." />
+    <link rel="canonical" href="https://www.divorcios.ar/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.divorcios.ar/" />
+    <meta property="og:title" content="Divorcios.ar | Especialistas en Derecho de Familia en CABA" />
+    <meta property="og:description" content="Asesoramiento legal integral. Divorcios express, cuota alimentaria y división de bienes. Consulte hoy mismo." />
+    
+    <meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Abogados de Divorcios en Capital Federal. Equipo de divorcios.ar" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.divorcios.ar/" />
+    <meta property="twitter:title" content="Divorcios.ar | Especialistas en Familia" />
+    <meta property="twitter:description" content="Especialistas en divorcios y derecho de familia en Buenos Aires." />
+    <meta property="twitter:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
+
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Buenos Aires" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+</head>
+<body class="bg-white antialiased">
+    <Header />
+    
+    <main>
+        <Hero />
+		<Servicios />
+    
+        
+        <section class="py-24 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
+                        Honorarios <span class="text-indigo-600">Mensuales</span>
+                    </h2>
+                    <div class="w-20 h-1.5 bg-amber-400 mx-auto mt-6 rounded-full"></div>
+                </div>
+                <PreciosDivorcio />
+            </div>
+        </section>
+		<Confianza />
+    </main>
+
+    <Footer />
+    <WhatsappFlotante />
+	<CookieBanner />
+</body>
+</html>

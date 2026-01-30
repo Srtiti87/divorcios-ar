@@ -1,0 +1,91 @@
+---
+// src/pages/blog.astro
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+
+// Usamos import.meta.glob para obtener los posts (Eager carga los datos de inmediato)
+const postFiles = import.meta.glob('./blog/*.md', { eager: true });
+
+// Convertimos el objeto en un array y extraemos la información necesaria
+const posts = Object.values(postFiles).map((post: any) => ({
+  url: post.url,
+  frontmatter: post.frontmatter
+}));
+
+// Ordenamos por fecha (de más reciente a más antiguo)
+const sortedPosts = posts.sort((a, b) => 
+    new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+);
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Blog Jurídico | Especialistas en Derecho de Familia | divorcios.ar</title>
+    <meta name="description" content="Artículos de actualidad sobre divorcio express, división de bienes y cuota alimentaria en Argentina." />
+    <link rel="canonical" href="https://www.divorcios.ar/blog" />
+</head>
+
+<body class="bg-indigo-950 flex flex-col min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
+    
+    <Header />
+
+    <main class="flex-grow pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            
+            <header class="mb-16">
+                <p class="text-indigo-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 text-center md:text-left">
+                    Recursos y Actualidad
+                </p>
+                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none text-center md:text-left">
+                    Blog <span class="text-indigo-400">Legal</span>
+                </h1>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sortedPosts.map((post) => (
+                    <a href={post.url} class="group flex flex-col h-full bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 shadow-2xl">
+                        
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                                {post.frontmatter.category}
+                            </span>
+                            <span class="text-indigo-100/30 text-[10px] font-bold uppercase tracking-widest">
+                                {post.frontmatter.date}
+                            </span>
+                        </div>
+
+                        <h2 class="text-2xl font-black text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300 tracking-tight leading-tight uppercase">
+                            {post.frontmatter.title}
+                        </h2>
+
+                        <p class="text-indigo-100/60 text-sm leading-relaxed mb-8 flex-grow">
+                            {post.frontmatter.description}
+                        </p>
+
+                        <div class="flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.2em] pt-6 border-t border-white/5">
+                            Leer Guía Completa <span class="text-indigo-400 group-hover:translate-x-2 transition-transform">→</span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+
+            {sortedPosts.length === 0 && (
+                <div class="text-center py-20 border-2 border-dashed border-white/10 rounded-[3rem]">
+                    <p class="text-indigo-200/40 font-bold uppercase tracking-widest">Próximamente nuevos artículos</p>
+                </div>
+            )}
+
+        </div>
+    </main>
+
+    <Footer />
+    <WhatsappFlotante />
+
+</body>
+</html>
