@@ -1,0 +1,65 @@
+---
+// src/components/ProcesoEtapas.astro
+const etapas = [
+  { title: "Consulta Inicial", desc: "Análisis de su situación particular y estrategia legal personalizada." },
+  { title: "Recolección", desc: "Gestión de partidas, documentación de bienes y acuerdos preliminares." },
+  { title: "Presentación", desc: "Inicio formal del trámite ante el Juzgado de Familia correspondiente." },
+  { title: "Notificación", desc: "Gestión judicial de plazos y cumplimiento de etapas procesales." },
+  { title: "Sentencia", desc: "Obtención del divorcio e inscripción en el Registro Civil." }
+];
+---
+
+<section class="py-24 px-6 relative overflow-hidden bg-indigo-950">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-6xl font-black text-white mb-20 uppercase tracking-tighter text-center">
+      Proceso en <span class="text-indigo-500">Marcha</span>
+    </h2>
+
+    <div class="relative">
+      <div class="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 hidden md:block"></div>
+      
+      <div id="progress-line" class="absolute top-1/2 left-0 w-0 h-0.5 bg-indigo-500 -translate-y-1/2 transition-all duration-[2000ms] ease-out hidden md:block shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
+        {etapas.map((etapa, index) => (
+          <div class="step-item group flex flex-col items-center text-center opacity-0 translate-y-8 transition-all duration-700" style={`transition-delay: ${index * 200}ms`}>
+            <div class="w-12 h-12 rounded-full bg-indigo-950 border-2 border-white/20 flex items-center justify-center mb-6 group-hover:border-indigo-500 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-500 bg-white/5 relative">
+                <span class="text-white font-black text-sm">{index + 1}</span>
+                {index === 0 && <div class="absolute inset-0 rounded-full bg-indigo-500 animate-ping opacity-20"></div>}
+            </div>
+            
+            <h3 class="text-white font-black uppercase tracking-tighter text-lg mb-3">{etapa.title}</h3>
+            <p class="text-indigo-200/60 text-sm leading-relaxed">{etapa.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación al hacer scroll
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Alargar la línea
+        const line = document.getElementById('progress-line');
+        if (line) line.style.width = '100%';
+        
+        // Aparecer los pasos
+        const steps = document.querySelectorAll('.step-item');
+        steps.forEach(step => {
+          step.classList.remove('opacity-0', 'translate-y-8');
+          step.classList.add('opacity-100', 'translate-y-0');
+        });
+      }
+    });
+  }, observerOptions);
+
+  const section = document.querySelector('section');
+  if (section) observer.observe(section);
+</script>
