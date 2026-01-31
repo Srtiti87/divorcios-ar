@@ -14,7 +14,7 @@ En esta guía, analizamos los requisitos actuales para las jurisdicciones de **C
 
 ## 1. Documentación Obligatoria (Checklist)
 
-Para dar inicio al expediente judicial, el primer requisito es contar con la documentación original. Google y los juzgados coinciden: la claridad documental acelera los plazos.
+Para dar inicio al expediente judicial, el primer requisito es contar con la documentación original. Los juzgados coinciden: la claridad documental acelera los plazos.
 
 * **Acta de Matrimonio Actualizada:** Es indispensable presentar la partida de matrimonio original. Si el matrimonio fue en el extranjero, debe estar debidamente apostillada y traducida.
 * **DNI de los Cónyuges:** Una copia clara del documento de identidad. El domicilio que figure en el DNI o el último domicilio conyugal determinará qué juez intervendrá en el caso.
