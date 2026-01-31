@@ -1,0 +1,37 @@
+/* src/styles/blog.css */
+
+/* Estilos de elementos específicos del contenido legal */
+.prose-legal strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.prose-legal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+/* Estilos que movimos del Layout para limpiar la cadena crítica */
+.prose-legal { @apply break-words overflow-x-hidden w-full; }
+
+.prose-legal h2 { 
+    @apply text-xl md:text-3xl font-black text-white mt-16 mb-6 uppercase tracking-tighter flex items-center gap-3; 
+}
+
+.prose-legal p { 
+    @apply text-indigo-100/80 leading-relaxed mb-6 text-base md:text-xl font-light; 
+}
+
+.prose-legal blockquote { 
+    @apply border-l-4 md:border-l-8 border-indigo-500 bg-white/5 p-6 md:p-10 rounded-r-2xl italic text-lg md:text-2xl text-indigo-200 my-10; 
+}
+
+.prose-legal ul { 
+    @apply bg-white/5 border border-white/10 p-6 md:p-10 rounded-[2rem] space-y-4 mb-10 list-none; 
+}
+
+.prose-legal ul li { 
+    @apply flex items-start gap-3 text-indigo-100/70 text-sm md:text-lg before:content-['→'] before:text-indigo-500; 
+}
