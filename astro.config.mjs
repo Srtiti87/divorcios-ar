@@ -15,10 +15,9 @@ export default defineConfig({
     sitemap(), 
     partytown({
       config: {
-        forward: ['dataLayer.push'],
-      },
-      // AGREGAMOS ESTO: Copia los archivos de la librería a la carpeta pública
-      lib: true, 
-    }),
+    // Añadimos dataLayer y google_tag_manager al túnel de comunicación
+    forward: ["dataLayer.push", "google_tag_manager"],
+  },
+  lib: true,
   ]
 });
