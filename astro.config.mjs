@@ -1,4 +1,3 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
@@ -15,9 +14,9 @@ export default defineConfig({
     sitemap(), 
     partytown({
       config: {
-    // Añadimos dataLayer y google_tag_manager al túnel de comunicación
-    forward: ["dataLayer.push", "google_tag_manager"],
-  },
-  lib: true,
+        forward: ["dataLayer.push", "google_tag_manager"],
+      },
+      lib: true,
+    }),
   ]
 });
