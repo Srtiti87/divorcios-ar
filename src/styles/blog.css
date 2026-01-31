@@ -1,6 +1,5 @@
 /* src/styles/blog.css */
 
-/* Estilos de elementos específicos del contenido legal */
 .prose-legal strong {
     color: #ffffff;
     font-weight: 700;
@@ -13,25 +12,98 @@
     margin: 2rem 0;
 }
 
-/* Estilos que movimos del Layout para limpiar la cadena crítica */
-.prose-legal { @apply break-words overflow-x-hidden w-full; }
+/* Reemplazamos @apply por CSS estándar para que el Build de Vercel no falle */
+.prose-legal { 
+    word-wrap: break-word;
+    overflow-x: hidden; 
+    width: 100%;
+}
 
 .prose-legal h2 { 
-    @apply text-xl md:text-3xl font-black text-white mt-16 mb-6 uppercase tracking-tighter flex items-center gap-3; 
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Media query para el md:text-3xl */
+@media (min-width: 768px) {
+    .prose-legal h2 {
+        font-size: 1.875rem;
+    }
 }
 
 .prose-legal p { 
-    @apply text-indigo-100/80 leading-relaxed mb-6 text-base md:text-xl font-light; 
+    color: rgba(224, 231, 255, 0.8); /* indigo-100/80 */
+    line-height: 1.625;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .prose-legal p {
+        font-size: 1.25rem;
+    }
 }
 
 .prose-legal blockquote { 
-    @apply border-l-4 md:border-l-8 border-indigo-500 bg-white/5 p-6 md:p-10 rounded-r-2xl italic text-lg md:text-2xl text-indigo-200 my-10; 
+    border-left-width: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    font-style: italic;
+    font-size: 1.125rem;
+    color: #c7d2fe; /* indigo-200 */
+    margin: 2.5rem 0;
+    border-left-color: #6366f1; /* indigo-500 */
+}
+
+@media (min-width: 768px) {
+    .prose-legal blockquote {
+        border-left-width: 8px;
+        padding: 2.5rem;
+        font-size: 1.5rem;
+    }
 }
 
 .prose-legal ul { 
-    @apply bg-white/5 border border-white/10 p-6 md:p-10 rounded-[2rem] space-y-4 mb-10 list-none; 
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    margin-bottom: 2.5rem;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .prose-legal ul {
+        padding: 2.5rem;
+    }
 }
 
 .prose-legal ul li { 
-    @apply flex items-start gap-3 text-indigo-100/70 text-sm md:text-lg before:content-['→'] before:text-indigo-500; 
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: rgba(224, 231, 255, 0.7);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .prose-legal ul li {
+        font-size: 1.125rem;
+    }
+}
+
+.prose-legal ul li::before {
+    content: '→';
+    color: #6366f1;
 }
