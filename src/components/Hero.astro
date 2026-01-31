@@ -2,7 +2,7 @@
 // src/components/Hero.astro
 ---
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-indigo-950 text-white">
-    <canvas id="canvas-particles" class="absolute inset-0 z-0 opacity-60"></canvas>
+    <canvas id="canvas-particles" class="absolute inset-0 z-0 opacity-40 pointer-events-none"></canvas>
     
     <div class="absolute inset-0 z-10 bg-gradient-to-b from-indigo-950/20 via-indigo-950/80 to-indigo-950"></div>
 
@@ -14,10 +14,10 @@
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] mb-12">
             ABOGADOS <br class="md:block" />
             <div class="relative h-[1.2em] md:h-[1em] mt-2 flex justify-center items-center">
-                <span class="word-fade animate-fade-1 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">Divorcio Express</span>
-                <span class="word-fade animate-fade-2 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">Cuidado Personal</span>
-                <span class="word-fade animate-fade-3 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">División de Bienes</span>
-                <span class="word-fade animate-fade-4 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">Compensación Económica</span>
+                <span class="word-fade animate-fade-1 text-amber-400">Divorcio Express</span>
+                <span class="word-fade animate-fade-2 text-amber-400">Cuidado Personal</span>
+                <span class="word-fade animate-fade-3 text-amber-400">División de Bienes</span>
+                <span class="word-fade animate-fade-4 text-amber-400">Compensación Económica</span>
             </div>
         </h1>
 
@@ -35,72 +35,76 @@
 </section>
 
 <script>
-    const canvas = document.getElementById('canvas-particles') as HTMLCanvasElement;
-    const ctx = canvas?.getContext('2d');
-    let particles = [];
-
-    function resize() {
-        if (!canvas) return;
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    class Particle {
-        x: number; y: number; vx: number; vy: number;
-        constructor() {
-            this.x = Math.random() * (canvas?.width || 0);
-            this.y = Math.random() * (canvas?.height || 0);
-            this.vx = (Math.random() - 0.5) * 0.7;
-            this.vy = (Math.random() - 0.5) * 0.7;
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > (canvas?.width || 0)) this.vx *= -1;
-            if (this.y < 0 || this.y > (canvas?.height || 0)) this.vy *= -1;
-        }
-    }
-
-    function init() {
+    // Usamos requestIdleCallback para no bloquear la carga inicial
+    const initCanvas = () => {
+        const canvas = document.getElementById('canvas-particles') as HTMLCanvasElement;
+        const ctx = canvas?.getContext('2d');
         if (!canvas || !ctx) return;
-        resize();
-        particles = Array.from({ length: 110 }, () => new Particle());
-        loop();
-    }
 
-    function loop() {
-        if (!ctx || !canvas) return;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.strokeStyle = 'rgba(165, 180, 252, 0.6)'; 
-        ctx.lineWidth = 1.2;
+        let particles = [];
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
 
-        particles.forEach((p, i) => {
-            p.update();
-            
-            ctx.fillStyle = 'rgba(199, 210, 254, 0.8)';
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-            ctx.fill();
+        class Particle {
+            x = Math.random() * w;
+            y = Math.random() * h;
+            vx = (Math.random() - 0.5) * 0.5;
+            vy = (Math.random() - 0.5) * 0.5;
 
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-                if (dist < 190) {
-                    ctx.globalAlpha = 1 - (dist / 190); 
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-                    ctx.globalAlpha = 1;
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > w) this.vx *= -1;
+                if (this.y < 0 || this.y > h) this.vy *= -1;
+            }
+        }
+
+        const setup = () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+            // Bajamos la cantidad a 60 para ahorrar 50% de CPU
+            particles = Array.from({ length: 60 }, () => new Particle());
+        };
+
+        const draw = () => {
+            ctx.clearRect(0, 0, w, h);
+            ctx.strokeStyle = 'rgba(165, 180, 252, 0.2)';
+            ctx.fillStyle = 'rgba(199, 210, 254, 0.4)';
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.update();
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 150) {
+                        ctx.globalAlpha = 1 - (dist / 150);
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
                 }
             }
-        });
-        requestAnimationFrame(loop);
-    }
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(draw);
+        };
 
-    window.addEventListener('resize', resize);
-    init();
+        window.addEventListener('resize', setup);
+        setup();
+        draw();
+    };
+
+    // Solo arranca cuando el navegador está tranquilo
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(initCanvas);
+    } else {
+        setTimeout(initCanvas, 1000);
+    }
 </script>
 
 <style>
@@ -109,16 +113,16 @@
         opacity: 0;
         width: 100%;
         display: block;
-        transform: translateY(15px);
-        filter: blur(4px);
-        will-change: transform, opacity, filter;
+        /* Usamos translate3d para forzar aceleración por hardware (GPU) */
+        transform: translate3d(0, 15px, 0);
+        will-change: transform, opacity;
     }
 
     @keyframes wordAnimation {
-        0% { opacity: 0; transform: translateY(15px); filter: blur(4px); }
-        5% { opacity: 1; transform: translateY(0); filter: blur(0); }
-        20% { opacity: 1; transform: translateY(0); filter: blur(0); }
-        25% { opacity: 0; transform: translateY(-15px); filter: blur(4px); }
+        0% { opacity: 0; transform: translate3d(0, 15px, 0); }
+        5% { opacity: 1; transform: translate3d(0, 0, 0); }
+        20% { opacity: 1; transform: translate3d(0, 0, 0); }
+        25% { opacity: 0; transform: translate3d(0, -15px, 0); }
         100% { opacity: 0; }
     }
 
@@ -127,12 +131,6 @@
     .animate-fade-3 { animation: wordAnimation 8s infinite 4s; }
     .animate-fade-4 { animation: wordAnimation 8s infinite 6s; }
 
-    .animate-fade-in {
-        animation: fadeIn 1.5s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
