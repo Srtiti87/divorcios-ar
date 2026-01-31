@@ -1,173 +1,88 @@
-/ src/components/Footer.astro
-
+/---
+// src/components/Footer.astro
 const barrios = [
-
     "Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", 
-
     "Constitución", "Flores", "Floresta", "La Boca", "La Paternal", "Liniers", "Mataderos", "Monte Castro", "Monserrat", 
-
     "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", 
-
     "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sarsfield", 
-
     "Versalles", "Villa Crespo", "Villa del Parque", "Villa Devoto", "Villa General Mitre", "Villa Lugano", "Villa Luro", 
-
     "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza"
-
 ];
 
+// Sugerencia: Usa el enlace directo a tu ficha de Google Business Profile
+const googleMapsUrl = "https://maps.app.goo.gl/tu-ubicacion-real"; 
 ---
 
-
-
 <section class="bg-indigo-950 px-6 pb-12">
-
     <div class="max-w-7xl mx-auto rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl h-[350px] relative group">
-
-        <iframe 
-
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.44367080601!2d-58.5033383!3d-34.6037389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b381a45b643a2!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1700000000000" 
-
-            class="absolute inset-0 w-full h-full grayscale-[0.5] contrast-[1.1] brightness-[0.8] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100"
-
-            style="border:0;" 
-
-            allowfullscreen="" 
-
-            loading="lazy" 
-
-            referrerpolicy="no-referrer-when-downgrade">
-
-        </iframe>
-
+        <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" class="block w-full h-full relative" aria-label="Ver nuestra ubicación en Google Maps">
+            <img 
+                src="/img/mapa-estatico-caba.webp" 
+                alt="Mapa de cobertura legal en Ciudad de Buenos Aires"
+                class="absolute inset-0 w-full h-full object-cover grayscale-[0.5] contrast-[1.1] brightness-[0.8] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100"
+                loading="lazy"
+                decoding="async"
+                width="1280"
+                height="350"
+            />
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-indigo-950/20">
+                <span class="bg-white text-indigo-950 px-8 py-3 rounded-full font-black uppercase text-[10px] tracking-widest shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-500">
+                    Abrir en Google Maps
+                </span>
+            </div>
+        </a>
         
-
         <div class="absolute inset-0 pointer-events-none border-[12px] border-indigo-950/20 rounded-[2.5rem]"></div>
-
         <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-indigo-950 via-transparent to-indigo-950/20"></div>
-
     </div>
-
 </section>
 
-
-
 <footer class="bg-indigo-950 pt-12 pb-8 border-t border-white/5">
-
     <div class="max-w-7xl mx-auto px-6">
-
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-
-            
-
             <div>
-
                 <a href="/" class="flex items-center gap-2 mb-4">
-
                     <span class="text-xl font-black text-white tracking-tighter">
-
                         divorcios<span class="text-indigo-400">.ar</span>
-
                     </span>
-
                 </a>
-
-                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-
+                <address class="not-italic flex flex-col sm:flex-row gap-4 sm:gap-8">
                     <a href="mailto:contacto@divorcios.ar" class="text-indigo-300 hover:text-white transition-colors font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-
                         contacto@divorcios.ar
-
                     </a>
-
-                    <span class="text-indigo-100/30 text-xs font-bold uppercase tracking-widest">
-
-                        Ciudad de Buenos Aires, CABA
-
+                    <span class="text-indigo-100/40 text-xs font-bold uppercase tracking-widest">
+                        CABA, Argentina
                     </span>
-
-                </div>
-
+                </address>
             </div>
-
-
 
             <nav class="flex gap-6 text-[10px] font-black uppercase tracking-[0.2em]">
-
                 <a href="/#servicios" class="text-indigo-100/30 hover:text-white transition-colors">Servicios</a>
-
-                <a href="https://wa.me/5491141689773" class="text-indigo-100/30 hover:text-white transition-colors">WhatsApp</a>
-
+                <a href="/blog" class="text-indigo-100/30 hover:text-white transition-colors">Blog</a>
+                <a href="https://wa.me/5491141689773" class="text-indigo-400 hover:text-white transition-colors font-bold">WhatsApp</a>
             </nav>
-
         </div>
 
-
-
-        <div class="sr-only" aria-hidden="true">
-
-            {barrios.map(barrio => <span>Abogado de familia en {barrio}, CABA. </span>)}
-
+        <div class="text-[10px] text-indigo-100/10 leading-relaxed text-center md:text-left mb-12 border-y border-white/5 py-8">
+            <p class="mb-2 font-bold uppercase tracking-tighter text-indigo-500/40">Zonas de atención inmediata:</p>
+            {barrios.map((barrio, index) => (
+                <span key={barrio}>
+                    Abogado de familia en {barrio}{index < barrios.length - 1 ? " • " : ""}
+                </span>
+            ))}
         </div>
-
-
 
         <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-
-            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-
-                <p class="text-indigo-100/10 text-[9px] font-black uppercase tracking-[0.4em]">
-
-                    © 2026 divorcios.ar
-
-                </p>
-
-                <nav class="flex gap-6">
-
-                    <a href="/privacidad" class="text-indigo-100/20 hover:text-indigo-400 text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Privacidad</a>
-
-                    <a href="/terminos" class="text-indigo-100/20 hover:text-indigo-400 text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Términos</a>
-
-                </nav>
-
-            </div>
-
             <p class="text-indigo-100/10 text-[9px] font-black uppercase tracking-[0.4em]">
-
-                Atención en toda Capital Federal
-
+                © {new Date().getFullYear()} divorcios.ar
             </p>
-
+            <nav class="flex gap-6">
+                <a href="/privacidad" class="text-indigo-100/20 hover:text-indigo-400 text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Privacidad</a>
+                <a href="/terminos" class="text-indigo-100/20 hover:text-indigo-400 text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Términos</a>
+            </nav>
+            <p class="text-indigo-100/10 text-[9px] font-black uppercase tracking-[0.4em]">
+                Derecho de Familia y Sucesiones
+            </p>
         </div>
-
     </div>
-
 </footer>
-
-
-
-<style>
-
-    .sr-only {
-
-        position: absolute;
-
-        width: 1px;
-
-        height: 1px;
-
-        padding: 0;
-
-        margin: -1px;
-
-        overflow: hidden;
-
-        clip: rect(0, 0, 0, 0);
-
-        white-space: nowrap;
-
-        border-width: 0;
-
-    }
-
-</style>
