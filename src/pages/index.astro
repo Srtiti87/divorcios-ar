@@ -8,22 +8,54 @@ import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import ProcesoEtapas from '../components/ProcesoEtapas.astro';
+import '@fontsource-variable/inter';
 import '../styles/global.css';
+
+// Datos para el Schema de Google
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Divorcios.ar | Abogados A&G",
+  "description": "Estudio jurídico especialista en divorcios express y derecho de familia en CABA.",
+  "url": "https://www.divorcios.ar",
+  "telephone": "+5491141689773",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Buenos Aires",
+    "addressRegion": "CABA",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-34.6037", 
+    "longitude": "-38.3816"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+};
 ---
 
 <html lang="es">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KPJP7PBP');</script>
-    <!-- End Google Tag Manager -->
+    <script type="text/partytown" is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+    </script>
+
+    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="language" content="es" />
-    
     <link rel="icon" type="image/png" href="/favicon.png" />
     
     <title>Divorcios.ar | Abogados Divorcios Especialistas en Derecho de Familia CABA</title>
@@ -34,35 +66,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content="https://www.divorcios.ar/" />
     <meta property="og:title" content="Divorcios.ar | Especialistas en Derecho de Familia en CABA" />
     <meta property="og:description" content="Asesoramiento legal integral. Divorcios express, cuota alimentaria y división de bienes. Consulte hoy mismo." />
-    
     <meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Abogados de Divorcios en Capital Federal. Equipo de divorcios.ar" />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.divorcios.ar/" />
-    <meta property="twitter:title" content="Divorcios.ar | Especialistas en Familia" />
-    <meta property="twitter:description" content="Especialistas en divorcios y derecho de familia en Buenos Aires." />
-    <meta property="twitter:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="geo.region" content="AR-C" />
     <meta name="geo.placename" content="Buenos Aires" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
 </head>
+
 <body class="bg-white antialiased">
-        <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
     <Header />
     
     <main>
-        <Hero />
-		<Servicios />
-    
+        <Hero fetchpriority="high" />
+        <Servicios />
         
-        <section class="py-24 bg-slate-50 border-y border-slate-200">
+        <section class="py-24 bg-slate-50 border-y border-slate-200" id="honorarios">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
@@ -73,13 +94,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <PreciosDivorcio />
             </div>
         </section>
+
         <ProcesoEtapas />
-		<Confianza />
+        <Confianza />
     </main>
 
-    
     <Footer />
     <WhatsappFlotante />
-	<CookieBanner />
+    <CookieBanner />
 </body>
 </html>
