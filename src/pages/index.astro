@@ -1,6 +1,6 @@
 ---
 // src/pages/index.astro
-import LayoutPost from '../layouts/LayoutPost.astro'; // Importamos el layout central
+import LayoutPost from '../layouts/LayoutPost.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Confianza from '../components/Confianza.astro';
@@ -47,29 +47,22 @@ const schema = {
 >
     <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
 
-    <Header />
+    <Hero fetchpriority="high" />
+    <Servicios />
     
-    <main>
-        <Hero fetchpriority="high" />
-        <Servicios />
-        
-        <section class="py-24 bg-slate-50 border-y border-slate-200" id="honorarios">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
-                        Honorarios <span class="text-indigo-600">Mensuales</span>
-                    </h2>
-                    <div class="w-20 h-1.5 bg-amber-400 mx-auto mt-6 rounded-full"></div>
-                </div>
-                <PreciosDivorcio />
+    <section class="py-24 bg-slate-50 border-y border-slate-200" id="honorarios">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
+                    Honorarios <span class="text-indigo-600">Mensuales</span>
+                </h2>
+                <div class="w-20 h-1.5 bg-amber-400 mx-auto mt-6 rounded-full"></div>
             </div>
-        </section>
+            <PreciosDivorcio />
+        </div>
+    </section>
 
-        <ProcesoEtapas />
-        <Confianza />
-    </main>
+    <ProcesoEtapas />
+    <Confianza />
 
-    <Footer />
-    <WhatsappFlotante />
-    <CookieBanner />
-</LayoutPost>
+    </LayoutPost>
