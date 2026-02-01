@@ -7,20 +7,27 @@ import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
 
-const { frontmatter } = Astro.props;
+interface Props {
+  frontmatter?: {
+    title: string;
+    description: string;
+    category?: string;
+    date?: string;
+  };
+  title?: string;
+  description?: string;
+}
+
+const { frontmatter, title, description } = Astro.props;
+
+// Priorizamos el título y descripción que vengan por props o por frontmatter
+const metaTitle = title || frontmatter?.title || "Abogados A&G";
+const metaDescription = description || frontmatter?.description || "Estudio Jurídico Especialista en Derecho de Familia y Sucesiones en CABA.";
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
 ---
 
 <html lang="es">
 <head>
-    <link 
-      rel="preload" 
-      href="/_astro/inter-latin-variable-wght-normal.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous" 
-    />
-
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -34,25 +41,32 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KPJP7PBP');
     </script>
-    
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>{frontmatter.title} | divorcios.ar</title>
-    <meta name="description" content={frontmatter.description} />
+    <title>{metaTitle} | divorcios.ar</title>
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={frontmatter.title} />
-    <meta property="og:description" content={frontmatter.description} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="geo.region" content="AR-C" />
     <meta name="geo.placename" content="Buenos Aires" />
+
+    <link 
+      rel="preload" 
+      href="/_astro/inter-latin-variable-wght-normal.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous" 
+    />
 </head>
 
 <body class="bg-indigo-950 text-indigo-100 flex flex-col min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
@@ -64,74 +78,72 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
     <Header />
     
     <main class="flex-grow pt-32 pb-20 px-6">
-        <article class="max-w-4xl mx-auto">
-            <header class="mb-16 text-center">
-                <div class="flex items-center justify-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-8">
-                    <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-1.5 rounded-full">{frontmatter.category}</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500/40"></span>
-                    <span class="text-indigo-100/40">{frontmatter.date}</span>
-                </div>
-                
-                <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">
-                    {frontmatter.title}
-                </h1>
-
-                <div class="flex items-center justify-center gap-8 border-y border-white/5 py-6">
-                    <div class="text-left">
-                        <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Lectura</p>
-                        <p class="text-xs font-bold text-white">8 Minutos aprox.</p>
-                    </div>
-                    <div class="text-left">
-                        <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Autoría</p>
-                        <p class="text-xs font-bold text-white">Abogados A&G</p>
-                    </div>
-                </div>
-            </header>
-
-            <div class="prose-legal max-w-3xl mx-auto">
-                <slot /> 
-            </div>
-
-            <section class="mt-16 pt-12 border-t border-white/5 max-w-3xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/5 p-8 md:p-10 rounded-[2.5rem] border border-white/10">
-                    <div class="flex-shrink-0">
-                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
-                        </div>
+        {frontmatter ? (
+            /* Layout para Posts (Markdown) */
+            <article class="max-w-4xl mx-auto">
+                <header class="mb-16 text-center">
+                    <div class="flex items-center justify-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-8">
+                        <span class="bg-indigo-500/10 border border-indigo-500/30 px-4 py-1.5 rounded-full">{frontmatter.category}</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-indigo-500/40"></span>
+                        <span class="text-indigo-100/40">{frontmatter.date}</span>
                     </div>
                     
-                    <div class="text-center md:text-left">
-                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-2">Autoría y Respaldo Legal</p>
-                        <h3 class="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tighter">Héctor D. Santibañez</h3>
-                        <p class="text-indigo-200/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-                            Abogado egresado de la <strong>Universidad de Buenos Aires (UBA)</strong> con más de 10 años de trayectoria en el ejercicio profesional. Especialista en Derecho de Familia y Sucesiones, brindando soluciones ágiles y estratégicas en el ámbito de la Ciudad Autónoma de Buenos Aires.
-                        </p>
-                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                            <span class="text-[9px] font-black uppercase tracking-widest bg-indigo-500/20 text-indigo-300 px-3 py-1.5 rounded-lg border border-indigo-500/30">
-                                T°124 F°535 CPACF
-                            </span>
-                            <span class="text-[9px] font-black uppercase tracking-widest bg-white/5 text-white/40 px-3 py-1.5 rounded-lg border border-white/10">
-                                Especialista en Derecho Civil
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">
+                        {frontmatter.title}
+                    </h1>
 
-            <div class="mt-24 max-w-3xl mx-auto">
-                <div class="relative p-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem]">
-                    <div class="bg-indigo-950 p-12 rounded-[2.8rem] text-center">
-                        <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter">¿Su situación requiere intervención legal?</h3>
-                        <p class="text-indigo-200/70 mb-10 text-lg leading-relaxed">No tome decisiones sobre su patrimonio sin asesoramiento profesional.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://wa.me/5491141689773" class="bg-white text-indigo-950 hover:bg-indigo-400 hover:text-white font-black uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-2xl">
-                                Agendar Consulta Personalizada
-                            </a>
+                    <div class="flex items-center justify-center gap-8 border-y border-white/5 py-6">
+                        <div class="text-left">
+                            <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Lectura</p>
+                            <p class="text-xs font-bold text-white">8 Minutos aprox.</p>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Autoría</p>
+                            <p class="text-xs font-bold text-white">Abogados A&G</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="prose-legal max-w-3xl mx-auto">
+                    <slot /> 
+                </div>
+
+                <section class="mt-16 pt-12 border-t border-white/5 max-w-3xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/5 p-8 md:p-10 rounded-[2.5rem] border border-white/10">
+                        <div class="flex-shrink-0">
+                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center md:text-left">
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-2">Autoría y Respaldo Legal</p>
+                            <h3 class="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tighter">Héctor D. Santibañez</h3>
+                            <p class="text-indigo-200/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+                                Abogado egresado de la <strong>Universidad de Buenos Aires (UBA)</strong> con más de 10 años de trayectoria en el ejercicio profesional. Especialista en Derecho de Familia y Sucesiones, brindando soluciones ágiles y estratégicas en CABA.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="mt-24 max-w-3xl mx-auto">
+                    <div class="relative p-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem]">
+                        <div class="bg-indigo-950 p-12 rounded-[2.8rem] text-center">
+                            <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter">¿Su situación requiere intervención legal?</h3>
+                            <p class="text-indigo-200/70 mb-10 text-lg leading-relaxed">No tome decisiones sobre su patrimonio sin asesoramiento profesional.</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="https://wa.me/5491141689773" class="bg-white text-indigo-950 hover:bg-indigo-400 hover:text-white font-black uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-2xl">
+                                    Agendar Consulta Personalizada
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        ) : (
+            /* Layout para Páginas Normales (Blog index, Home, etc.) */
+            <slot />
+        )}
     </main>
 
     <Footer />
@@ -140,5 +152,5 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
 </html>
 
 <style is:global>
-    /* ... (Tus estilos se mantienen sin cambios) ... */
+    /* Tus estilos existentes... */
 </style>
