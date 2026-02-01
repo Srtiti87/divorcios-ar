@@ -1,4 +1,6 @@
 ---
+// src/pages/index.astro
+import LayoutPost from '../layouts/LayoutPost.astro'; // Importamos el layout central
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Confianza from '../components/Confianza.astro';
@@ -39,51 +41,12 @@ const schema = {
 };
 ---
 
-<html lang="es">
-<head>
-    <script is:inline>
-      // Forzamos la disponibilidad global inmediata
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
+<LayoutPost 
+  title="Divorcios.ar | Abogados Divorcios Express. Especialistas en Derecho de Familia CABA"
+  description="Estudio jurídico líder en divorcios en Capital Federal. Divorcio express, división de bienes y cuidado personal. Atención profesional y confidencial en CABA."
+>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
 
-      (function(w,d,s,l,i){
-        var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KPJP7PBP');
-    </script>
-
-    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="language" content="es" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    
-    <title>Divorcios.ar | Abogados Divorcios Express. Especialistas en Derecho de Familia CABA</title>
-    <meta name="description" content="Estudio jurídico líder en divorcios en Capital Federal. Divorcio express, división de bienes y cuidado personal. Atención profesional y confidencial en CABA." />
-    <link rel="canonical" href="https://www.divorcios.ar/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.divorcios.ar/" />
-    <meta property="og:title" content="Divorcios.ar | Especialistas en Derecho de Familia en CABA" />
-    <meta property="og:description" content="Asesoramiento legal integral. Divorcios express, cuota alimentaria y división de bienes. Consulte hoy mismo." />
-    <meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <meta name="geo.region" content="AR-C" />
-    <meta name="geo.placename" content="Buenos Aires" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-</head>
-
-<body class="bg-white antialiased">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
     <Header />
     
     <main>
@@ -109,5 +72,4 @@ const schema = {
     <Footer />
     <WhatsappFlotante />
     <CookieBanner />
-</body>
-</html>
+</LayoutPost>
