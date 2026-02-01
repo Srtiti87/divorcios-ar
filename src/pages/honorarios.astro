@@ -1,31 +1,17 @@
 ---
 // src/pages/honorarios.astro
 import '../styles/global.css'; 
+import LayoutPost from '../layouts/LayoutPost.astro'; // Importamos tu layout central
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
-import PreciosDivorcio from '../components/PreciosDivorcio.astro'; // Tu componente actual
+import PreciosDivorcio from '../components/PreciosDivorcio.astro';
 ---
 
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Honorarios Divorcio Express | Transparencia Económica | divorcios.ar</title>
-    <meta name="description" content="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA y PBA. Consulte planes de pago." />
-    
-    <link rel="canonical" href="https://www.divorcios.ar/honorarios" />
-
-    <meta property="og:title" content="Honorarios Divorcio Express | Transparencia Económica" />
-    <meta property="og:description" content="Consulte gastos judiciales y honorarios para su divorcio en CABA y PBA." />
-    <meta property="og:url" content="https://www.divorcios.ar/honorarios" />
-    <meta property="og:type" content="website" />
-</head>
-
-<body class="bg-indigo-950 flex flex-col min-h-screen font-sans">
-    
+<LayoutPost 
+  title="Honorarios Divorcio Express | Transparencia Económica | divorcios.ar"
+  description="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA y PBA. Consulte planes de pago."
+>
     <Header />
 
     <main class="flex-grow pt-32 pb-20 px-6">
@@ -82,6 +68,4 @@ import PreciosDivorcio from '../components/PreciosDivorcio.astro'; // Tu compone
 
     <Footer />
     <WhatsappFlotante />
-
-</body>
-</html>
+</LayoutPost>
