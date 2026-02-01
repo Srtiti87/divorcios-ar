@@ -13,10 +13,10 @@ export default defineConfig({
   integrations: [
     sitemap(), 
     partytown({
+      // Quitamos el 'forward' del dataLayer para que no choque con GTM estándar
       config: {
-        forward: ["dataLayer.push", "google_tag_manager"],
+        forward: [], 
       },
-      lib: true,
     }),
   ]
 });
