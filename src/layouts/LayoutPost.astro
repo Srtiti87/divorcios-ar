@@ -20,10 +20,12 @@ interface Props {
 
 const { frontmatter, title, description } = Astro.props;
 
-// Priorizamos el título y descripción que vengan por props o por frontmatter
 const metaTitle = title || frontmatter?.title || "Abogados A&G";
 const metaDescription = description || frontmatter?.description || "Estudio Jurídico Especialista en Derecho de Familia y Sucesiones en CABA.";
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
+
+// Determinamos si es un post para aplicar los estilos de blog
+const isPost = !!frontmatter;
 ---
 
 <html lang="es">
@@ -41,6 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KPJP7PBP');
     </script>
+    
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,7 +52,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
     <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalURL} />
 
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content={isPost ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={metaDescription} />
@@ -67,9 +70,11 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
       type="font/woff2" 
       crossorigin="anonymous" 
     />
+
+    <slot name="head" />
 </head>
 
-<body class="bg-indigo-950 text-indigo-100 flex flex-col min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
+<body class=`flex flex-col min-h-screen font-sans selection:bg-indigo-500 selection:text-white ${isPost ? 'bg-indigo-950 text-indigo-100' : 'bg-white text-slate-900'}`>
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP" 
               height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -77,9 +82,8 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
     
     <Header />
     
-    <main class="flex-grow pt-32 pb-20 px-6">
-        {frontmatter ? (
-            /* Layout para Posts (Markdown) */
+    <main class=`flex-grow w-full ${isPost ? 'pt-32 pb-20 px-6' : ''}`>
+        {isPost ? (
             <article class="max-w-4xl mx-auto">
                 <header class="mb-16 text-center">
                     <div class="flex items-center justify-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-8">
@@ -115,17 +119,16 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
                             </div>
                         </div>
-                        
                         <div class="text-center md:text-left">
                             <p class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-2">Autoría y Respaldo Legal</p>
                             <h3 class="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tighter">Héctor D. Santibañez</h3>
                             <p class="text-indigo-200/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-                                Abogado egresado de la <strong>Universidad de Buenos Aires (UBA)</strong> con más de 10 años de trayectoria en el ejercicio profesional. Especialista en Derecho de Familia y Sucesiones, brindando soluciones ágiles y estratégicas en CABA.
+                                Abogado egresado de la <strong>Universidad de Buenos Aires (UBA)</strong> con más de 10 años de trayectoria. Especialista en Derecho de Familia.
                             </p>
                         </div>
                     </div>
                 </section>
-                
+
                 <div class="mt-24 max-w-3xl mx-auto">
                     <div class="relative p-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem]">
                         <div class="bg-indigo-950 p-12 rounded-[2.8rem] text-center">
@@ -141,7 +144,6 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
                 </div>
             </article>
         ) : (
-            /* Layout para Páginas Normales (Blog index, Home, etc.) */
             <slot />
         )}
     </main>
@@ -150,7 +152,3 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
     <WhatsappFlotante />
 </body>
 </html>
-
-<style is:global>
-    /* Tus estilos existentes... */
-</style>
