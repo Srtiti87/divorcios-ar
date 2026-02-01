@@ -15,20 +15,20 @@
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-12 w-full">
             <span class="block">ABOGADOS</span>
             
-            <div class="relative h-[1.1em] mt-2 flex justify-center items-center overflow-visible">
+            <div class="relative h-[1.2em] md:h-[1em] mt-2 flex justify-center items-center">
                 <span class="word-fade animate-fade-1 text-amber-400">Divorcio Express</span>
                 <span class="word-fade animate-fade-2 text-amber-400">Cuidado Personal</span>
                 <span class="word-fade animate-fade-3 text-amber-400">División de Bienes</span>
-                <span class="word-fade animate-fade-4 text-amber-400 text-[0.8em] md:text-[1em]">Compensación Económica</span>
+                <span class="word-fade animate-fade-4 text-amber-400 text-fluid-long">Compensación Económica</span>
             </div>
         </h1>
 
-        <p class="text-base md:text-xl text-indigo-100/70 mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-2">
+        <p class="text-base md:text-xl text-indigo-100/70 mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-4">
             Atención jurídica estratégica y reserva absoluta en procesos de alta complejidad. <span class="text-white font-bold">Tu voz cuenta.</span>
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-            <a href="https://wa.me/5491141689773" class="w-[80%] sm:w-auto px-10 py-5 bg-white text-indigo-950 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-indigo-400 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-6">
+            <a href="https://wa.me/5491141689773" class="w-full sm:w-auto px-10 py-5 bg-white text-indigo-950 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-indigo-400 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z"></path></svg>
                 Consulta Privada
             </a>
@@ -37,7 +37,7 @@
 </section>
 
 <script>
-    // ... Tu script de partículas se mantiene igual (está muy bien optimizado)
+    // Tu script de partículas se mantiene igual...
 </script>
 
 <style>
@@ -47,15 +47,28 @@
         width: 100%;
         left: 0;
         right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
         transform: translate3d(0, 15px, 0);
         will-change: transform, opacity;
-        white-space: nowrap; /* Evita que las palabras largas se rompan en dos líneas en móvil */
     }
 
-    /* Animación corregida para ser más suave */
+    /* Tipografía fluida para la frase más larga */
+    .text-fluid-long {
+        /* Se adapta entre 1.8rem y el tamaño original según el ancho de pantalla */
+        font-size: clamp(1.8rem, 7.5vw, 1em);
+    }
+
+    @media (max-width: 480px) {
+        .text-fluid-long {
+            font-size: 6.2vw; /* Ajuste fino para pantallas muy pequeñas (iPhone SE) */
+        }
+    }
+
     @keyframes wordAnimation {
         0% { opacity: 0; transform: translate3d(0, 15px, 0); }
         5% { opacity: 1; transform: translate3d(0, 0, 0); }
