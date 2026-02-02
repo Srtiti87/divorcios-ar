@@ -1,52 +1,86 @@
 ---
 // src/components/Hero.astro
 ---
-<section class="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-indigo-950 text-white w-full">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-indigo-950 text-white w-full">
     <div class="absolute inset-0 z-0 bg-indigo-950"></div>
     <div class="absolute inset-0 z-10 aura-glow opacity-40"></div>
+    <div class="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-indigo-950/40 to-indigo-950"></div>
 
     <div class="relative z-30 max-w-6xl mx-auto text-center px-4 w-full flex flex-col items-center">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-10 backdrop-blur-sm animate-fade-in">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-300">Derecho de Familia • CABA</span>
+        </div>
+
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-12 w-full">
             <span class="block">ABOGADOS</span>
             
-            <div class="relative h-[80px] md:h-[160px] lg:h-[180px] mt-4 flex justify-center items-center">
+            <div class="relative h-[100px] md:h-[180px] lg:h-[210px] mt-6 flex justify-center items-center">
                 <span class="word-fade animate-fade-1 text-amber-400">Divorcio Express</span>
                 <span class="word-fade animate-fade-2 text-amber-400">Cuidado Personal</span>
                 <span class="word-fade animate-fade-3 text-amber-400">División de Bienes</span>
                 <span class="word-fade animate-fade-4 text-amber-400 text-fluid-long">Compensación Económica</span>
             </div>
         </h1>
-        <a href="https://wa.me/5491141689773" class="px-10 py-5 bg-white text-indigo-950 rounded-2xl font-black uppercase tracking-widest text-xs">
+
+        <p class="text-base md:text-xl text-indigo-100/70 mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-4">
+            Atención jurídica estratégica y reserva absoluta. <span class="text-white font-bold">Tu voz cuenta.</span>
+        </p>
+
+        <a href="https://wa.me/5491141689773" class="w-[90%] sm:w-auto px-10 py-5 bg-white text-indigo-950 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-indigo-400 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
             Consulta Privada
         </a>
     </div>
 </section>
 
 <style>
-    /* Usamos transformaciones 3D para que el navegador no recalcule el diseño */
     .aura-glow {
-        background: radial-gradient(circle, #4338ca 0%, transparent 70%);
+        background: radial-gradient(circle at 50% 50%, #4338ca 0%, transparent 70%);
         filter: blur(40px);
-        animation: auraMove 10s infinite alternate;
+        animation: auraMove 10s ease-in-out infinite alternate;
         will-change: transform;
     }
-    @keyframes auraMove { 
-        from { transform: translate3d(-1%, -1%, 0); } 
-        to { transform: translate3d(1%, 1%, 0); } 
+
+    @keyframes auraMove {
+        0% { transform: translate3d(-2%, -2%, 0) scale(1); }
+        100% { transform: translate3d(2%, 2%, 0) scale(1.1); }
     }
+
     .word-fade {
-        position: absolute; opacity: 0; width: 100%;
-        transform: translate3d(0, 10px, 0);
+        position: absolute; 
+        opacity: 0; 
+        width: 100%; 
+        left: 0; 
+        right: 0; 
+        margin: 0 auto;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+        white-space: nowrap; 
+        /* Movimiento ultra corto para evitar recortes visuales */
+        transform: translate3d(0, 5px, 0); 
         will-change: transform, opacity;
+        text-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
     }
-    .text-fluid-long { font-size: clamp(1.4rem, 6.5vw, 1em); }
+
+    .text-fluid-long { 
+        font-size: clamp(1.2rem, 6vw, 0.9em); 
+    }
+
     @keyframes wordAnimation {
-        0%, 100% { opacity: 0; transform: translate3d(0, 10px, 0); }
-        10%, 25% { opacity: 1; transform: translate3d(0, 0, 0); }
-        35% { opacity: 0; transform: translate3d(0, -10px, 0); }
+        0% { opacity: 0; transform: translate3d(0, 5px, 0); }
+        8% { opacity: 1; transform: translate3d(0, 0, 0); }
+        22% { opacity: 1; transform: translate3d(0, 0, 0); }
+        30% { opacity: 0; transform: translate3d(0, -5px, 0); }
+        100% { opacity: 0; }
     }
+
     .animate-fade-1 { animation: wordAnimation 8s infinite 0s; }
     .animate-fade-2 { animation: wordAnimation 8s infinite 2s; }
     .animate-fade-3 { animation: wordAnimation 8s infinite 4s; }
     .animate-fade-4 { animation: wordAnimation 8s infinite 6s; }
+
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
