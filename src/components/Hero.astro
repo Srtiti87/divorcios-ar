@@ -2,10 +2,11 @@
 // src/components/Hero.astro
 ---
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-indigo-950 text-white w-full">
-    <canvas id="canvas-particles" class="absolute inset-0 z-0 opacity-40 pointer-events-none"></canvas>
+    <div class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_50%,_#1e1b4b_0%,_#0f172a_100%)]"></div>
     <div class="absolute inset-0 z-10 bg-gradient-to-b from-indigo-950/20 via-indigo-950/80 to-indigo-950"></div>
 
     <div class="relative z-20 max-w-6xl mx-auto text-center px-4 w-full flex flex-col items-center">
+        
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm animate-fade-in">
             <span class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-300">Derecho de Familia • CABA</span>
         </div>
@@ -30,48 +31,30 @@
     </div>
 </section>
 
-<script>
-    const initCanvas = () => {
-        const canvas = document.getElementById('canvas-particles');
-        const ctx = canvas.getContext('2d');
-        if (!canvas || !ctx) return;
-        let particles = [];
-        let w = canvas.width = window.innerWidth;
-        let h = canvas.height = window.innerHeight;
-        class Particle {
-            x = Math.random() * w; y = Math.random() * h;
-            vx = (Math.random() - 0.5) * 0.5; vy = (Math.random() - 0.5) * 0.5;
-            update() {
-                this.x += this.vx; this.y += this.vy;
-                if (this.x < 0 || this.x > w) this.vx *= -1;
-                if (this.y < 0 || this.y > h) this.vy *= -1;
-            }
-        }
-        const setup = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; particles = Array.from({ length: 60 }, () => new Particle()); };
-        const draw = () => {
-            ctx.clearRect(0, 0, w, h); ctx.strokeStyle = 'rgba(165, 180, 252, 0.2)'; ctx.fillStyle = 'rgba(199, 210, 254, 0.4)';
-            particles.forEach((p, i) => {
-                p.update(); ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2); ctx.fill();
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dist = Math.hypot(p.x - particles[j].x, p.y - particles[j].y);
-                    if (dist < 150) { ctx.globalAlpha = 1 - (dist / 150); ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
-                }
-            });
-            ctx.globalAlpha = 1; requestAnimationFrame(draw);
-        };
-        window.addEventListener('resize', setup); setup(); draw();
-    };
-    if ('requestIdleCallback' in window) window.requestIdleCallback(initCanvas); else setTimeout(initCanvas, 1000);
-</script>
-
 <style>
     .word-fade {
-        position: absolute; opacity: 0; width: 100%; left: 0; right: 0; margin: 0 auto;
-        display: flex; justify-content: center; align-items: center; text-align: center;
-        white-space: nowrap; transform: translate3d(0, 15px, 0); will-change: transform, opacity;
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+        /* Usamos hardware acceleration para la animación */
+        transform: translate3d(0, 15px, 0);
+        will-change: transform, opacity;
         text-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
     }
-    .text-fluid-long { font-size: clamp(1.4rem, 6.5vw, 1em); }
+
+    /* Tipografía fluida para evitar desbordes en móviles */
+    .text-fluid-long { 
+        font-size: clamp(1.4rem, 6.5vw, 1em); 
+    }
+
     @keyframes wordAnimation {
         0% { opacity: 0; transform: translate3d(0, 15px, 0); }
         5% { opacity: 1; transform: translate3d(0, 0, 0); }
@@ -79,10 +62,12 @@
         25% { opacity: 0; transform: translate3d(0, -15px, 0); }
         100% { opacity: 0; }
     }
+
     .animate-fade-1 { animation: wordAnimation 8s infinite 0s; }
     .animate-fade-2 { animation: wordAnimation 8s infinite 2s; }
     .animate-fade-3 { animation: wordAnimation 8s infinite 4s; }
     .animate-fade-4 { animation: wordAnimation 8s infinite 6s; }
+
     .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
