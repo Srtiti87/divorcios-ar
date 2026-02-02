@@ -24,7 +24,6 @@ const metaTitle = title || frontmatter?.title || "Abogados A&G";
 const metaDescription = description || frontmatter?.description || "Estudio Jurídico Especialista en Derecho de Familia y Sucesiones en CABA.";
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.divorcios.ar');
 
-// Determinamos si es un post para aplicar los estilos de blog
 const isPost = !!frontmatter;
 ---
 
@@ -32,16 +31,8 @@ const isPost = !!frontmatter;
 <head>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-
-      (function(w,d,s,l,i){
-        var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      (function(w,d,s,l,i){var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KPJP7PBP');
     </script>
     
     <meta charset="utf-8" />
@@ -51,6 +42,8 @@ const isPost = !!frontmatter;
     <title>{metaTitle} | divorcios.ar</title>
     <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalURL} />
+
+    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
     <meta property="og:type" content={isPost ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
@@ -63,22 +56,11 @@ const isPost = !!frontmatter;
     <meta name="geo.region" content="AR-C" />
     <meta name="geo.placename" content="Buenos Aires" />
 
-    <link 
-      rel="preload" 
-      href="/_astro/inter-latin-variable-wght-normal.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous" 
-    />
-
     <slot name="head" />
 </head>
 
 <body class=`flex flex-col min-h-screen font-sans selection:bg-indigo-500 selection:text-white ${isPost ? 'bg-indigo-950 text-indigo-100' : 'bg-white text-slate-900'}`>
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP" 
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <Header />
     
@@ -91,40 +73,22 @@ const isPost = !!frontmatter;
                         <span class="w-1.5 h-1.5 rounded-full bg-indigo-500/40"></span>
                         <span class="text-indigo-100/40">{frontmatter.date}</span>
                     </div>
-                    
-                    <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">
-                        {frontmatter.title}
-                    </h1>
-
+                    <h1 class="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-12">{frontmatter.title}</h1>
                     <div class="flex items-center justify-center gap-8 border-y border-white/5 py-6">
-                        <div class="text-left">
-                            <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Lectura</p>
-                            <p class="text-xs font-bold text-white">8 Minutos aprox.</p>
-                        </div>
-                        <div class="text-left">
-                            <p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Autoría</p>
-                            <p class="text-xs font-bold text-white">Abogados A&G</p>
-                        </div>
+                        <div class="text-left"><p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Lectura</p><p class="text-xs font-bold text-white">8 Minutos</p></div>
+                        <div class="text-left"><p class="text-[9px] uppercase tracking-widest text-indigo-400 font-black mb-1">Autoría</p><p class="text-xs font-bold text-white">Abogados A&G</p></div>
                     </div>
                 </header>
 
-                <div class="prose-legal max-w-3xl mx-auto">
-                    <slot /> 
-                </div>
+                <div class="prose-legal max-w-3xl mx-auto"><slot /></div>
 
                 <section class="mt-16 pt-12 border-t border-white/5 max-w-3xl mx-auto">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/5 p-8 md:p-10 rounded-[2.5rem] border border-white/10">
-                        <div class="flex-shrink-0">
-                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
-                            </div>
-                        </div>
+                        <div class="flex-shrink-0"><div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-xl"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg></div></div>
                         <div class="text-center md:text-left">
                             <p class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-2">Autoría y Respaldo Legal</p>
                             <h3 class="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tighter">Héctor D. Santibañez</h3>
-                            <p class="text-indigo-200/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-                                Abogado egresado de la <strong>Universidad de Buenos Aires (UBA)</strong> con más de 10 años de trayectoria. Especialista en Derecho de Familia.
-                            </p>
+                            <p class="text-indigo-200/70 text-sm leading-relaxed mb-6">Abogado egresado de la <strong>UBA</strong> con más de 10 años de trayectoria. Especialista en Derecho de Familia.</p>
                         </div>
                     </div>
                 </section>
@@ -132,13 +96,8 @@ const isPost = !!frontmatter;
                 <div class="mt-24 max-w-3xl mx-auto">
                     <div class="relative p-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem]">
                         <div class="bg-indigo-950 p-12 rounded-[2.8rem] text-center">
-                            <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter">¿Su situación requiere intervención legal?</h3>
-                            <p class="text-indigo-200/70 mb-10 text-lg leading-relaxed">No tome decisiones sobre su patrimonio sin asesoramiento profesional.</p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="https://wa.me/5491141689773" class="bg-white text-indigo-950 hover:bg-indigo-400 hover:text-white font-black uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-2xl">
-                                    Agendar Consulta Personalizada
-                                </a>
-                            </div>
+                            <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter">¿Requiere intervención legal?</h3>
+                            <a href="https://wa.me/5491141689773" class="bg-white text-indigo-950 hover:bg-indigo-400 hover:text-white font-black uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-2xl inline-block mt-4">Agendar Consulta</a>
                         </div>
                     </div>
                 </div>
@@ -147,7 +106,6 @@ const isPost = !!frontmatter;
             <slot />
         )}
     </main>
-
     <Footer />
     <WhatsappFlotante />
 </body>

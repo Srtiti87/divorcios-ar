@@ -1,82 +1,35 @@
 ---
 // src/pages/blog.astro
 import '../styles/global.css';
-// Importamos tu único layout maestro
 import LayoutPost from '../layouts/LayoutPost.astro'; 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 
-// Obtenemos los posts (Eager carga los datos de inmediato)
 const postFiles = import.meta.glob('./blog/*.md', { eager: true });
-
-// Convertimos el objeto en un array y extraemos la información necesaria
-const posts = Object.values(postFiles).map((post: any) => ({
-  url: post.url,
-  frontmatter: post.frontmatter
-}));
-
-// Ordenamos por fecha (de más reciente a más antiguo)
-const sortedPosts = posts.sort((a, b) => 
-    new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
-);
+const posts = Object.values(postFiles).map((post: any) => ({ url: post.url, frontmatter: post.frontmatter }));
+const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 ---
 
 <LayoutPost 
-  title="Blog Jurídico | Especialistas en Derecho de Familia | divorcios.ar"
-  description="Artículos de actualidad sobre divorcio express, división de bienes y cuota alimentaria en Argentina."
+  title="Blog Jurídico | Especialistas en Derecho de Familia"
+  description="Artículos de actualidad sobre divorcio express y derecho de familia en Argentina."
 >
-    <Header />
+    <div class="max-w-6xl mx-auto pt-32 pb-20 px-6">
+        <header class="mb-16">
+            <p class="text-indigo-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4">Recursos y Actualidad</p>
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">Blog <span class="text-indigo-400">Legal</span></h1>
+        </header>
 
-    <main class="flex-grow pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            
-            <header class="mb-16">
-                <p class="text-indigo-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 text-center md:text-left">
-                    Recursos y Actualidad
-                </p>
-                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none text-center md:text-left">
-                    Blog <span class="text-indigo-400">Legal</span>
-                </h1>
-            </header>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sortedPosts.map((post) => (
-                    <a href={post.url} class="group flex flex-col h-full bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 shadow-2xl">
-                        
-                        <div class="flex items-center justify-between mb-8">
-                            <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
-                                {post.frontmatter.category}
-                            </span>
-                            <span class="text-indigo-100/30 text-[10px] font-bold uppercase tracking-widest">
-                                {post.frontmatter.date}
-                            </span>
-                        </div>
-
-                        <h2 class="text-2xl font-black text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300 tracking-tight leading-tight uppercase">
-                            {post.frontmatter.title}
-                        </h2>
-
-                        <p class="text-indigo-100/60 text-sm leading-relaxed mb-8 flex-grow">
-                            {post.frontmatter.description}
-                        </p>
-
-                        <div class="flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.2em] pt-6 border-t border-white/5">
-                            Leer Guía Completa <span class="text-indigo-400 group-hover:translate-x-2 transition-transform">→</span>
-                        </div>
-                    </a>
-                ))}
-            </div>
-
-            {sortedPosts.length === 0 && (
-                <div class="text-center py-20 border-2 border-dashed border-white/10 rounded-[3rem]">
-                    <p class="text-indigo-200/40 font-bold uppercase tracking-widest">Próximamente nuevos artículos</p>
-                </div>
-            )}
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sortedPosts.map((post) => (
+                <a href={post.url} class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 hover:border-indigo-500 transition-all duration-500">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-black px-3 py-1 rounded-full uppercase">{post.frontmatter.category}</span>
+                        <span class="text-indigo-100/30 text-[10px] font-bold uppercase">{post.frontmatter.date}</span>
+                    </div>
+                    <h2 class="text-2xl font-black text-white mb-4 group-hover:text-indigo-400 tracking-tight uppercase">{post.frontmatter.title}</h2>
+                    <p class="text-indigo-100/60 text-sm leading-relaxed mb-8">{post.frontmatter.description}</p>
+                    <div class="flex items-center gap-2 text-white font-black text-[10px] uppercase pt-6 border-t border-white/5">Leer Guía <span class="text-indigo-400 group-hover:translate-x-2 transition-transform">→</span></div>
+                </a>
+            ))}
         </div>
-    </main>
-
-    <Footer />
-    <WhatsappFlotante />
+    </div>
 </LayoutPost>
