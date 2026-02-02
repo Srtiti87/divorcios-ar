@@ -24,8 +24,8 @@ const etapas = [
       
       <div 
         id="main-progress-line" 
-        class="absolute left-1/2 top-0 w-[2px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 transition-all duration-[4000ms] ease-linear z-0"
-        style="height: 0%"
+        class="absolute left-1/2 top-0 w-[2px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 z-0 origin-top will-change-transform"
+        style="height: 100%; transform: scaleY(0); transition: transform 4000ms linear;"
       ></div>
 
       <div class="space-y-12 relative z-10">
@@ -40,14 +40,9 @@ const etapas = [
               </div>
 
               <div class="bg-white/[0.03] border-2 border-white/10 p-8 md:p-12 rounded-[3rem] text-center hover:border-indigo-500/50 transition-all duration-500 backdrop-blur-md relative">
-                
                 <div class="absolute inset-0 rounded-[2.8rem] border border-white/5 pointer-events-none"></div>
-                
                 <h3 class="text-white font-black uppercase tracking-tight text-2xl mb-4">{etapa.title}</h3>
-                <p class="text-indigo-100/60 text-lg leading-relaxed font-light max-w-xl mx-auto">
-                  {etapa.desc}
-                </p>
-
+                <p class="text-indigo-100/60 text-lg leading-relaxed font-light max-w-xl mx-auto">{etapa.desc}</p>
                 <div class="absolute -inset-1 bg-gradient-to-b from-indigo-500/20 to-purple-500/20 rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
               </div>
             </div>
@@ -64,8 +59,10 @@ const etapas = [
     const progressLine = document.getElementById('main-progress-line');
     const steps = document.querySelectorAll('.step-container');
 
-    // Forzamos la visibilidad si hay problemas de carga
-    if (progressLine) progressLine.style.height = '100%';
+    // OPTIMIZACIÓN: Usamos scaleY en lugar de height
+    if (progressLine) {
+        progressLine.style.transform = 'scaleY(1)';
+    }
     
     steps.forEach((step, i) => {
       setTimeout(() => {
@@ -75,7 +72,6 @@ const etapas = [
     });
   }
 
-  // Ejecutar cuando el scroll llegue o si la página ya cargó arriba
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -87,6 +83,6 @@ const etapas = [
   const section = document.querySelector('section');
   if (section) observer.observe(section);
   
-  // Backup: si por alguna razón el observer falla, mostrar igual tras 2 segundos
+  // Backup: ejecución diferida
   setTimeout(startAnimation, 2000);
 </script>

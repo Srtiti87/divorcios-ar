@@ -27,22 +27,47 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <meta name="description" content={metaDescription} />
 
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GTM-KPJP7PBP');
+      function loadGTM() {
+        if (window.gtmLoaded) return;
+        window.gtmLoaded = true;
+        
+        // Inicialización de dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Configuración de IDs (Ads y GA4)
+        gtag('config', 'GTM-KPJP7PBP');
+        gtag('config', 'AW-17919248557');
+
+        // Carga del script de GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+      }
+
+      // Disparadores: Carga al interactuar o a los 3.5 segundos de inactividad
+      window.addEventListener('scroll', loadGTM, { once: true });
+      window.addEventListener('mousemove', loadGTM, { once: true });
+      window.addEventListener('touchstart', loadGTM, { once: true });
+      setTimeout(loadGTM, 3500); 
     </script>
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPJP7PBP"></script>
 
     <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
     {isPost && <link rel="stylesheet" href="/_astro/blog.css" />}
 
     <style is:inline>
-      /* Estabilizador de CLS: Reserva el espacio del Hero */
-      .hero-title { min-height: 1.2em; contain: layout; }
-      /* Display Swap para evitar texto invisible */
+      /* Evita saltos de diseño y optimiza fuentes */
       :root { font-display: swap; }
+      .hero-title { min-height: 1.2em; contain: layout; }
+      
+      /* Corrección para la animación de progreso si existe */
+      #main-progress-line { 
+        transform-origin: top; 
+        will-change: transform; 
+      }
     </style>
 
     <slot name="head" />
