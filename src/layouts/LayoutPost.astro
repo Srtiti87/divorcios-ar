@@ -1,7 +1,7 @@
 ---
 // src/layouts/LayoutPost.astro
 import '../styles/global.css';
-import '../styles/blog.css'; 
+// Eliminamos el import directo de blog.css aquí para que no bloquee la Home
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
@@ -43,7 +43,22 @@ const isPost = !!frontmatter;
     <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalURL} />
 
-    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link 
+      rel="preload" 
+      href="/_astro/inter-latin-variable-wght-normal.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous" 
+    />
+
+    <style is:inline>
+      :root { font-display: swap; }
+      h1 { content-visibility: auto; contain-intrinsic-size: 1px 500px; }
+      /* Si no es un post, cargamos los estilos de blog de forma asíncrona */
+      {isPost ? '' : `@import url('../styles/blog.css') print;`}
+    </style>
+
+    {isPost && <link rel="stylesheet" href="/_astro/blog.css" />}
 
     <meta property="og:type" content={isPost ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
@@ -92,15 +107,6 @@ const isPost = !!frontmatter;
                         </div>
                     </div>
                 </section>
-
-                <div class="mt-24 max-w-3xl mx-auto">
-                    <div class="relative p-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem]">
-                        <div class="bg-indigo-950 p-12 rounded-[2.8rem] text-center">
-                            <h3 class="text-3xl font-black text-white mb-4 uppercase tracking-tighter">¿Requiere intervención legal?</h3>
-                            <a href="https://wa.me/5491141689773" class="bg-white text-indigo-950 hover:bg-indigo-400 hover:text-white font-black uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-2xl inline-block mt-4">Agendar Consulta</a>
-                        </div>
-                    </div>
-                </div>
             </article>
         ) : (
             <slot />
