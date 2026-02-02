@@ -1,5 +1,5 @@
 ---
-// src/layouts/LayoutPost.astro
+// src/layouts/LayoutPost.astro (CÓDIGO CORREGIDO)
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -30,24 +30,18 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
       function loadGTM() {
         if (window.gtmLoaded) return;
         window.gtmLoaded = true;
-        
-        // Inicialización de dataLayer
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        // Configuración de IDs (Ads y GA4)
         gtag('config', 'GTM-KPJP7PBP');
         gtag('config', 'AW-17919248557');
 
-        // Carga del script de GTM
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KPJP7PBP');
       }
-
-      // Disparadores: Carga al interactuar o a los 3.5 segundos de inactividad
       window.addEventListener('scroll', loadGTM, { once: true });
       window.addEventListener('mousemove', loadGTM, { once: true });
       window.addEventListener('touchstart', loadGTM, { once: true });
@@ -55,31 +49,28 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     </script>
 
     <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-
+    
+    {/* Forzamos la carga de estilos de blog si es un post */}
     {isPost && <link rel="stylesheet" href="/_astro/blog.css" />}
 
     <style is:inline>
-      /* Evita saltos de diseño y optimiza fuentes */
-      :root { font-display: swap; }
+      :root { font-display: swap; background-color: #0f172a; } /* bg-slate-950 para evitar destellos blancos */
       .hero-title { min-height: 1.2em; contain: layout; }
-      
-      /* Corrección para la animación de progreso si existe */
-      #main-progress-line { 
-        transform-origin: top; 
-        will-change: transform; 
-      }
     </style>
 
     <slot name="head" />
 </head>
 
-<body class=`flex flex-col min-h-screen ${isPost ? 'bg-indigo-950 text-indigo-100' : 'bg-white text-slate-900'}`>
+{/* CORRECCIÓN AQUÍ: Forzamos bg-indigo-950 y text-indigo-100 para todas las páginas internas */}
+<body class="flex flex-col min-h-screen bg-indigo-950 text-indigo-100">
     <Header />
     <main class="flex-grow">
         {isPost ? (
             <article class="max-w-4xl mx-auto pt-32 px-6">
                 <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12">{frontmatter.title}</h1>
-                <slot />
+                <div class="prose prose-invert max-w-none">
+                    <slot />
+                </div>
             </article>
         ) : (
             <slot />

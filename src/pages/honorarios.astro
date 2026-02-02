@@ -1,20 +1,15 @@
 ---
-// src/pages/honorarios.astro
-import '../styles/global.css'; 
-import LayoutPost from '../layouts/LayoutPost.astro'; // Importamos tu layout central
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+// src/pages/honorarios.astro (CÓDIGO CORREGIDO)
+import LayoutPost from '../layouts/LayoutPost.astro';
 import PreciosDivorcio from '../components/PreciosDivorcio.astro';
 ---
 
 <LayoutPost 
-  title="Honorarios Divorcio Express | Transparencia Económica | divorcios.ar"
-  description="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA y PBA. Consulte planes de pago."
+  title="Honorarios Divorcio Express | Transparencia Económica"
+  description="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA."
 >
-    <Header />
-
-    <main class="flex-grow pt-32 pb-20 px-6">
+    {/* Ya no necesitamos Header ni etiquetas <main> extra, el LayoutPost se encarga */}
+    <div class="pt-32 pb-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
             
             <div class="mb-8">
@@ -64,8 +59,5 @@ import PreciosDivorcio from '../components/PreciosDivorcio.astro';
                 </a>
             </div>
         </div>
-    </main>
-
-    <Footer />
-    <WhatsappFlotante />
+    </div>
 </LayoutPost>
