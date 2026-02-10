@@ -67,4 +67,4 @@ Las deudas contraídas durante el matrimonio para el mantenimiento del hogar o l
 La división de bienes no es solo una cuestión de matemáticas, sino de **estrategia legal**. Un error en la calificación de un bien puede significar la pérdida de años de ahorro.
 
 **¿Necesita un presupuesto para la liquidación de sus bienes?**
-[Contáctenos por WhatsApp](https://wa.me/5491141689773) para una auditoría patrimonial inicial y proteja lo que le pertenece.
+[Contáctenos por WhatsApp](https://wa.me/5491159360995) para una auditoría patrimonial inicial y proteja lo que le pertenece.

@@ -52,4 +52,4 @@ Un dato que muchos clientes desconocen es que la compensación económica **tamb
 
 
 **¿Cree que su situación amerita una compensación económica?**
-No permita que el plazo legal venza. [Hable con nosotros por WhatsApp](https://wa.me/5491141689773) para realizar un diagnóstico patrimonial de su caso.
+No permita que el plazo legal venza. [Hable con nosotros por WhatsApp](https://wa.me/5491159360995) para realizar un diagnóstico patrimonial de su caso.
