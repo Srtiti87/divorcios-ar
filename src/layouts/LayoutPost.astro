@@ -37,6 +37,15 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
+    {isPost && (
+      <link 
+        rel="stylesheet" 
+        href="/_astro/blog.xBf0_bIQ.css" 
+        media="print" 
+        onload="this.media='all'" 
+      />
+    )}
+
     <script is:inline>
       function loadGTM() {
         if (window.gtmLoaded) return;
@@ -56,7 +65,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('mousemove', loadGTM, { once: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
-      
       setTimeout(loadGTM, 500); 
     </script>
 
@@ -78,8 +86,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     <main class="flex-grow">
         {isPost ? (
             <article class="max-w-4xl mx-auto pt-32 px-6">
-                <link rel="stylesheet" href="/_astro/blog.DfzL4HCD.css" media="print" onload="this.media='all'" />
-                
                 <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12 leading-[0.9] tracking-tighter">
                   {frontmatter.title}
                 </h1>
