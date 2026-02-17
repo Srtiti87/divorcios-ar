@@ -5,9 +5,6 @@ import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
 
-// Importamos el CSS del blog para que Astro lo procese correctamente
-import blogStyles from '../styles/blog.css?inline';
-
 interface Props {
   frontmatter?: { title: string; description: string; category?: string; date?: string; };
   title?: string;
@@ -21,7 +18,7 @@ const metaTitle = title || frontmatter?.title || "Abogados A&G";
 const metaDescription = description || frontmatter?.description || "Estudio Jur√≠dico Especialista en Derecho de Familia.";
 ---
 
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +26,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     <meta name="description" content={metaDescription} />
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    
     <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
@@ -47,10 +43,11 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
         gtag('js', new Date());
         gtag('config', 'AW-17919248557');
       }
+      // Configuraci√≥n de carga equilibrada para Google Ads y Performance
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
-      // Retraso de 6 segundos para asegurar LCP perfecto
-      setTimeout(loadGTM, 500); 
+      window.addEventListener('click', loadGTM, { once: true }); 
+      setTimeout(loadGTM, 2500); 
     </script>
 
     <style is:inline>
@@ -59,21 +56,25 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
         font-display: swap; 
         background-color: #05051a; 
       }
-      /* Si es un post, inyectamos los estilos del blog.css aqu√≠ mismo sin bloquear */
-      {isPost && blogStyles}
+      .hero-title { min-height: 1.1em; contain: layout; }
     </style>
 
     <slot name="head" />
 </head>
 
-<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-100 antialiased">
+<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-50 antialiased">
     <Header />
     <main class="flex-grow">
         {isPost ? (
-            <article class="max-w-4xl mx-auto pt-32 px-6">
-                <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12 leading-tight">
-                  {frontmatter.title}
-                </h1>
+            <article class="max-w-4xl mx-auto pt-32 pb-20 px-6">
+                <header class="mb-12">
+                    <p class="text-amber-400 font-black uppercase text-[10px] tracking-[0.3em] mb-4">
+                        {frontmatter.category} ‚Ä¢ {frontmatter.date}
+                    </p>
+                    <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter">
+                      {frontmatter.title}
+                    </h1>
+                </header>
                 <div class="prose-legal">
                     <slot />
                 </div>
