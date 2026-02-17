@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
+// Importamos el contenido del CSS del blog para inyectarlo sin bloqueos
+import blogStyles from '../styles/blog.css?inline';
 
 interface Props {
   frontmatter?: { title: string; description: string; category?: string; date?: string; };
@@ -26,7 +28,14 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     <meta name="description" content={metaDescription} />
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    
+    <link 
+      rel="preload" 
+      href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous"
+    />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -39,24 +48,30 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KPJP7PBP');
-        function gtag(){window.dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-17919248557');
+        
+        window.gtag = function(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'AW-17919248557');
       }
-      // Configuraci√≥n de carga equilibrada para Google Ads y Performance
+      
+      // Se carga al interactuar o a los 2.5s (seguro para Ads)
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
       window.addEventListener('click', loadGTM, { once: true }); 
-      setTimeout(loadGTM, 500); 
+      setTimeout(loadGTM, 1000); 
     </script>
 
-    <style is:inline>
+    <style is:inline define:vars={{}}>
       :root { 
         font-family: 'Inter Variable', system-ui, sans-serif; 
         font-display: swap; 
         background-color: #05051a; 
       }
       .hero-title { min-height: 1.1em; contain: layout; }
+      body { -webkit-font-smoothing: antialiased; }
+      
+      /* Inyectamos los estilos del blog solo si es post, evitando el link bloqueador */
+      {isPost && blogStyles}
     </style>
 
     <slot name="head" />
@@ -71,7 +86,7 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
                     <p class="text-amber-400 font-black uppercase text-[10px] tracking-[0.3em] mb-4">
                         {frontmatter.category} ‚Ä¢ {frontmatter.date}
                     </p>
-                    <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter">
+                    <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter hero-title">
                       {frontmatter.title}
                     </h1>
                 </header>
