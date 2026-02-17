@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
-// Importamos el contenido del CSS como texto para inyectarlo
 import blogStyles from '../styles/blog.css?inline';
 
 interface Props {
@@ -57,9 +56,10 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
       window.addEventListener('click', loadGTM, { once: true }); 
-      setTimeout(loadGTM, 2500); 
+      setTimeout(loadGTM, 3500);
     </script>
 
+    <!-- Estilos críticos inline — sin lógica condicional -->
     <style is:inline>
       :root { 
         font-family: 'Inter Variable', system-ui, sans-serif; 
@@ -68,10 +68,10 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
       }
       .hero-title { min-height: 1.1em; contain: layout; }
       body { -webkit-font-smoothing: antialiased; }
-      
-      /* CORRECCIÓN: Inyectamos el texto del CSS directamente */
-      {isPost && blogStyles}
     </style>
+
+    <!-- ✅ Blog CSS inyectado AFUERA del style, con set:html — solo en posts -->
+    {isPost && <style set:html={blogStyles} />}
 
     <slot name="head" />
 </head>
