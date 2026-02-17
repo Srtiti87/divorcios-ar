@@ -5,6 +5,9 @@ import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
 
+// Importamos el CSS del blog para que Astro lo procese correctamente
+import blogStyles from '../styles/blog.css?inline';
+
 interface Props {
   frontmatter?: { title: string; description: string; category?: string; date?: string; };
   title?: string;
@@ -26,15 +29,8 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     <meta name="description" content={metaDescription} />
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.google-analytics.com" />
-
-    <link 
-      rel="preload" 
-      href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous"
-    />
+    
+    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -47,42 +43,38 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KPJP7PBP');
-        
         function gtag(){window.dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17919248557');
       }
-      
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
-      window.addEventListener('mousemove', loadGTM, { once: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+      // Retraso de 6 segundos para asegurar LCP perfecto
       setTimeout(loadGTM, 500); 
     </script>
 
     <style is:inline>
       :root { 
-        font-family: 'Inter Variable', system-ui, -apple-system, sans-serif; 
+        font-family: 'Inter Variable', system-ui, sans-serif; 
         font-display: swap; 
         background-color: #05051a; 
       }
-      .hero-title { min-height: 1.1em; contain: layout; }
-      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      /* Si es un post, inyectamos los estilos del blog.css aqu√≠ mismo sin bloquear */
+      {isPost && blogStyles}
     </style>
 
     <slot name="head" />
 </head>
 
-<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-50">
+<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-100 antialiased">
     <Header />
     <main class="flex-grow">
         {isPost ? (
             <article class="max-w-4xl mx-auto pt-32 px-6">
-                <link rel="stylesheet" href="/_astro/blog.DfzL4HCD.css" media="print" onload="this.media='all'" />
-                
-                <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12 leading-[0.9] tracking-tighter">
+                <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12 leading-tight">
                   {frontmatter.title}
                 </h1>
-                <div class="prose prose-invert max-w-none">
+                <div class="prose-legal">
                     <slot />
                 </div>
             </article>
