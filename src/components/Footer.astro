@@ -13,7 +13,7 @@ const googleMapsUrl = "https://maps.app.goo.gl/qeorwnfmpYZWnA629?g_st=aw";
 ---
 
 <section class="bg-[#05051a] px-6 pb-12">
-    <div class="max-w-7xl mx-auto rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl h-[350px] relative group bg-indigo-950/20">
+    <div class="max-w-7xl mx-auto rounded-[2.5rem] overflow-hidden border border-white/30 shadow-2xl h-[350px] relative group bg-indigo-950/20">
         <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" class="block w-full h-full relative" aria-label="Ver nuestra ubicación en Google Maps">
             <img 
                 src="/img/mapa-estatico-caba.webp" 
@@ -79,12 +79,12 @@ const googleMapsUrl = "https://maps.app.goo.gl/qeorwnfmpYZWnA629?g_st=aw";
         <div class="mb-12 border-t border-white/5 pt-8">
             <div class="flex items-center justify-between mb-4">
                 <h5 class="font-black uppercase tracking-[0.3em] text-white/20 text-[9px]">Cobertura Legal en CABA:</h5>
-                <span class="text-white/10 text-[8px] uppercase tracking-widest animate-pulse">Deslizar →</span>
+                <span class="text-white/30 text-[8px] uppercase tracking-widest animate-pulse">Deslizar →</span>
             </div>
             
             <div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar select-none">
                 {barrios.map((barrio) => (
-                    <span class="text-[8px] font-bold text-white/10 uppercase tracking-tighter whitespace-nowrap border border-white/5 px-3 py-1 rounded-full">
+                    <span class="text-[8px] font-bold text-white/30 uppercase tracking-tighter whitespace-nowrap border border-white/5 px-3 py-1 rounded-full">
                         Abogado {barrio}
                     </span>
                 ))}
@@ -92,12 +92,12 @@ const googleMapsUrl = "https://maps.app.goo.gl/qeorwnfmpYZWnA629?g_st=aw";
         </div>
 
         <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5">
-            <p class="text-white/10 text-[9px] font-black uppercase tracking-[0.4em]">
+            <p class="text-white/30 text-[9px] font-black uppercase tracking-[0.4em]">
                 © {new Date().getFullYear()} divorcios.ar
             </p>
             <div class="flex gap-6">
-                <a href="/privacidad" class="text-white/10 hover:text-white text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Privacidad</a>
-                <a href="/terminos" class="text-white/10 hover:text-white text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Términos</a>
+                <a href="/privacidad" class="text-white/30 hover:text-white text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Privacidad</a>
+                <a href="/terminos" class="text-white/30 hover:text-white text-[9px] font-black uppercase tracking-[0.3em] transition-colors">Términos</a>
             </div>
         </div>
     </div>

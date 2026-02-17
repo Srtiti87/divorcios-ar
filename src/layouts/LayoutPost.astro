@@ -28,10 +28,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
 
-    {/* Astro inyectará automáticamente los estilos de global.css aquí. 
-        Para los posts, evitaremos link manuales a "/_astro/blog.css" ya que el hash cambia. 
-        Si necesitas estilos de blog, es mejor importarlos en el frontmatter de Astro. */}
-
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -44,36 +40,45 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+        
         function gtag(){window.dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17919248557');
       }
-      window.addEventListener('scroll', loadGTM, { once: true });
+      
+      // Eventos de usuario para cargar scripts pesados
+      window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('mousemove', loadGTM, { once: true });
-      window.addEventListener('touchstart', loadGTM, { once: true });
-      setTimeout(loadGTM, 3500); // Aumentamos un poco el delay para priorizar el renderizado visual
+      window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+      // Tiempo suficiente para asegurar que el LCP ya se pintó
+      setTimeout(loadGTM, 4000); 
     </script>
 
     <style is:inline>
-      /* Definimos la fuente y el fondo inmediatamente para evitar el CLS (salto de diseño) */
+      /* Evitamos el CLS (Layout Shift) definiendo la fuente y el fondo base */
       :root { 
-        font-family: 'Inter Variable', system-ui, sans-serif; 
+        font-family: 'Inter Variable', system-ui, -apple-system, sans-serif; 
         font-display: swap; 
         background-color: #05051a; 
       }
-      /* Reservamos el espacio para evitar saltos de diseño */
-      .hero-title { min-height: 1.2em; contain: layout; }
+      /* Prevenimos saltos visuales en el título del Hero */
+      .hero-title { min-height: 1.1em; contain: layout; }
+      
+      /* Mejora de accesibilidad para el contraste detectado en Lighthouse */
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     </style>
 
     <slot name="head" />
 </head>
 
-<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-100 antialiased">
+<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-50">
     <Header />
     <main class="flex-grow">
         {isPost ? (
             <article class="max-w-4xl mx-auto pt-32 px-6">
-                <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12">{frontmatter.title}</h1>
+                <h1 class="text-4xl md:text-7xl font-black text-white uppercase mb-12 leading-[0.9] tracking-tighter">
+                  {frontmatter.title}
+                </h1>
                 <div class="prose prose-invert max-w-none">
                     <slot />
                 </div>
