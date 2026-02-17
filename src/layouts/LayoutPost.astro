@@ -1,5 +1,4 @@
 ---
-// src/layouts/LayoutPost.astro (CÓDIGO CORREGIDO)
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -26,47 +25,50 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <title>{metaTitle} | divorcios.ar</title>
     <meta name="description" content={metaDescription} />
 
-<script is:inline>
-  function loadGTM() {
-    if (window.gtmLoaded) return;
-    window.gtmLoaded = true;
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
 
-    window.dataLayer = window.dataLayer || [];
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+    {/* Astro inyectará automáticamente los estilos de global.css aquí. 
+        Para los posts, evitaremos link manuales a "/_astro/blog.css" ya que el hash cambia. 
+        Si necesitas estilos de blog, es mejor importarlos en el frontmatter de Astro. */}
 
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17919248557');
-  }
+    <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
-  window.addEventListener('scroll', loadGTM, { once: true });
-  window.addEventListener('mousemove', loadGTM, { once: true });
-  window.addEventListener('touchstart', loadGTM, { once: true });
-  setTimeout(loadGTM, 500); 
-</script>
-
-    
-    {/* Forzamos la carga de estilos de blog si es un post */}
-    {isPost && <link rel="stylesheet" href="/_astro/blog.css" />}
+    <script is:inline>
+      function loadGTM() {
+        if (window.gtmLoaded) return;
+        window.gtmLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17919248557');
+      }
+      window.addEventListener('scroll', loadGTM, { once: true });
+      window.addEventListener('mousemove', loadGTM, { once: true });
+      window.addEventListener('touchstart', loadGTM, { once: true });
+      setTimeout(loadGTM, 3500); // Aumentamos un poco el delay para priorizar el renderizado visual
+    </script>
 
     <style is:inline>
-  :root { 
-    font-family: 'Inter Variable', sans-serif; /* Astro reconoce este nombre de Fontsource */
-    font-display: swap; 
-    background-color: #05051a; /* Color del Hero para una carga fluida */
-  }
-  .hero-title { min-height: 1.2em; contain: layout; }
+      /* Definimos la fuente y el fondo inmediatamente para evitar el CLS (salto de diseño) */
+      :root { 
+        font-family: 'Inter Variable', system-ui, sans-serif; 
+        font-display: swap; 
+        background-color: #05051a; 
+      }
+      /* Reservamos el espacio para evitar saltos de diseño */
+      .hero-title { min-height: 1.2em; contain: layout; }
     </style>
 
     <slot name="head" />
 </head>
 
-
-<body class="flex flex-col min-h-screen bg-indigo-950 text-indigo-100">
+<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-100 antialiased">
     <Header />
     <main class="flex-grow">
         {isPost ? (

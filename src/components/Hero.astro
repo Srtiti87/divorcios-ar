@@ -4,13 +4,13 @@
 
 <section class="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#05051a] text-white w-full py-20 md:py-0">    
     <div class="absolute inset-0 z-0 pointer-events-none">
-        <img 
-            id="parallax-img"
-            src="/images/bg-tribunales.webp" 
-            alt="Vista artística Tribunales CABA" 
-            class="w-full h-[120%] object-cover opacity-40 sepia-[1] brightness-[0.7] contrast-[1.1] transition-transform duration-100 ease-out"
-            style="transform: translateY(0);"
-        />
+    <img 
+    id="parallax-img"
+    src="/images/bg-tribunales.webp" 
+    alt="Vista artística Tribunales CABA" 
+    class="w-full h-[120%] object-cover opacity-40 sepia-[1] brightness-[0.7] contrast-[1.1] transition-transform duration-100 ease-out"
+    style="transform: translateY(0);"
+    fetchpriority="high"   loading="eager"        decoding="sync"       />
     </div>
 
     <div class="absolute inset-0 z-10 bg-black/30"></div>
