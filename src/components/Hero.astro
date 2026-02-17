@@ -4,13 +4,17 @@
 
 <section class="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#05051a] text-white w-full py-20 md:py-0">    
     <div class="absolute inset-0 z-0 pointer-events-none">
-    <img 
-    id="parallax-img"
-    src="/images/bg-tribunales.webp" 
-    alt="Vista artística Tribunales CABA" 
-    class="w-full h-[120%] object-cover opacity-40 sepia-[1] brightness-[0.7] contrast-[1.1] transition-transform duration-100 ease-out"
-    style="transform: translateY(0);"
-    fetchpriority="high"   loading="eager"        decoding="sync"       />
+        <img 
+            id="parallax-img"
+            src="/images/bg-tribunales.webp" 
+            alt="Vista artística Tribunales CABA" 
+            class="w-full h-[120%] object-cover opacity-40 sepia-[1] brightness-[0.7] contrast-[1.1] parallax-layer"
+            fetchpriority="high" 
+            loading="eager" 
+            decoding="sync" 
+            width="1920"
+            height="1080"
+        />
     </div>
 
     <div class="absolute inset-0 z-10 bg-black/30"></div>
@@ -19,7 +23,7 @@
         
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/20 border border-white/10 mb-8 backdrop-blur-md animate-fade-in">
             <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" style="will-change: transform, opacity;"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
             <span class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200">Abogados Divorcios • Atención CABA</span>
@@ -51,26 +55,28 @@
     </div>
 </section>
 
-<script>
-    window.addEventListener('scroll', () => {
-        const img = document.getElementById('parallax-img');
-        if (img) {
-            const scrollValue = window.scrollY;
-            img.style.transform = `translateY(${scrollValue * 0.15}px)`;
-        }
-    });
-</script>
-
 <style>
-    section {
-        /* Optimiza el renderizado inicial y ayuda a reducir el LCP */
-        content-visibility: auto;
-        contain-intrinsic-size: 1px 500px;
+    /* ✅ Parallax CSS puro — zero JS, zero main thread */
+    .parallax-layer {
+        will-change: transform;
     }
 
+    @supports (animation-timeline: scroll()) {
+        .parallax-layer {
+            animation: parallax linear;
+            animation-timeline: scroll();
+            animation-range: 0vh 100vh;
+        }
+    }
+
+    @keyframes parallax {
+        from { transform: translateY(0); }
+        to { transform: translateY(120px); }
+    }
+
+    /* ✅ Fade-in con will-change liberado al terminar (via JS) */
     .animate-fade-in { 
-        /* Usamos will-change para que el navegador prepare la GPU */
-        will-change: opacity;
+        will-change: opacity, transform;
         animation: fadeIn 0.8s ease-out forwards; 
     }
 
@@ -79,3 +85,11 @@
         to { opacity: 1; transform: translateY(0); } 
     }
 </style>
+
+<script>
+    // Liberar will-change después del fade-in
+    document.querySelector('.animate-fade-in')
+        ?.addEventListener('animationend', (e) => {
+            (e.target as HTMLElement).style.willChange = 'auto';
+        }, { once: true });
+</script>
