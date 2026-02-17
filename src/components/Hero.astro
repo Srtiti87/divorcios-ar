@@ -1,86 +1,67 @@
 ---
 // src/components/Hero.astro
 ---
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-indigo-950 text-white w-full">
-    <div class="absolute inset-0 z-0 bg-indigo-950"></div>
-    <div class="absolute inset-0 z-10 aura-glow opacity-40"></div>
-    <div class="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-indigo-950/40 to-indigo-950"></div>
+
+<section class="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#05051a] text-white w-full py-20 md:py-0">    
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <img 
+            id="parallax-img"
+            src="/images/bg-tribunales.webp" 
+            alt="Vista artística Tribunales CABA" 
+            class="w-full h-[120%] object-cover opacity-40 sepia-[1] brightness-[0.7] contrast-[1.1] transition-transform duration-100 ease-out"
+            style="transform: translateY(0);"
+        />
+    </div>
+
+    <div class="absolute inset-0 z-10 bg-black/30"></div>
 
     <div class="relative z-30 max-w-6xl mx-auto text-center px-4 w-full flex flex-col items-center">
         
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-10 backdrop-blur-sm animate-fade-in">
-            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-300">Derecho de Familia • CABA</span>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/20 border border-white/10 mb-8 backdrop-blur-md animate-fade-in">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+            </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200">Abogados Divorcios • Atención CABA</span>
         </div>
 
-        <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-12 w-full">
-            <span class="block">ABOGADOS</span>
-            
-            <div class="relative h-[100px] md:h-[180px] lg:h-[210px] mt-6 flex justify-center items-center">
-                <span class="word-fade animate-fade-1 text-amber-400">Divorcio Express</span>
-                <span class="word-fade animate-fade-2 text-amber-400">Cuidado Personal</span>
-                <span class="word-fade animate-fade-3 text-amber-400">División de Bienes</span>
-                <span class="word-fade animate-fade-4 text-amber-400 text-fluid-long">Compensación Económica</span>
-            </div>
+        <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-8 w-full drop-shadow-2xl">
+            <span class="block text-white">DIVORCIO</span>
+            <span class="block text-amber-400 drop-shadow-[0_0_30px_rgba(251,191,36,0.4)]">EXPRESS</span>
         </h1>
 
-        <p class="text-base md:text-xl text-indigo-100/70 mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-4">
-            Atención jurídica estratégica y reserva absoluta. <span class="text-white font-bold">Tu voz cuenta.</span>
+        <p class="text-base md:text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed font-medium px-4 drop-shadow-lg">
+            Más de 15 años defendiendo derechos. Divorcios <span class="text-amber-400 font-bold italic border-b-2 border-amber-400/30">express y 100% digital</span> en Capital Federal. Honorarios transparentes y cuotas fijas.
         </p>
 
-        <a href="https://wa.me/5491159360995" class="w-[90%] sm:w-auto px-10 py-5 bg-white text-indigo-950 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-indigo-400 hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3">
-            Consulta Privada
-        </a>
+        <div class="flex flex-col gap-4 w-full items-center">
+            <a 
+                href="https://wa.me/5491159360995" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-[90%] sm:w-auto px-10 py-5 bg-[#25D366] text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#128C7E] transition-all shadow-2xl flex items-center justify-center gap-3 scale-105 active:scale-95"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 0 5.414 0 12.05c0 2.123.553 4.197 1.603 6.034L0 24l6.135-1.61a11.81 11.81 0 005.911 1.569h.005c6.636 0 12.05-5.414 12.05-12.051a11.817 11.817 0 00-3.488-8.522z"/>
+                </svg>
+                Iniciar Consulta WhatsApp
+            </a>
+            <span class="text-[10px] text-white/80 uppercase tracking-widest font-bold">Respuesta inmediata</span>
+        </div>
     </div>
 </section>
 
+<script>
+    window.addEventListener('scroll', () => {
+        const img = document.getElementById('parallax-img');
+        if (img) {
+            const scrollValue = window.scrollY;
+            img.style.transform = `translateY(${scrollValue * 0.15}px)`;
+        }
+    });
+</script>
+
 <style>
-    .aura-glow {
-        background: radial-gradient(circle at 50% 50%, #4338ca 0%, transparent 70%);
-        filter: blur(40px);
-        animation: auraMove 10s ease-in-out infinite alternate;
-        will-change: transform;
-    }
-
-    @keyframes auraMove {
-        0% { transform: translate3d(-2%, -2%, 0) scale(1); }
-        100% { transform: translate3d(2%, 2%, 0) scale(1.1); }
-    }
-
-    .word-fade {
-        position: absolute; 
-        opacity: 0; 
-        width: 100%; 
-        left: 0; 
-        right: 0; 
-        margin: 0 auto;
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        text-align: center;
-        white-space: nowrap; 
-        /* Movimiento ultra corto para evitar recortes visuales */
-        transform: translate3d(0, 5px, 0); 
-        will-change: transform, opacity;
-        text-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
-    }
-
-    .text-fluid-long { 
-        font-size: clamp(1.2rem, 6vw, 0.9em); 
-    }
-
-    @keyframes wordAnimation {
-        0% { opacity: 0; transform: translate3d(0, 5px, 0); }
-        8% { opacity: 1; transform: translate3d(0, 0, 0); }
-        22% { opacity: 1; transform: translate3d(0, 0, 0); }
-        30% { opacity: 0; transform: translate3d(0, -5px, 0); }
-        100% { opacity: 0; }
-    }
-
-    .animate-fade-1 { animation: wordAnimation 8s infinite 0s; }
-    .animate-fade-2 { animation: wordAnimation 8s infinite 2s; }
-    .animate-fade-3 { animation: wordAnimation 8s infinite 4s; }
-    .animate-fade-4 { animation: wordAnimation 8s infinite 6s; }
-
     .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>

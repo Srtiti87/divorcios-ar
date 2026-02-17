@@ -49,14 +49,17 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
   setTimeout(loadGTM, 500); 
 </script>
 
-    <link rel="preload" href="/_astro/inter-latin-variable-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     
     {/* Forzamos la carga de estilos de blog si es un post */}
     {isPost && <link rel="stylesheet" href="/_astro/blog.css" />}
 
     <style is:inline>
-      :root { font-display: swap; background-color: #0f172a; } /* bg-slate-950 para evitar destellos blancos */
-      .hero-title { min-height: 1.2em; contain: layout; }
+  :root { 
+    font-family: 'Inter Variable', sans-serif; /* Astro reconoce este nombre de Fontsource */
+    font-display: swap; 
+    background-color: #05051a; /* Color del Hero para una carga fluida */
+  }
+  .hero-title { min-height: 1.2em; contain: layout; }
     </style>
 
     <slot name="head" />

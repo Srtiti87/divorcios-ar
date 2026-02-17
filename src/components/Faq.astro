@@ -1,0 +1,81 @@
+---
+const faqs = [
+  {
+    pregunta: "¿Cuál es la diferencia entre Divorcio de Mutuo Acuerdo y Unilateral?",
+    respuesta: "En el de *Mutuo Acuerdo*, ambos cónyuges firman la petición y el convenio regulador, lo que lo hace más rápido y económico. En el *Unilateral*, solo uno de los dos presenta la demanda; no hace falta el consentimiento del otro, pero los tiempos pueden extenderse debido a las notificaciones legales."
+  },
+  {
+    pregunta: "¿Cuánto tiempo demora el trámite en CABA?",
+    respuesta: "Un divorcio bilateral (mutuo acuerdo) suele tardar entre 15 a 60 dias hasta la sentencia. El unilateral depende de la rapidez con la que se logre notificar a la otra parte, pudiendo demorar un poco más."
+  },
+  {
+    pregunta: "¿Es obligatorio presentar una propuesta para los bienes y los hijos?",
+    respuesta: "Sí. Bajo el nuevo Código Civil, toda demanda de divorcio (sea unilateral o conjunta) debe acompañarse de un *Convenio Regulador* o propuesta que trate temas como la vivienda, los bienes y, si hay hijos menores, el plan de parentalidad y alimentos."
+  },
+  {
+    pregunta: "¿Debo asistir personalmente a Tribunales?",
+    respuesta: "Normalmente no es necesario. Gracias a la digitalización del sistema judicial en Capital Federal, el trámite es 100% digital. Podemos gestionar todo el proceso mediante firmas digitales y audiencias virtuales si fueran requeridas.(En determinados casos, dependiendo del juzgado, en juicios de divorcio controvertidos, pueden llamarse a audiciencias presenciales)"
+  },
+  {
+    pregunta: "¿Qué documentación mínima necesito para empezar hoy?",
+    respuesta: "Necesitamos el *DNI* de quien inicia el trámite y la *Partida de Matrimonio* actualizada. Si hay hijos menores, sus partidas de nacimiento. No importa si la partida es de otra provincia, siempre que esté legalizada."
+  },
+  {
+    pregunta: "¿Puedo divorciarme si mi ex pareja no quiere firmar?",
+    respuesta: "Absolutamente. El divorcio *Unilateral* garantiza que nadie esté obligado a permanecer casado. Solo necesitamos tu voluntad de iniciar el trámite; el juez dictará la sentencia de todos modos."
+  }
+];
+---
+
+<section class="py-20 bg-[#05051a] border-t border-white/5" id="faq">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">
+          Preguntas <span class="text-amber-400">Frecuentes</span>
+        </h2>
+        <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group border border-white/10 rounded-2xl bg-white/[0.02] transition-all duration-300 open:bg-white/[0.05] open:border-amber-400/30">
+          <summary class="list-none p-6 cursor-pointer flex items-center justify-between">
+            <h3 class="text-base md:text-lg font-bold text-indigo-100 group-open:text-amber-400 transition-colors pr-4">
+              {faq.pregunta}
+            </h3>
+            <div class="text-amber-400 transition-transform duration-300 group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 text-indigo-100/70 text-sm md:text-base leading-relaxed border-t border-white/5 pt-4">
+            <p set:html={faq.respuesta}></p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.pregunta,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.respuesta.replace(/\*\*/g, '')
+        }
+      }))
+    })} />
+
+  </div>
+</section>
+
+<style>
+  /* Eliminamos la flecha por defecto de Chrome/Safari */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

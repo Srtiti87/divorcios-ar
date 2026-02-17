@@ -1,0 +1,82 @@
+---
+const beneficios = [
+  "Honorarios claros y cuotas fijas en pesos.",
+  "Gestión 100% digital sin ir a Tribunales.",
+  "Redacción estratégica del Convenio Regulador.",
+  "Atención personalizada por abogados expertos."
+];
+
+const perjuicios = [
+  "Conflictos prolongados que encarecen el proceso.",
+  "Indefensión en la división de bienes y alimentos.",
+  "Demoras por errores técnicos en la demanda.",
+  "Incertidumbre jurídica sobre su patrimonio."
+];
+---
+
+<section class="py-20 bg-gradient-to-br from-[#05051a] via-[#0a0a2e] to-[#05051a] border-y border-white/5 relative overflow-hidden">
+  
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+        ¿Por qué elegirnos para realizar su <span class="text-amber-400">Divorcio Express</span>?
+      </h2>
+      <p class="text-indigo-100/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+        El nuevo Código Civil permite resolver la unión matrimonial de forma ágil en CABA. 
+        Hacerlo con profesionales marca la diferencia entre una solución definitiva y un problema eterno.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      
+      <div class="p-8 rounded-[2rem] bg-indigo-500/5 border border-indigo-500/20 shadow-xl group transition-all duration-300 hover:bg-indigo-500/10">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-2xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-white uppercase tracking-tight">Ventajas Abogados A&G</h3>
+        </div>
+        
+        <ul class="space-y-5">
+          {beneficios.map(text => (
+            <li class="flex items-start gap-4 text-white/90 text-sm md:text-base">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-400 text-[#05051a] flex items-center justify-center font-black text-[10px]">✓</span>
+              {text}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="p-8 rounded-[2rem] bg-black/20 border border-white/5 group transition-all duration-300">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-2xl bg-red-500/5 flex items-center justify-center text-red-500/40">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-white/90 uppercase tracking-tight italic">Riesgos de la demora</h3>
+        </div>
+        
+        <ul class="space-y-5">
+          {perjuicios.map(text => (
+            <li class="flex items-start gap-4 text-white/90 text-sm md:text-base italic">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full border border-red-500/20 flex items-center justify-center text-red-500/80 text-[10px]">✕</span>
+              {text}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-12 p-8 rounded-[2rem] bg-amber-400/[0.03] border border-amber-400/10 text-center">
+      <h4 class="text-amber-400 font-black uppercase text-[10px] tracking-[0.4em] mb-4">Información Jurídica Relevante</h4>
+      <p class="text-indigo-100/80 text-sm leading-relaxed max-w-4xl mx-auto italic">
+        "El divorcio express es un trámite que solo requiere la <strong>voluntad de uno de los cónyuges</strong>. No requiere el consentimiento de la otra parte y puede iniciarse en cualquier momento. La falta de asesoramiento preventivo puede derivar en la pérdida de derechos sobre bienes gananciales o cuotas alimentarias mal calculadas."
+      </p>
+    </div>
+  </div>
+</section>
