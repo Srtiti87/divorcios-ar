@@ -28,13 +28,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     
-    <link 
-      rel="preload" 
-      href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous"
-    />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -59,7 +52,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
       setTimeout(loadGTM, 3500);
     </script>
 
-    <!-- Estilos cr√≠ticos inline ‚Äî sin l√≥gica condicional -->
     <style is:inline>
       :root { 
         font-family: 'Inter Variable', system-ui, sans-serif; 
@@ -70,7 +62,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
       body { -webkit-font-smoothing: antialiased; }
     </style>
 
-    <!-- ‚úÖ Blog CSS inyectado AFUERA del style, con set:html ‚Äî solo en posts -->
     {isPost && <style set:html={blogStyles} />}
 
     <slot name="head" />
