@@ -3,9 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
-import '@fontsource-variable/inter';
-
-// ✅ Importamos el contenido del CSS del blog como texto para inyectarlo solo cuando sea necesario
+// ✅ ELIMINADO: import '@fontsource-variable/inter' — la fuente ahora está en public/fonts/
 import blogStyles from '../styles/blog.css?inline';
 
 interface Props {
@@ -30,14 +28,10 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <link 
-      rel="preload" 
-      href="/_astro/inter-latin-variable-wght-normal.Dx4kXJAl.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous"
-    />
+    <!-- ✅ CORREGIDO: ruta estática, nunca más 404 ni hashes rotos -->
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -56,12 +50,10 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
         window.gtag('config', 'AW-17919248557');
       }
       
-      // Listeners inmediatos: si el usuario hace algo, cargamos GTM al instante
       ['scroll', 'touchstart', 'click', 'mousemove'].forEach(event => {
         window.addEventListener(event, loadGTM, { once: true, passive: true });
       });
 
-      // Tiempo de seguridad: 3 segundos por si el usuario no interactúa
       setTimeout(loadGTM, 3000); 
     </script>
 
