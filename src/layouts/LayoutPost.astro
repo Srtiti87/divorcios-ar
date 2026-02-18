@@ -5,6 +5,8 @@ import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
 import '@fontsource-variable/inter';
 import blogStyles from '../styles/blog.css?inline';
+// ✅ AGREGADO — Astro resuelve el hash correcto en cada build
+import interFont from '@fontsource-variable/inter/files/inter-latin-variable-wght-normal.woff2?url';
 
 interface Props {
   frontmatter?: { title: string; description: string; category?: string; date?: string; };
@@ -27,7 +29,11 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <meta name="description" content={metaDescription} />
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- ✅ CORREGIDO — URL dinámica, nunca más 404 -->
+    <link rel="preload" href={interFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -49,7 +55,7 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
       window.addEventListener('scroll', loadGTM, { once: true, passive: true });
       window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
       window.addEventListener('click', loadGTM, { once: true }); 
-      setTimeout(loadGTM, 3500);
+      setTimeout(loadGTM, 2500);
     </script>
 
     <style is:inline>
@@ -73,7 +79,7 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
         {isPost ? (
             <article class="max-w-4xl mx-auto pt-32 pb-20 px-6">
                 <header class="mb-12">
-                    <p class="text-amber-400 font-black uppercase text-[10px] tracking-[0.3em] mb-4">
+                    <p class="text-amber-400 font-black uppercase text-xs tracking-[0.3em] mb-4">
                         {frontmatter.category} • {frontmatter.date}
                     </p>
                     <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter hero-title">
