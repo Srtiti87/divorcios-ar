@@ -20,16 +20,13 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-KPJP7PBP');
-
       window.gtag = function(){ window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
       window.gtag('config', 'AW-17919248557');
     }
-
     ['scroll', 'touchstart', 'click', 'mousemove'].forEach(event => {
       window.addEventListener(event, loadGTM, { once: true, passive: true });
     });
-
     setTimeout(loadGTM, 3000);
   </script>
   <!-- End Google Tag Manager -->
@@ -39,14 +36,14 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#16253a" />
 
-  <title>Divorcio Express Buenos Aires 2026 — Desde $99.000/mes | Abogados AyG</title>
-  <meta name="description" content="¿Cuánto cuesta un divorcio express en Buenos Aires? Desde $99.000/mes en cuotas. Abogados matriculados CPACF. Mutuo acuerdo o unilateral. Primera consulta GRATUITA. Respondemos hoy." />
-  <link rel="canonical" href="https://abogadosayg.com/landing/divorcio-express" />
-  <meta name="robots" content="noindex, nofollow" /><!-- landing paga: no indexar -->
+  <title>Divorcio Express y Mutuo Acuerdo CABA 2026 — Honorarios desde $99.000/mes | Abogados AyG</title>
+  <meta name="description" content="¿Cuánto cuestan los honorarios de un divorcio express o mutuo acuerdo en CABA? Desde $99.000/mes en cuotas sin interés. Abogados matriculados CPACF. Precio fijo por escrito. Primera consulta GRATUITA." />
+  <link rel="canonical" href="https://www.divorcios.ar/landing/divorcios" />
+  <meta name="robots" content="noindex, nofollow" />
 
   <!-- OG -->
-  <meta property="og:title" content="Divorcio Express Buenos Aires 2026 | Honorarios desde $99.000/mes" />
-  <meta property="og:description" content="Abogados especializados en divorcio express CABA. Sin sorpresas, convenio por escrito. Primera consulta gratuita." />
+  <meta property="og:title" content="Divorcio Express y Mutuo Acuerdo CABA 2026 | Honorarios desde $99.000/mes" />
+  <meta property="og:description" content="Honorarios de divorcio express y mutuo acuerdo en CABA desde $99.000/mes. Precio fijo por escrito, sin sorpresas. Abogados matriculados CPACF. Primera consulta gratuita." />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -60,7 +57,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "Abogados AyG – Santibáñez & Almendras González",
-    "url": "https://abogadosayg.com",
+    "url": "https://www.divorcios.ar",
     "telephone": "+54-11-5936-0995",
     "priceRange": "$$",
     "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
@@ -70,7 +67,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       "name": "Servicios de Divorcio",
       "itemListElement": [
         { "@type": "Offer", "name": "Divorcio Express por Mutuo Acuerdo", "description": "Desde $99.000/mes en cuotas sin interés" },
-        { "@type": "Offer", "name": "Divorcio Unilateral", "description": "Desde $95.000/mes en cuotas sin interés" }
+        { "@type": "Offer", "name": "Divorcio Unilateral", "description": "Desde $135.000/mes en cuotas sin interés" }
       ]
     }
   }
@@ -85,20 +82,20 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     --bg-card2: #1a2f45;
     --gold: #d4af37;
     --gold-light: #f0e68c;
-    --gold-dim: rgba(212,175,55,0.15);
-    --gold-border: rgba(212,175,55,0.25);
+    --gold-dim: rgba(212,175,55,0.12);
+    --gold-border: rgba(212,175,55,0.22);
     --text: #f0f4f8;
-    --text-muted: ##d6dbe0;
+    --text-muted: #d6dbe0;
     --text-faint: #5a7a96;
     --green: #3dba6f;
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'DM Sans', sans-serif;
     --radius: 16px;
     --radius-sm: 8px;
+    --red: #e05252;
   }
 
-  html { font-size: 18px; scroll-behavior: smooth; }
-  html { overflow-x: hidden; }
+  html { font-size: 18px; scroll-behavior: smooth; overflow-x: hidden; }
   body {
     font-family: var(--font-body);
     background: var(--bg);
@@ -114,25 +111,25 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   .gold { color: var(--gold); }
+
   .label {
     display: inline-block; font-size: 0.65rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--gold); border: 1px solid var(--gold-border);
     background: var(--gold-dim); padding: 0.3rem 0.9rem; border-radius: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
   }
 
   /* ===== TOPBAR ===== */
   .topbar {
-    background: rgba(10,18,28,0.95);
+    background: rgba(10,18,28,0.96);
     border-bottom: 1px solid var(--gold-border);
     padding: 0.6rem 0;
     position: sticky; top: 0; z-index: 100;
     backdrop-filter: blur(12px);
   }
   .topbar-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 1rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   }
   .topbar-brand {
     font-family: var(--font-display);
@@ -164,17 +161,6 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   }
   .btn-wa-top:hover { background: #32a860; transform: translateY(-1px); }
 
-  /* ===== URGENCY BAR ===== */
-  .urgency-bar {
-    background: linear-gradient(90deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06), rgba(212,175,55,0.12));
-    border-bottom: 1px solid var(--gold-border);
-    padding: 0.55rem 0; text-align: center;
-    font-size: 0.72rem; color: var(--gold);
-    letter-spacing: 0.05em;
-    animation: pulse-bar 3s ease-in-out infinite;
-  }
-  @keyframes pulse-bar { 0%,100% { opacity:1; } 50% { opacity:0.7; } }
-
   /* ===== HERO ===== */
   .hero {
     position: relative; overflow: hidden;
@@ -191,13 +177,13 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 360px;
     gap: 3rem; align-items: start;
     position: relative; z-index: 1;
   }
   .hero-eyebrow {
     display: flex; align-items: center; gap: 0.6rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
   }
   .live-dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -218,7 +204,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     font-weight: 700; line-height: 1.05;
     letter-spacing: -0.01em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
     color: var(--text);
   }
   h1.hero-title em {
@@ -228,14 +214,15 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   }
 
   .hero-sub {
-    font-size: 1rem; color: var(--text-muted);
-    max-width: 54ch; margin-bottom: 1.75rem; line-height: 1.7;
+    font-size: 0.97rem; color: var(--text-muted);
+    max-width: 54ch; margin-bottom: 1.5rem; line-height: 1.7;
   }
   .hero-sub strong { color: var(--text); }
 
+  /* Trust chips — reducidas a 3 */
   .trust-chips {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-bottom: 1.75rem;
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   .chip {
     display: flex; align-items: center; gap: 0.4rem;
@@ -246,7 +233,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   }
   .chip svg { color: var(--gold); flex-shrink: 0; }
 
-  .hero-ctas { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .hero-ctas { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1rem; }
 
   .btn-primary {
     display: inline-flex; align-items: center; gap: 0.6rem;
@@ -272,6 +259,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     cursor: pointer; transition: all 0.25s ease;
   }
   .btn-secondary:hover { background: var(--gold-dim); border-color: rgba(212,175,55,0.5); }
+
   .btn-urgente {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
     background: var(--red); color: #fff;
@@ -286,7 +274,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .hero-disclaimer { font-size: 0.72rem; color: var(--text-faint); }
   .hero-disclaimer strong { color: var(--text-muted); }
 
-  /* ===== MINI FORM ===== */
+  /* ===== MINI FORM — simplificado a 2 campos ===== */
   .mini-form-card {
     background: linear-gradient(160deg, var(--bg-card), var(--bg-card2));
     border: 1px solid var(--gold-border);
@@ -352,7 +340,11 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .form-success h4 { color: var(--gold); font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.5rem; }
   .form-success p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
 
-  /* ===== SOCIAL PROOF BAR ===== */
+  /* ===== SOCIAL PROOF dentro del hero ===== */
+  .proof-bar-mobile {
+    display: none; /* oculto en desktop — desktop usa proof-bar externo */
+  }
+  /* proof-bar desktop: se muestra como sección separada fuera del hero */
   .proof-bar {
     background: rgba(0,0,0,0.3);
     border-top: 1px solid rgba(255,255,255,0.05);
@@ -366,44 +358,43 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .proof-item { display: flex; align-items: center; gap: 0.6rem; }
   .proof-num {
     font-family: var(--font-display);
-    font-size: 1.6rem; font-weight: 700; color: var(--gold);
-    line-height: 1;
+    font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1;
   }
   .proof-label { font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; max-width: 8ch; }
   .proof-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.1); }
 
   /* ===== SECTION BASE ===== */
-  section { padding: 4rem 0; }
+  section { padding: 3.5rem 0; }
   section.alt { background: rgba(0,0,0,0.2); }
-  .section-head { text-align: center; margin-bottom: 2.5rem; }
+  .section-head { text-align: center; margin-bottom: 2.25rem; }
   .section-head h2 {
     font-family: var(--font-display);
     font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 700; line-height: 1.1;
-    margin-bottom: 0.75rem;
+    font-weight: 700; line-height: 1.1; margin-bottom: 0.6rem;
   }
-  .section-head p { font-size: 0.92rem; color: var(--text-muted); max-width: 56ch; margin: 0 auto; line-height: 1.7; }
+  .section-head p { font-size: 0.9rem; color: var(--text-muted); max-width: 54ch; margin: 0 auto; line-height: 1.65; }
 
-  /* ===== WHY CARDS ===== */
-  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  /* ===== WHY — 4 cards en lugar de 6 ===== */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 860px; margin: 0 auto; }
   .why-card {
     background: linear-gradient(160deg, var(--bg-card), var(--bg-card2));
     border: 1px solid rgba(255,255,255,0.07);
-    border-radius: var(--radius); padding: 1.5rem;
+    border-radius: var(--radius); padding: 1.4rem 1.5rem;
     transition: all 0.3s ease;
-    display: flex; flex-direction: column; gap: 0.75rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
   }
   .why-card:hover { border-color: var(--gold-border); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .why-card-header { display: flex; align-items: center; gap: 0.75rem; }
   .why-icon {
-    width: 44px; height: 44px; border-radius: 10px;
+    width: 40px; height: 40px; border-radius: 10px;
     background: var(--gold-dim); border: 1px solid var(--gold-border);
     display: flex; align-items: center; justify-content: center;
-    color: var(--gold);
+    color: var(--gold); flex-shrink: 0;
   }
-  .why-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+  .why-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; line-height: 1.2; }
   .why-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
 
-  /* ===== TIPOS CARDS GLASSMORPHISM ===== */
+  /* ===== TIPOS CARDS ===== */
   .tipos-grid {
     display: grid; grid-template-columns: 1fr 1.06fr 1fr;
     gap: 1.25rem; align-items: stretch;
@@ -428,7 +419,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .tf-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 280px; height: 160px; background: radial-gradient(ellipse, rgba(212,175,55,0.32), transparent 70%); filter: blur(20px); pointer-events: none; z-index: 0; }
   .tf-shine { position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(105deg, transparent 20%, rgba(212,175,55,0.05) 40%, rgba(212,175,55,0.1) 50%, rgba(212,175,55,0.05) 60%, transparent 80%); animation: shine 4.5s ease-in-out infinite; pointer-events: none; z-index: 0; }
   @keyframes shine { 0% { left:-100%; } 28% { left:120%; } 100% { left:120%; } }
-  .tipo-inner { position: relative; z-index: 1; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; height: 100%; }
+  .tipo-inner { position: relative; z-index: 1; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.9rem; height: 100%; }
   .tipo-badge { display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; background: var(--gold); color: #0a0a0a; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.28rem 0.8rem; border-radius: 50px; box-shadow: 0 4px 16px rgba(212,175,55,0.4); }
   .tipo-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
   .tipo-eyebrow-gold { color: var(--gold); }
@@ -445,7 +436,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .tp-period { font-size: 0.68rem; color: var(--text-faint); }
   .tp-consult { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; line-height: 1.1; background: linear-gradient(135deg, #f0e68c, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .tp-consult-sub { font-size: 0.65rem; color: rgba(212,175,55,0.65); }
-  .tipo-list { display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid rgba(212,175,55,0.12); padding-top: 0.9rem; flex: 1; }
+  .tipo-list { display: flex; flex-direction: column; gap: 0.45rem; border-top: 1px solid rgba(212,175,55,0.12); padding-top: 0.85rem; flex: 1; }
   .tipo-list li { font-size: 0.8rem; color: var(--text-muted); padding-left: 1.3rem; position: relative; line-height: 1.4; }
   .tipo-list li::before { content: '✓'; position: absolute; left: 0; color: #3dba6f; font-weight: 700; }
   .tipo-list-feat li { color: var(--text); }
@@ -456,6 +447,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .tipo-cta-outline:hover { background: var(--gold-dim); border-color: rgba(212,175,55,0.55); }
   .tipo-cta-primary { background: linear-gradient(135deg, #c9a227, #e8cc6a 50%, #c9a227); background-size: 200% 100%; color: #0a0a0a; border: none; font-weight: 800; box-shadow: 0 4px 20px rgba(212,175,55,0.35); }
   .tipo-cta-primary:hover { background-position: right; box-shadow: 0 8px 32px rgba(212,175,55,0.5); }
+
   .bienes-banner {
     display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
     background: linear-gradient(135deg, rgba(37,63,95,0.55), rgba(26,45,69,0.75));
@@ -468,55 +460,76 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-border); padding: 0.7rem 1.25rem; border-radius: 8px; transition: all 0.2s ease; white-space: nowrap; }
   .btn-ghost:hover { background: var(--gold-dim); border-color: rgba(212,175,55,0.5); }
 
-  /* ===== PROCESO ===== */
-  .proceso-list { display: flex; flex-direction: column; gap: 0; max-width: 700px; margin: 0 auto; }
-  .paso {
-    display: grid; grid-template-columns: 56px 1fr; gap: 1.25rem;
-    align-items: start;
+  /* ===== PROCESO — compacto horizontal ===== */
+  .proceso-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; max-width: 900px; margin: 0 auto;
+    counter-reset: paso-counter;
   }
-  .paso-left { display: flex; flex-direction: column; align-items: center; }
-  .paso-num {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--gold-dim); border: 2px solid var(--gold);
-    color: var(--gold); font-family: var(--font-display);
-    font-size: 1.3rem; font-weight: 700;
+  .paso-h {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    padding: 1.4rem; border-radius: var(--radius);
+    background: linear-gradient(160deg, var(--bg-card), var(--bg-card2));
+    border: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+  }
+  .paso-h::before {
+    counter-increment: paso-counter;
+    content: counter(paso-counter);
+    font-family: var(--font-display); font-size: 0.8rem; font-weight: 700;
+    color: var(--gold); background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    width: 28px; height: 28px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; position: relative; z-index: 1;
+    flex-shrink: 0;
   }
-  .paso-line { width: 2px; flex: 1; min-height: 40px; background: linear-gradient(180deg, rgba(212,175,55,0.4), rgba(212,175,55,0.05)); }
-  .paso-content { padding: 0.5rem 0 2rem; }
-  .paso-content h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4rem; }
-  .paso-content p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-  .paso:last-child .paso-line { display: none; }
-  .paso:last-child .paso-content { padding-bottom: 0; }
+  .paso-h::before { display: block; text-align: center; line-height: 26px; }
+  .paso-h h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
+  .paso-h p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
+  .paso-connector {
+    display: none; /* sólo en desktop se muestra con pseudo-elementos */
+  }
 
-  /* ===== TESTIMONIOS ===== */
+  @media (max-width: 960px) {
+    .proof-bar-desktop { display: none; }
+  }
+
+  /* paso 5 centrado en desktop */
+  .paso-last { grid-column: 2; }
+  @media (max-width: 960px) {
+    .paso-last { grid-column: auto; }
+  }
+
+  @media (max-width: 960px) {
+    .paso-last { grid-column: auto; }
+  }
+
   .testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .testimonio-card {
     background: linear-gradient(160deg, var(--bg-card), var(--bg-card2));
     border: 1px solid rgba(255,255,255,0.07);
-    border-radius: var(--radius); padding: 1.5rem;
-    display: flex; flex-direction: column; gap: 1rem;
+    border-radius: var(--radius); padding: 1.4rem;
+    display: flex; flex-direction: column; gap: 0.85rem;
     transition: border-color 0.3s ease;
   }
   .testimonio-card:hover { border-color: var(--gold-border); }
   .estrellas { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; }
-  .testimonio-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; font-style: italic; flex: 1; }
+  .testimonio-text { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; font-style: italic; flex: 1; }
   .testimonio-text::before { content: '"'; font-family: var(--font-display); font-size: 2rem; color: var(--gold); line-height: 0; vertical-align: -0.5rem; margin-right: 0.2rem; }
   .testimonio-autor { display: flex; align-items: center; gap: 0.75rem; }
   .autor-avatar {
-    width: 38px; height: 38px; border-radius: 50%;
+    width: 36px; height: 36px; border-radius: 50%;
     background: var(--gold-dim); border: 1px solid var(--gold-border);
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 1rem; color: var(--gold); font-weight: 700;
+    font-family: var(--font-display); font-size: 0.95rem; color: var(--gold); font-weight: 700;
     flex-shrink: 0;
   }
   .autor-info strong { display: block; font-size: 0.82rem; }
   .autor-info span { font-size: 0.72rem; color: var(--text-faint); }
-  .google-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--text-faint); margin-top: 0.25rem; }
+  .google-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--text-faint); margin-top: 0.2rem; }
 
   /* ===== FAQ ===== */
-  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.65rem; }
   .faq-item {
     background: var(--bg-card); border: 1px solid rgba(255,255,255,0.07);
     border-radius: var(--radius-sm); overflow: hidden;
@@ -524,14 +537,14 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   }
   .faq-item[open] { border-color: var(--gold-border); }
   .faq-item summary {
-    padding: 1.1rem 1.25rem; font-weight: 600; font-size: 0.92rem;
+    padding: 1rem 1.25rem; font-weight: 600; font-size: 0.9rem;
     list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
     cursor: pointer; user-select: none;
   }
   .faq-item summary::-webkit-details-marker { display: none; }
   .faq-chevron { color: var(--gold); font-size: 1.3rem; font-weight: 300; flex-shrink: 0; transition: transform 0.25s ease; }
   .faq-item[open] .faq-chevron { transform: rotate(45deg); }
-  .faq-body { padding: 0 1.25rem 1.1rem; font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.9rem; }
+  .faq-body { padding: 0 1.25rem 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.85rem; }
   .faq-body strong { color: var(--text); }
 
   /* ===== CTA FINAL ===== */
@@ -539,12 +552,12 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     background: linear-gradient(135deg, rgba(212,175,55,0.07), rgba(212,175,55,0.03));
     border-top: 1px solid var(--gold-border);
     border-bottom: 1px solid var(--gold-border);
-    padding: 4rem 0; text-align: center;
+    padding: 3.5rem 0; text-align: center;
   }
-  .cta-final h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 0.75rem; }
-  .cta-final p { font-size: 0.95rem; color: var(--text-muted); max-width: 52ch; margin: 0 auto 2rem; line-height: 1.7; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .trust-final { display: flex; align-items: center; justify-content: center; gap: 1.75rem; flex-wrap: wrap; }
+  .cta-final h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .cta-final p { font-size: 0.92rem; color: var(--text-muted); max-width: 50ch; margin: 0 auto 1.75rem; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .trust-final { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
   .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--text-faint); }
   .trust-item svg { color: var(--gold); }
 
@@ -581,17 +594,32 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   @media (max-width: 960px) {
     .hero-grid { grid-template-columns: 1fr; }
     .mini-form-card { position: static; }
+    /* En desktop el proof-bar-mobile no se ve — en mobile sí */
+    .proof-bar-mobile {
+      display: block;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-top: 0.25rem;
+    }
+    .proof-bar-mobile .proof-items { gap: 1rem; justify-content: space-between; }
+    .proof-bar-mobile .proof-divider { display: none; }
+    .proof-bar-mobile .proof-num { font-size: 1.3rem; }
+    .proof-bar-mobile .proof-label { font-size: 0.65rem; max-width: 7ch; }
     .tipos-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
     .tipo-featured { transform: none; }
     .tipo-featured:hover { transform: translateY(-6px); }
     .why-grid { grid-template-columns: 1fr 1fr; }
     .testimonios-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-  }
-  @media (max-width: 960px) {
-    .hero > img { object-position: center center; opacity: 0.18; }
+    .proceso-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
     .topbar-tel { display: none; }
+    .topbar-social { display: none; }
+    .topbar-inner { gap: 0.5rem; }
+    .btn-wa-top { font-size: 0.72rem; padding: 0.5rem 0.9rem; gap: 0.35rem; white-space: nowrap; flex-shrink: 0; }
+    .btn-wa-top svg { width: 13px; height: 13px; }
     .proof-items { gap: 1.25rem; }
     .proof-divider { display: none; }
     .why-grid { grid-template-columns: 1fr; }
@@ -599,9 +627,20 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     .hero-ctas a { width: 100%; justify-content: center; }
     .cta-buttons { flex-direction: column; align-items: center; }
     .bienes-banner { flex-direction: column; }
-    .wa-float span { display: none; }
     .wa-float { padding: 0.9rem; border-radius: 50%; }
-    .hero > img { opacity: 0.20; object-fit: cover; object-position: center center; }
+    .wa-float span { display: none; }
+    .proceso-grid { grid-template-columns: 1fr; }
+    .paso-last { grid-column: auto; }
+
+    .hero { padding: 1.4rem 0 1.5rem; }
+    h1.hero-title { font-size: 2rem; margin-bottom: 0.6rem; }
+    .hero-eyebrow { margin-bottom: 1rem; }
+    .hero-sub { font-size: 0.82rem; margin-bottom: 0.9rem; line-height: 1.55; }
+    .trust-chips { margin-bottom: 0.9rem; gap: 0.35rem; }
+    .chip { font-size: 0.63rem; padding: 0.25rem 0.55rem; }
+    .hero-ctas { gap: 0.55rem; margin-bottom: 0.65rem; }
+    .btn-primary, .btn-urgente { padding: 0.8rem 1.1rem; font-size: 0.76rem; }
+    .hero-disclaimer { font-size: 0.62rem; }
   }
   </style>
 </head>
@@ -609,7 +648,6 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPJP7PBP"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
 <!-- TOPBAR -->
 <header class="topbar">
@@ -638,11 +676,6 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   </div>
 </header>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-  ⚡ Respondemos consultas inmediatamente en días hábiles &nbsp;·&nbsp; Primera consulta 100% gratuita y sin compromiso
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <img
@@ -665,29 +698,24 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 
         <h1 class="hero-title">
           Divorcio Express<br/>
-          Caba 2026
-          <em>-Precio Fijo -</em><br/>
-          <em>Cuotas Fijas-</em>
+          y Mutuo Acuerdo<br/>
+          <em>CABA 2026</em>
         </h1>
 
         <p class="hero-sub">
-          Sin sorpresas ni gastos extra. Abogados especialistas en <strong>divorcio express</strong>
-          y divorcio unilateral en CABA. Honorarios desde <strong>$99.000/mes</strong>.
-          Convenio escrito — el precio no cambia.<strong> Previsibilidad total.</strong>
+          Honorarios desde <strong>$99.000/mes en cuotas sin interés</strong>.
+          Precio fijo por escrito antes de empezar — sin sorpresas ni costos ocultos.
+          Abogados matriculados CPACF especializados en divorcio express y mutuo acuerdo.
         </p>
 
         <div class="trust-chips">
           <div class="chip">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            CPACF
+            Matriculados CPACF
           </div>
           <div class="chip">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            +10 años experiencia
-          </div>
-          <div class="chip">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            Respuesta Inmediata
+            +10 años de experiencia
           </div>
           <div class="chip">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -704,15 +732,40 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
         </div>
 
         <p class="hero-disclaimer">
-          🔒 <strong>100% confidencial</strong> · Sin cargo por la primera consulta · Inversión Asegurada - Precio Fijo - Sin Gastos Ocultos.
+          🔒 <strong>100% confidencial</strong> · Primera consulta sin cargo · Respuesta inmediata en días hábiles
         </p>
       </div>
 
-      <!-- FORMULARIO -->
+      <!-- PROOF BAR mobile — aparece entre el contenido y el formulario en mobile -->
+      <div class="proof-bar-mobile">
+        <div class="proof-items">
+          <div class="proof-item">
+            <span class="proof-num">+500</span>
+            <span class="proof-label">divorcios tramitados</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <span class="proof-num">15 días</span>
+            <span class="proof-label">tiempo mínimo logrado</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <span class="proof-num">+10</span>
+            <span class="proof-label">años de experiencia</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <span class="proof-num">100%</span>
+            <span class="proof-label">precio fijo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO — simplificado: teléfono + tipo -->
       <div class="mini-form-card">
         <div class="form-header">
           <h3>Consulta <span class="gold">gratuita</span></h3>
-          <p>Le damos el precio exacto para su caso en la primera reunión.</p>
+          <p>Dejenos su contacto y le damos el precio exacto para su caso.</p>
           <div class="response-time">
             <div class="live-dot"></div>
             Respondemos inmediatamente
@@ -720,11 +773,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
         </div>
         <form class="mini-form" id="heroForm">
           <div class="fg">
-            <label for="h-nombre">Su nombre</label>
-            <input type="text" id="h-nombre" name="nombre" placeholder="Ej: María González" required />
-          </div>
-          <div class="fg">
-            <label for="h-tel">Teléfono / WhatsApp</label>
+            <label for="h-tel">Su WhatsApp</label>
             <input type="tel" id="h-tel" name="tel" placeholder="+54 9 11 XXXX-XXXX" required />
           </div>
           <div class="fg">
@@ -737,10 +786,6 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
               <option value="hijos">Hay hijos menores</option>
               <option value="nosé">No sé cuál me corresponde</option>
             </select>
-          </div>
-          <div class="fg">
-            <label for="h-consulta">¿Cuál es su mayor duda? (opcional)</label>
-            <input type="text" id="h-consulta" name="consulta" placeholder="Ej: ¿Cuánto cuesta? ¿Cuánto tarda?" />
           </div>
           <button type="submit" class="btn-form">
             Consultar por WhatsApp →
@@ -761,8 +806,9 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<div class="proof-bar">
+
+<!-- SOCIAL PROOF desktop — oculto en mobile porque el .proof-bar-mobile ya lo muestra dentro del hero -->
+<div class="proof-bar proof-bar-desktop">
   <div class="container">
     <div class="proof-items">
       <div class="proof-item">
@@ -771,7 +817,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       </div>
       <div class="proof-divider"></div>
       <div class="proof-item">
-        <span class="proof-num">7 días</span>
+        <span class="proof-num">15 días</span>
         <span class="proof-label">tiempo mínimo logrado</span>
       </div>
       <div class="proof-divider"></div>
@@ -782,74 +828,19 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       <div class="proof-divider"></div>
       <div class="proof-item">
         <span class="proof-num">100%</span>
-        <span class="proof-label">transparencia en honorarios</span>
+        <span class="proof-label">precio fijo por escrito</span>
       </div>
     </div>
   </div>
 </div>
-
-<!-- POR QUÉ ELEGIRNOS -->
-<section>
-  <div class="container">
-    <div class="section-head">
-      <span class="label">¿Por qué elegirnos?</span>
-      <h2>Abogados que trabajan <em class="gold">para usted</em></h2>
-      <p>Porque no somos una fábrica de trámites. Cada caso tiene un abogado responsable que lo acompaña desde el primer día hasta la sentencia.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <h3>Convenio por escrito antes de empezar</h3>
-        <p>El precio que acordamos en la primera reunión es el precio final. No hay adicionales ni sorpresas al terminar el proceso.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <h3>Gestión 100% online y ágil</h3>
-        <p>No necesita venir a la oficina para la mayoría de los trámites. Firmamos documentos de forma digital y le avisamos cada novedad por WhatsApp.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Matriculados CPACF</h3>
-        <p>Dr. Héctor Santibáñez (T°124 F°535) y Dra. Nadia Almendras González (T°124 F°529). Abogados activos, con matrícula vigente y ética profesional.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <h3>Cuotas sin interés</h3>
-        <p>Trabajamos con planes de pago mensuales durante el proceso. El divorcio no tiene por qué ser una carga económica adicional.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Comunicación directa</h3>
-        <p>Tiene acceso directo al abogado responsable de su caso por WhatsApp. Sin secretarias ni derivaciones. Respuesta real.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Patrocinio de ambos cónyuges</h3>
-        <p>En divorcios por mutuo acuerdo podemos representar a ambas partes, lo que reduce significativamente el costo total del trámite.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- TIPOS DE DIVORCIO -->
 <section class="alt" id="tipos">
   <div class="container">
     <div class="section-head">
       <span class="label">Honorarios 2026</span>
-      <h2>¿Cuánto cuesta el <em class="gold">divorcio express</em>?</h2>
-      <p>Precios orientativos para Buenos Aires. El presupuesto definitivo y exacto para su caso se entrega en la primera consulta, sin cargo y sin compromiso.</p>
+      <h2>¿Cuánto cuesta el <em class="gold">divorcio en CABA</em>?</h2>
+      <p>Precios orientativos. El presupuesto definitivo para su caso se entrega en la primera consulta, sin cargo y sin compromiso.</p>
     </div>
 
     <div class="tipos-grid">
@@ -857,19 +848,18 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       <div class="tipo-card">
         <div class="tipo-glow"></div>
         <div class="tipo-inner">
-          <div class="tipo-eyebrow">Mutuo acuerdo</div>
-          <h3 class="tipo-title">Divorcio<br/>Conjunto</h3>
-          <p class="tipo-sub">Ambos cónyuges de acuerdo. La opción más rápida y económica.</p>
+          <div class="tipo-eyebrow">Ambos de acuerdo</div>
+          <h3 class="tipo-title">Divorcio<br/>Mutuo Acuerdo</h3>
+          <p class="tipo-sub">La opción más rápida, económica y sin conflictos.</p>
           <div class="tipo-price">
             <span class="tp-desde">honorarios desde</span>
             <div class="tp-row"><span class="tp-cur">$</span><span class="tp-amt">99.000</span></div>
             <span class="tp-period">/ mes · cuotas sin interés</span>
           </div>
           <ul class="tipo-list">
-            <li>Convenio regulador completo</li>
+            <li>Convenio regulador incluido</li>
             <li>Sin audiencias en el juzgado</li>
             <li>Proceso: 15 días a 6 meses</li>
-            <li>Representación de ambos incluida</li>
           </ul>
           <a href={WA_PRECIO} target="_blank" rel="noopener" class="tipo-cta tipo-cta-outline">
             Consultar precio →
@@ -892,10 +882,9 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
             <span class="tp-consult-sub">Máximo descuento disponible</span>
           </a>
           <ul class="tipo-list tipo-list-feat">
-            <li class="tipo-hi">Bonificación sobre el precio base</li>
+            <li class="tipo-hi">Bonificación sobre precio base</li>
             <li>Inicio inmediato del trámite</li>
-            <li>Prioridad de atención y gestión</li>
-            <li>Convenio regulador incluido</li>
+            <li>Prioridad de gestión</li>
           </ul>
           <a href={WA_PRECIO} target="_blank" rel="noopener" class="tipo-cta tipo-cta-primary">
             Consultar descuento →
@@ -916,10 +905,9 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
             <span class="tp-period">/ mes · cuotas sin interés</span>
           </div>
           <ul class="tipo-list">
-            <li>No requiere conformidad del otro</li>
+            <li>Sin necesitar conformidad del otro</li>
             <li>Proceso: 6 a 12 meses</li>
             <li>Notificación al cónyuge incluida</li>
-            <li>Inscripción incluida</li>
           </ul>
           <a href={WA_URGENTE} target="_blank" rel="noopener" class="tipo-cta tipo-cta-outline">
             Consultar precio →
@@ -934,64 +922,103 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
         <span style="font-size:1.8rem;flex-shrink:0">🏠</span>
         <div>
           <strong>¿Tienen bienes, inmuebles o hijos menores?</strong>
-          <p>El valor adicional depende del patrimonio y la complejidad del caso. Consúltenos sin cargo para obtener un presupuesto exacto.</p>
+          <p>El presupuesto varía según el patrimonio y la complejidad. Consúltenos sin cargo para obtener un precio exacto.</p>
         </div>
       </div>
-      <a href={WA_BIENES} target="_blank" rel="noopener" class="btn-ghost">Consultar caso →</a>
+      <a href={WA_BIENES} target="_blank" rel="noopener" class="btn-ghost">Consultar mi caso →</a>
     </div>
   </div>
 </section>
 
-<!-- PROCESO -->
+<!-- POR QUÉ ELEGIRNOS — 4 cards -->
 <section>
   <div class="container">
     <div class="section-head">
+      <span class="label">¿Por qué elegirnos?</span>
+      <h2>Abogados que trabajan <em class="gold">para usted</em></h2>
+      <p>Cada caso tiene un abogado responsable que lo acompaña desde la consulta hasta la sentencia.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-header">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+          </div>
+          <h3>Precio fijo por escrito</h3>
+        </div>
+        <p>El número que acordamos en la primera reunión es el precio final. Sin adicionales ni sorpresas al terminar el proceso.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-header">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Gestión 100% online</h3>
+        </div>
+        <p>No necesita venir a la oficina. Firmamos digitalmente y le avisamos cada novedad del expediente por WhatsApp.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-header">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>Acceso directo al abogado</h3>
+        </div>
+        <p>Tiene contacto directo con el abogado responsable de su caso. Sin secretarias, sin derivaciones. Respuesta real.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-header">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Cuotas sin interés</h3>
+        </div>
+        <p>Planes de pago mensuales durante el proceso. En mutuo acuerdo, representamos a ambos cónyuges reduciendo el costo total.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO — horizontal en 3 columnas -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
       <span class="label">Paso a paso</span>
-      <h2>¿Cómo funciona el <em class="gold">trámite de divorcio</em>?</h2>
+      <h2>¿Cómo funciona el <em class="gold">trámite</em>?</h2>
       <p>Un proceso diseñado para ser lo menos estresante posible. La mayoría de los pasos los gestionamos nosotros.</p>
     </div>
-    <div class="proceso-list">
-      <div class="paso">
-        <div class="paso-left"><div class="paso-num">1</div><div class="paso-line"></div></div>
-        <div class="paso-content">
-          <h3>Consulta gratuita — definimos su caso</h3>
-          <p>En 30 minutos evaluamos su situación: tipo de divorcio, si hay hijos, bienes, deudas o complejidades. Le damos el presupuesto exacto. Sin costo y sin compromiso.</p>
-        </div>
+    <div class="proceso-grid">
+      <div class="paso-h">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:var(--font-display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">1</div>
+        <h3>Consulta gratuita</h3>
+        <p>Evaluamos su situación en 30 minutos y le damos el presupuesto exacto, sin costo y sin compromiso.</p>
       </div>
-      <div class="paso">
-        <div class="paso-left"><div class="paso-num">2</div><div class="paso-line"></div></div>
-        <div class="paso-content">
-          <h3>Convenio de honorarios por escrito</h3>
-          <p>Firmamos un convenio donde queda fijado el precio total del servicio. Ese número no cambia, aunque el proceso lleve más tiempo del esperado.</p>
-        </div>
+      <div class="paso-h">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:var(--font-display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">2</div>
+        <h3>Convenio de honorarios</h3>
+        <p>Firmamos el convenio con el precio fijado. Ese número no cambia, aunque el proceso lleve más tiempo.</p>
       </div>
-      <div class="paso">
-        <div class="paso-left"><div class="paso-num">3</div><div class="paso-line"></div></div>
-        <div class="paso-content">
-          <h3>Redacción del convenio regulador</h3>
-          <p>Preparamos el convenio regulador que regula bienes, hijos, alimentos y vivienda. Usted revisa y aprueba antes de presentarlo ante el juzgado.</p>
-        </div>
+      <div class="paso-h">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:var(--font-display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">3</div>
+        <h3>Convenio regulador</h3>
+        <p>Redactamos el acuerdo sobre bienes, hijos y vivienda. Usted revisa y aprueba antes de presentarlo.</p>
       </div>
-      <div class="paso">
-        <div class="paso-left"><div class="paso-num">4</div><div class="paso-line"></div></div>
-        <div class="paso-content">
-          <h3>Presentación judicial — nosotros lo gestionamos todo</h3>
-          <p>Presentamos el expediente ante el juzgado de familia de CABA. En el divorcio por mutuo acuerdo, usted generalmente no necesita presentarse al tribunal.</p>
-        </div>
+      <div class="paso-h">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:var(--font-display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">4</div>
+        <h3>Presentación judicial</h3>
+        <p>Gestionamos el expediente ante el juzgado de familia. En mutuo acuerdo, usted generalmente no necesita concurrir.</p>
       </div>
-      <div class="paso">
-        <div class="paso-left"><div class="paso-num">5</div><div class="paso-line"></div></div>
-        <div class="paso-content">
-          <h3>Sentencia de divorcio — es libre</h3>
-          <p>El juez dicta la sentencia. Le enviamos copia certificada. El vínculo matrimonial queda disuelto y puede rehacer su vida con total tranquilidad legal.</p>
-        </div>
+      <div class="paso-h paso-last">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-family:var(--font-display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">5</div>
+        <h3>Sentencia — es libre</h3>
+        <p>El juez dicta la sentencia. Le enviamos copia certificada y el vínculo matrimonial queda disuelto.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIOS -->
-<section class="alt">
+<section>
   <div class="container">
     <div class="section-head">
       <span class="label">Lo que dicen nuestros clientes</span>
@@ -1000,7 +1027,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     <div class="testimonios-grid">
       <div class="testimonio-card">
         <div class="estrellas">★★★★★</div>
-        <p class="testimonio-text">Pensé que el divorcio iba a ser traumático y costoso. En tres meses todo estaba resuelto, el precio fue exactamente el que acordamos y nunca tuve que ir al juzgado.</p>
+        <p class="testimonio-text">Pensé que el divorcio iba a ser traumático y costoso. En tres meses todo estaba resuelto, el precio fue exactamente el acordado y nunca tuve que ir al juzgado.</p>
         <div class="testimonio-autor">
           <div class="autor-avatar">M</div>
           <div class="autor-info">
@@ -1015,7 +1042,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       </div>
       <div class="testimonio-card">
         <div class="estrellas">★★★★★</div>
-        <p class="testimonio-text">Mi ex no quería saber nada del divorcio. Me explicaron que podía iniciarlo igual. En 8 meses tenía la sentencia. La comunicación por WhatsApp fue excelente en todo momento.</p>
+        <p class="testimonio-text">Mi ex no quería saber nada del divorcio. Me explicaron que podía iniciarlo igual. En 8 meses tenía la sentencia. La comunicación por WhatsApp fue excelente.</p>
         <div class="testimonio-autor">
           <div class="autor-avatar">R</div>
           <div class="autor-info">
@@ -1030,7 +1057,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
       </div>
       <div class="testimonio-card">
         <div class="estrellas">★★★★★</div>
-        <p class="testimonio-text">Teníamos un departamento y dudas sobre qué pasaba con los bienes. Todo quedó bien explicado y acordado desde el principio. El precio que nos dieron fue el que pagamos.</p>
+        <p class="testimonio-text">Teníamos un departamento y dudas sobre qué pasaba con los bienes. Todo quedó explicado y acordado desde el principio. Pagamos exactamente lo presupuestado.</p>
         <div class="testimonio-autor">
           <div class="autor-avatar">A</div>
           <div class="autor-info">
@@ -1048,44 +1075,44 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 </section>
 
 <!-- FAQ -->
-<section>
+<section class="alt">
   <div class="container">
     <div class="section-head">
       <span class="label">Preguntas frecuentes</span>
-      <h2>Todo lo que quiere saber sobre el <em class="gold">costo del divorcio</em></h2>
+      <h2>Todo sobre los <em class="gold">honorarios del divorcio</em></h2>
     </div>
     <div class="faq-list">
       <details class="faq-item">
         <summary>¿Cuánto cuesta un divorcio express en Buenos Aires en 2026? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">Un divorcio express por mutuo acuerdo en CABA parte desde <strong>$99.000 por mes</strong> en cuotas sin interés. El costo final depende de si hay hijos menores, bienes o deudas en común. En la primera consulta gratuita le damos el presupuesto exacto para su caso. Los honorarios siempre quedan fijados por escrito antes de iniciar el trámite.</div>
+        <div class="faq-body">Un divorcio express por mutuo acuerdo en CABA parte desde <strong>$99.000 por mes</strong> en cuotas sin interés. El costo final depende de si hay hijos menores, bienes o deudas en común. En la primera consulta gratuita le damos el presupuesto exacto. Los honorarios siempre quedan fijados por escrito antes de iniciar el trámite.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Cuánto tarda un divorcio express por mutuo acuerdo? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">El tiempo mínimo logrado es de <strong>15 días</strong>, aunque el promedio es de 3 a 6 meses dependiendo del juzgado y la complejidad del convenio regulador. Los factores que más influyen son: si hay hijos menores, si hay bienes, y la carga del juzgado asignado. En ningún caso necesita un plazo mínimo de casados para iniciar el trámite.</div>
+        <summary>¿Cuánto tarda un divorcio express? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">El tiempo mínimo logrado es de <strong>15 días</strong>, aunque el promedio es de 3 a 6 meses según el juzgado y la complejidad del convenio. Los factores que más influyen son la existencia de hijos menores, bienes, y la carga del juzgado asignado. No se requiere ningún plazo mínimo de casados para iniciar el trámite.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Puedo divorciarme si mi cónyuge no quiere o no lo encuentro? <span class="faq-chavron">+</span></summary>
-        <div class="faq-body">Sí, absolutamente. El <strong>divorcio unilateral</strong> le permite iniciar el proceso con su sola voluntad, sin necesitar la conformidad ni la presencia de su cónyuge. Si no conoce su domicilio, existen mecanismos legales para notificarlo por edictos. El proceso tarda entre 6 y 12 meses en promedio.</div>
+        <summary>¿Cuánto cuestan los honorarios del divorcio de mutuo acuerdo? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">Los honorarios de un <strong>divorcio de mutuo acuerdo</strong> en CABA parten desde <strong>$99.000 por mes</strong> en cuotas sin interés. Es la modalidad más económica porque permite que un mismo estudio represente a ambos cónyuges, reduciendo significativamente el costo total. El precio exacto se define en la primera consulta gratuita y queda fijado por escrito.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Hay que pagar tasas judiciales además de los honorarios? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">En CABA, los trámites de divorcio están <strong>exentos de tasa de justicia</strong>. Pueden existir gastos menores de sellado o notariales según el caso, que siempre le informamos con anticipación y por escrito. Si hay bienes inmuebles, puede corresponder una tasa proporcional al valor del patrimonio que también le informamos antes de empezar.</div>
+        <summary>¿Puedo divorciarme si mi cónyuge no quiere o no lo encuentro? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">Sí. El <strong>divorcio unilateral</strong> le permite iniciar el proceso con su sola voluntad, sin necesitar la conformidad ni la presencia de su cónyuge. Si no conoce su domicilio, existen mecanismos legales para notificarlo por edictos. El proceso tarda entre 6 y 12 meses en promedio.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Qué es el convenio regulador y es obligatorio? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">Sí, es obligatorio. El convenio regulador es el documento donde ambos cónyuges acuerdan cómo se van a regular los efectos del divorcio: <strong>atribución de la vivienda, división de bienes, cuidado de los hijos, régimen de visitas, cuota alimentaria y compensación económica</strong> (si corresponde). Nosotros lo redactamos y asesoramos en cada punto.</div>
+        <summary>¿Hay tasas judiciales además de los honorarios? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">En CABA, los trámites de divorcio están <strong>exentos de tasa de justicia</strong>. Pueden existir gastos menores de sellado o notariales según el caso, que siempre informamos con anticipación y por escrito. Si hay bienes inmuebles, puede corresponder una tasa proporcional que también detallamos antes de comenzar.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Tienen planes de pago para el divorcio? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">Sí. Trabajamos con un <strong>anticipo inicial y cuotas mensuales</strong> durante el proceso para que el costo no sea una barrera. El plan de pago exacto lo pactamos en la primera reunión según su situación económica. El divorcio no debería ser un lujo.</div>
+        <summary>¿Tienen planes de pago? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">Sí. Trabajamos con un <strong>anticipo inicial y cuotas mensuales</strong> durante el proceso para que el costo no sea una barrera. El plan de pago se acuerda en la primera reunión según su situación económica.</div>
       </details>
       <details class="faq-item">
         <summary>¿Necesito ir al juzgado personalmente? <span class="faq-chevron">+</span></summary>
         <div class="faq-body">En la mayoría de los divorcios por mutuo acuerdo, <strong>no necesita presentarse al juzgado</strong>. Nosotros gestionamos todo el expediente. En casos de divorcio unilateral puede ser necesaria una audiencia, que le avisamos con anticipación y lo acompañamos.</div>
       </details>
       <details class="faq-item">
-        <summary>¿La consulta inicial tiene costo? <span class="faq-chevron">+</span></summary>
-        <div class="faq-body">No. La primera consulta es <strong>completamente gratuita y sin compromiso</strong>. En esa reunión analizamos su situación completa, le explicamos qué tipo de divorcio le corresponde, cuánto tiempo puede tardar y cuál sería el costo total. No tiene que contratar nada para recibir esa información.</div>
+        <summary>¿La primera consulta tiene costo? <span class="faq-chevron">+</span></summary>
+        <div class="faq-body">No. La primera consulta es <strong>completamente gratuita y sin compromiso</strong>. En esa reunión analizamos su situación, le explicamos qué tipo de divorcio le corresponde, cuánto puede tardar y cuál sería el costo total. No tiene que contratar nada para recibir esa información.</div>
       </details>
     </div>
   </div>
@@ -1094,9 +1121,9 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="container">
-    <span class="label">De el primer paso</span>
+    <span class="label">Dé el primer paso</span>
     <h2>Conozca el costo exacto de <em class="gold">su divorcio hoy</em></h2>
-    <p>Primera consulta gratuita. Le damos un presupuesto claro, por escrito y sin compromiso. Respondemos en menos de 2 horas hábiles.</p>
+    <p>Primera consulta gratuita. Presupuesto claro, por escrito y sin compromiso. Respondemos en menos de 2 horas hábiles.</p>
     <div class="cta-buttons">
       <a href={WA_PRECIO} target="_blank" rel="noopener" class="btn-primary" style="font-size:0.95rem;padding:1.1rem 2rem">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1153,19 +1180,16 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 document.getElementById('heroForm')?.addEventListener('submit', (e) => {
   e.preventDefault();
   const form = e.target as HTMLFormElement;
-  const nombre = (form.querySelector('#h-nombre') as HTMLInputElement).value.trim();
   const tel = (form.querySelector('#h-tel') as HTMLInputElement).value.trim();
   const tipoEl = form.querySelector('#h-tipo') as HTMLSelectElement;
   const tipo = tipoEl.options[tipoEl.selectedIndex].text;
-  const consulta = (form.querySelector('#h-consulta') as HTMLInputElement).value.trim();
 
-  const msg = `Hola, me contacto desde abogadosayg.com.
+  const msg = `Hola, me contacto desde divorcios.ar.
 
 📋 *Consulta: Divorcio Express*
 
-👤 Nombre: ${nombre}
-📞 Teléfono: ${tel}
-⚖️ Tipo de divorcio: ${tipo}${consulta ? `\n💬 Consulta: ${consulta}` : ''}
+📞 WhatsApp: ${tel}
+⚖️ Tipo de divorcio: ${tipo}
 
 Quisiera conocer el costo y proceso para mi caso.`;
 
