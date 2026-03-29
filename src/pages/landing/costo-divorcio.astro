@@ -204,19 +204,38 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 
   /* TABLA DE PRECIOS — protagonista en esta landing */
   .precios-tabla {
-    max-width: 860px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    max-width: 1060px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.08fr 1fr;
+    gap: 1.25rem; align-items: stretch;
   }
   .precio-card {
     background: linear-gradient(160deg, var(--bg-card), var(--bg-card2));
     border: 1px solid rgba(212,175,55,0.2);
     border-radius: 20px; padding: 1.75rem;
     display: flex; flex-direction: column; gap: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s;
+    position: relative; overflow: hidden;
   }
   .precio-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.4); }
   .precio-card.featured { border-color: rgba(212,175,55,0.5); background: linear-gradient(160deg, rgba(45,72,105,0.98), rgba(30,50,78,0.99)); box-shadow: 0 0 60px rgba(212,175,55,0.07); }
+  /* tarjeta central destacada */
+  .precio-card.contado {
+    border: 1px solid rgba(212,175,55,0.55);
+    background: linear-gradient(160deg, rgba(45,72,105,0.98), rgba(30,50,78,0.99) 60%, rgba(20,35,58,1));
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(212,175,55,0.08), inset 0 1px 0 rgba(212,175,55,0.18);
+    overflow: hidden;
+  }
+  .precio-card.contado:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.3); }
+  .contado-glow { display: none; }
+  .contado-shine { position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(105deg, transparent 20%, rgba(212,175,55,0.05) 40%, rgba(212,175,55,0.1) 50%, rgba(212,175,55,0.05) 60%, transparent 80%); animation: shine 4.5s ease-in-out infinite; pointer-events: none; z-index: 0; }
+  @keyframes shine { 0% { left:-100%; } 28% { left:120%; } 100% { left:120%; } }
+  .precio-card.contado > * { position: relative; z-index: 1; }
+  .pc-badge-top { display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; background: var(--gold); color: #0a0a0a; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.28rem 0.8rem; border-radius: 50px; box-shadow: 0 4px 16px rgba(212,175,55,0.4); }
+  .pc-consult-box { background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.28); border-radius: 12px; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.12rem; text-decoration: none; transition: background 0.2s; cursor: pointer; }
+  .pc-consult-box:hover { background: rgba(212,175,55,0.15); }
+  .pc-consult-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; }
+  .pc-consult-num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; line-height: 1.1; background: linear-gradient(135deg, #f0e68c, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .pc-consult-sub { font-size: 0.65rem; color: rgba(212,175,55,0.65); }
   .pc-eyebrow { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
   .pc-eyebrow-gold { color: var(--gold); }
   .pc-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; line-height: 1.1; }
@@ -520,7 +539,7 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
     <div class="precios-tabla">
       <!-- Mutuo acuerdo -->
       <div class="precio-card featured">
-        <div class="pc-eyebrow pc-eyebrow-gold">★ Opción más económica</div>
+        <div class="pc-eyebrow pc-eyebrow-gold">Ambos de acuerdo</div>
         <h3 class="pc-title">Divorcio<br/>Mutuo Acuerdo</h3>
         <p class="pc-sub">Los dos de acuerdo. Un solo abogado representa a ambos, reduciendo el costo total a la mitad.</p>
         <div class="pc-precio-box gold-box">
@@ -530,14 +549,38 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
           <span class="pc-incluye">✓ Precio fijo por escrito</span>
         </div>
         <ul class="pc-list gold-check">
-          <li>Un solo abogado para los dos (ahorro significativo)</li>
+          <li>Un solo abogado para los dos</li>
           <li>Convenio regulador incluido</li>
           <li>Sin audiencias en el juzgado</li>
           <li>Proceso: 15 días a 6 meses</li>
-          <li>Gestión 100% online, sin ir a la oficina</li>
+          <li>Gestión 100% online</li>
         </ul>
         <a href={WA_PRECIO} target="_blank" rel="noopener" class="pc-cta pc-cta-primary">
-          Consultar precio para mi caso →
+          Consultar precio →
+        </a>
+      </div>
+
+      <!-- Pago contado DESTACADO -->
+      <div class="precio-card contado">
+        <div class="contado-shine"></div>
+        <div class="pc-badge-top">★ Mejor precio</div>
+        <div class="pc-eyebrow pc-eyebrow-gold">Máximo ahorro</div>
+        <h3 class="pc-title" style="background:linear-gradient(135deg,#f0e68c,#d4af37 45%,#f5d060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Divorcio<br/>Pago Contado</h3>
+        <p class="pc-sub">Cualquier modalidad abonando en efectivo o hasta 2 cuotas.</p>
+        <a href={WA_PRECIO} target="_blank" rel="noopener" class="pc-consult-box">
+          <span class="pc-consult-label">Bonificación especial</span>
+          <span class="pc-consult-num">Consultar<br/>precio →</span>
+          <span class="pc-consult-sub">Máximo descuento disponible</span>
+        </a>
+        <ul class="pc-list" style="border-top:1px solid rgba(212,175,55,0.12);padding-top:0.85rem;">
+          <li style="color:var(--text);font-weight:600;">Bonificación sobre precio base</li>
+          <li>Inicio inmediato del trámite</li>
+          <li>Prioridad de gestión</li>
+          <li>Precio fijo por escrito</li>
+          <li>Aplica a cualquier tipo de divorcio</li>
+        </ul>
+        <a href={WA_PRECIO} target="_blank" rel="noopener" class="pc-cta pc-cta-primary">
+          Consultar descuento →
         </a>
       </div>
 
