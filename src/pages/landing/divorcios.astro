@@ -1179,6 +1179,18 @@ const WA_BIENES = `${WA_BASE}?text=Hola%2C%20quiero%20divorciarme%20y%20tenemos%
 <script>
 document.getElementById('heroForm')?.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  // Forzar carga de GTM si aún no cargó
+  if (typeof loadGTM === 'function') loadGTM();
+
+  // Disparar conversión de Google Ads directamente
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', { send_to: 'AW-17919248557/dFBWCKS2nvEbEK2RyOBC' });
+  } else {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'form_whatsapp_submit', form_id: 'heroForm' });
+  }
+
   const form = e.target as HTMLFormElement;
   const tel = (form.querySelector('#h-tel') as HTMLInputElement).value.trim();
   const tipoEl = form.querySelector('#h-tipo') as HTMLSelectElement;
