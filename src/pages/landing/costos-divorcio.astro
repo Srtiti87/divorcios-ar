@@ -1,0 +1,1725 @@
+---
+// Landing Page · Divorcio Express CABA 2026
+// Abogados AyG — Santibáñez & Almendras González
+const WA_BASE = "https://wa.me/541159360995";
+const TEL = "tel:+541159360995";
+const WA_MUTUO = `${WA_BASE}?text=${encodeURIComponent("Hola, quisiera saber cuánto cuesta el divorcio en mi caso. Somos dos y estamos de acuerdo.")}`;
+const WA_UNILATERAL = `${WA_BASE}?text=${encodeURIComponent("Hola, necesito saber el costo de mi divorcio lo antes posible. ¿Pueden atenderme hoy?")}`;
+const WA_HERO = `${WA_BASE}?text=${encodeURIComponent("Hola, vi su anuncio y quisiera saber cuánto cuesta el divorcio en mi caso.")}`;
+const WA_CONTADO = `${WA_BASE}?text=${encodeURIComponent("Hola, quisiera consultar el precio con descuento por pago contado.")}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="¿Cuánto cuesta un divorcio en CABA 2026? Precio fijo por escrito desde $99.000/mes. Primera consulta gratuita. Abogados matriculados CPACF. Respuesta inmediata." />
+  <title>¿Cuánto Cuesta un Divorcio en CABA 2026? Desde $99.000/mes | Abogados AyG</title>
+  <link rel="canonical" href="https://www.divorcios.ar/landing/costo-divorcio" />
+  <meta property="og:title" content="¿Cuánto Cuesta un Divorcio en CABA 2026? | Abogados AyG" />
+  <meta property="og:description" content="Precio fijo por escrito. Sin sorpresas. Primera consulta gratuita. Matriculados CPACF." />
+  <meta property="og:url" content="https://www.divorcios.ar/landing/costo-divorcio" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "name": "Abogados AyG — Santibáñez & Almendras González",
+        "url": "https://www.divorcios.ar",
+        "telephone": "+541159360995",
+        "areaServed": "Ciudad Autónoma de Buenos Aires",
+        "priceRange": "desde $99.000/mes",
+        "description": "Estudio jurídico especializado en divorcios en CABA. Precio fijo por escrito, primera consulta gratuita."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta un divorcio en CABA en 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un divorcio por mutuo acuerdo parte desde $99.000 por mes en cuotas sin interés. Un divorcio unilateral parte desde $135.000 por mes. El precio final depende de si hay hijos menores, bienes o deudas en común."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay costos adicionales además de los honorarios?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En CABA, los divorcios están exentos de tasa de justicia. No hay sellados ni aranceles judiciales en la mayoría de los casos."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============================================
+       CSS VARIABLES — OPCIÓN A "Autoridad Serena"
+       Para cambiar a Opción B: reemplazar los valores
+       de --primary, --accent y --cta en :root
+    ============================================ */
+    :root {
+      /* Opción A — Autoridad Serena (activa) */
+      --primary:     #1B2A4A;
+      --primary-mid: #243a65;
+      --primary-light:#2f4d87;
+      --accent:      #C9A84C;
+      --accent-light: #e0c070;
+      --cta:         #1a7a3a;
+      --cta-hover:   #145e2c;
+      --bg:          #FFFFFF;
+      --bg-soft:     #F7F8FA;
+      --bg-dark:     #111927;
+      --text:        #1a1a2e;
+      --text-mid:    #3d4a5c;
+      --text-light:  #6b7a8d;
+      --border:      #e2e8f0;
+      --whatsapp:    #25D366;
+      --whatsapp-hover: #1da851;
+
+      /* Opción B — descomentar para activar
+      --primary:     #2D5016;
+      --accent:      #E8DCC8;
+      --cta:         #D4580A;
+      --bg-soft:     #faf8f4;
+      */
+
+      /* Tipografía */
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      /* Espaciado */
+      --section-gap: clamp(64px, 8vw, 112px);
+      --container:   1140px;
+      --radius:      12px;
+      --radius-lg:   20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: .04em;
+    }
+    .logo span { color: var(--accent); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-tel {
+      color: var(--accent-light);
+      font-size: .9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-tel svg { width: 15px; height: 15px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: .9rem;
+      padding: 11px 22px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background .18s, transform .12s, box-shadow .18s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      box-shadow: 0 3px 14px rgba(26,122,58,.28);
+    }
+    .btn-primary:hover { background: var(--cta-hover); box-shadow: 0 5px 18px rgba(26,122,58,.38); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    .btn-ghost {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+      padding: 9px 18px;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.22); }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 3px 14px rgba(37,211,102,.3);
+    }
+    .btn-wa:hover { background: var(--whatsapp-hover); }
+
+    /* ── AVAILABILITY BADGE ── */
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .82rem;
+      font-weight: 500;
+      color: #2ecc71;
+      background: rgba(46,204,113,.12);
+      border: 1px solid rgba(46,204,113,.3);
+      border-radius: 100px;
+      padding: 5px 13px;
+      margin-bottom: 18px;
+    }
+    .badge-live::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: #2ecc71;
+      border-radius: 50%;
+      animation: pulse 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.3); }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 60%, var(--primary-light) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(52px, 7vw, 96px) 0 clamp(48px, 6vw, 80px);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 100% 50%, rgba(201,168,76,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 0% 100%, rgba(201,168,76,.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Decorative lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 380px; height: 380px;
+      border: 1px solid rgba(201,168,76,.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy { color: #fff; }
+
+    .hero-eyebrow {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.8);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-bottom: 28px;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      color: rgba(255,255,255,.75);
+    }
+    .hero-trust-item svg { color: var(--accent); flex-shrink: 0; }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-disclaimer {
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+    }
+    .hero-disclaimer svg { display: inline; width: 12px; height: 12px; margin-right: 4px; }
+
+    /* ── QUIZ CARD ── */
+    .quiz-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3vw, 36px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25), 0 4px 16px rgba(0,0,0,.12);
+      position: relative;
+    }
+
+    .quiz-card-header {
+      margin-bottom: 22px;
+    }
+    .quiz-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .quiz-card-sub {
+      font-size: .85rem;
+      color: var(--text-light);
+    }
+
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+
+    .quiz-label {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 2px solid var(--border);
+      border-radius: 9px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      font-size: .9rem;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .quiz-option:hover { border-color: var(--primary-light); background: var(--bg-soft); }
+    .quiz-option.selected { border-color: var(--primary); background: rgba(27,42,74,.05); }
+    .quiz-option-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .quiz-progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .quiz-dot {
+      height: 4px;
+      flex: 1;
+      background: var(--border);
+      border-radius: 4px;
+      transition: background .3s;
+    }
+    .quiz-dot.done { background: var(--primary); }
+
+    .quiz-card-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 6px;
+    }
+
+    .quiz-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 14px;
+    }
+    .quiz-social-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .8rem;
+      color: var(--text-light);
+    }
+    .quiz-social-item strong { color: var(--text); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 36px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text-mid);
+    }
+    .trust-item-icon {
+      width: 34px; height: 34px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-item-icon svg { width: 17px; height: 17px; }
+
+    /* ── SECCIÓN GENÉRICA ── */
+    .section { padding: var(--section-gap) 0; }
+    .section-dark { background: var(--bg-dark); color: #fff; }
+    .section-soft { background: var(--bg-soft); }
+    .section-accent { background: var(--primary); color: #fff; }
+
+    .section-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      line-height: 1.2;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .section-dark .section-title,
+    .section-accent .section-title { color: #fff; }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-dark .section-title em { color: var(--accent-light); }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+    .section-dark .section-subtitle { color: rgba(255,255,255,.7); }
+
+    .section-header { margin-bottom: clamp(36px, 5vw, 56px); }
+
+    /* ── PRECIOS ── */
+    .prices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .price-card:hover {
+      box-shadow: 0 12px 40px rgba(27,42,74,.1);
+      transform: translateY(-3px);
+    }
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 8px 32px rgba(27,42,74,.14);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--primary);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .price-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .price-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .price-desc {
+      font-size: .88rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      min-height: 38px;
+    }
+
+    .price-amount {
+      margin-bottom: 22px;
+    }
+    .price-desde { font-size: .82rem; color: var(--text-light); }
+    .price-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .price-period { font-size: .85rem; color: var(--text-light); }
+    .price-cuotas {
+      font-size: .8rem;
+      color: var(--cta);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .price-features {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .875rem;
+      color: var(--text-mid);
+    }
+    .price-features li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--cta);
+    }
+
+    .price-card.special {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+      border-color: transparent;
+      color: #fff;
+    }
+    .price-card.special .price-name,
+    .price-card.special .price-number,
+    .price-card.special .price-label { color: #fff; }
+    .price-card.special .price-desc,
+    .price-card.special .price-period { color: rgba(255,255,255,.65); }
+    .price-card.special .price-cuotas { color: var(--accent-light); }
+    .price-card.special .price-features li { color: rgba(255,255,255,.8); }
+    .price-card.special .price-features li svg { color: var(--accent); }
+
+    /* ── QUÉ INCLUYE ── */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .include-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .include-icon {
+      width: 48px; height: 48px;
+      background: rgba(27,42,74,.07);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .include-icon svg { width: 22px; height: 22px; }
+
+    .include-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .include-body p { font-size: .9rem; color: var(--text-mid); line-height: 1.55; }
+
+    /* ── DESCARGA GRATUITA ── */
+    .download-section {
+      background: linear-gradient(135deg, #0f1e36 0%, var(--primary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .download-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .download-pretitle {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .download-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .download-desc {
+      font-size: .95rem;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 26px;
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    .download-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 18px;
+    }
+    .download-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.55);
+    }
+    .download-meta-item svg { color: var(--accent); }
+
+    .download-visual {
+      width: 160px;
+      flex-shrink: 0;
+    }
+
+    .pdf-mockup {
+      width: 130px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.4), 8px 8px 0 var(--accent);
+      padding: 16px 14px;
+      margin: 0 auto;
+    }
+    .pdf-mockup-header {
+      background: var(--primary);
+      height: 6px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .pdf-mockup-line {
+      height: 6px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-bottom: 7px;
+    }
+    .pdf-mockup-line.short { width: 70%; }
+    .pdf-mockup-line.shorter { width: 50%; }
+    .pdf-mockup-logo {
+      font-family: var(--font-display);
+      font-size: .6rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 12px;
+      letter-spacing: .06em;
+    }
+
+    /* ── ABOGADOS ── */
+    .lawyers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .lawyer-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      text-align: center;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .lawyer-card:hover {
+      box-shadow: 0 12px 40px rgba(27,42,74,.1);
+      transform: translateY(-3px);
+    }
+
+    .lawyer-photo {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--bg-soft);
+      border: 3px solid var(--accent);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 2rem;
+    }
+    .lawyer-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .lawyer-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .lawyer-title {
+      font-size: .83rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .lawyer-matricula {
+      display: inline-block;
+      background: rgba(27,42,74,.07);
+      color: var(--primary);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .lawyer-quote {
+      font-size: .88rem;
+      color: var(--text-mid);
+      font-style: italic;
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* ── PROCESO ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary-light), var(--accent));
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .process-number {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 16px rgba(27,42,74,.25);
+    }
+
+    .process-step-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .process-step-desc {
+      font-size: .88rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item.open { border-color: var(--primary); }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--primary);
+      gap: 12px;
+      user-select: none;
+      background: #fff;
+    }
+    .faq-item.open .faq-question { background: rgba(27,42,74,.03); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      color: var(--text-light);
+      transition: transform .25s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--primary); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 22px 18px;
+      font-size: .92rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--primary) 0%, #0f1e36 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      border: 1px solid rgba(201,168,76,.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-final-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-final-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 34px;
+    }
+    .cta-final-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .cta-final-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+    }
+    .cta-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.55);
+    }
+    .cta-badge svg { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #0a1220;
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: .82rem;
+      line-height: 1.7;
+    }
+    .site-footer a { color: rgba(255,255,255,.4); text-decoration: underline; }
+    .site-footer a:hover { color: rgba(255,255,255,.65); }
+
+    /* ── WHATSAPP FLOTANTE ── */
+    .wa-float {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      width: 56px; height: 56px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 30px rgba(37,211,102,.55); }
+    .wa-float svg { width: 28px; height: 28px; color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .quiz-card { order: -1; }
+      .prices-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .lawyers-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .process-steps { grid-template-columns: 1fr; gap: 28px; }
+      .process-steps::before { display: none; }
+      .download-grid { grid-template-columns: 1fr; }
+      .download-visual { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .wa-float { display: flex; }
+      .header-tel { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+
+    /* ── UTILIDADES ── */
+    .text-center { text-align: center; }
+    .mb-0 { margin-bottom: 0; }
+    .mt-auto { margin-top: auto; }
+    .w-full { width: 100%; }
+
+    /* ── SVG ICONS inline ── */
+    .icon { display: inline-flex; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<!-- ======================== HEADER ======================== -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">DIVORCIOS<span>.AR</span></a>
+    <div class="header-right">
+      <a href={TEL} class="header-tel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        11 5936-0995
+      </a>
+      <a href={WA_HERO} class="btn btn-ghost" target="_blank" rel="noopener">Consulta gratis →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Copy -->
+      <div class="hero-copy">
+        <div class="badge-live">Atendiendo consultas ahora</div>
+        <p class="hero-eyebrow">Abogados de Familia · CABA 2026</p>
+        <h1 class="hero-title">Que el costo de divorciarse <em>no sea otro problema más</em></h1>
+        <p class="hero-subtitle">Precio fijo por escrito antes de empezar. Sin sorpresas al terminar.<br>Primera consulta gratuita, sin compromiso.</p>
+
+        <div class="hero-trust">
+          <span class="hero-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            +500 divorcios tramitados
+          </span>
+          <span class="hero-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Matriculados CPACF
+          </span>
+          <span class="hero-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            +10 años de experiencia
+          </span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href={TEL} class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Llamar ahora
+          </a>
+        </div>
+        <p class="hero-disclaimer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          100% confidencial · Sin spam · Sin compromiso
+        </p>
+      </div>
+
+      <!-- Quiz Card -->
+      <div class="quiz-card">
+        <div class="quiz-card-header">
+          <h2 class="quiz-card-title">Conocé el precio de tu divorcio</h2>
+          <p class="quiz-card-sub">2 preguntas · Respuesta inmediata por WhatsApp</p>
+        </div>
+
+        <div class="quiz-progress">
+          <div class="quiz-dot done" id="dot1"></div>
+          <div class="quiz-dot" id="dot2"></div>
+        </div>
+
+        <!-- Paso 1 -->
+        <div class="quiz-step active" id="step1">
+          <span class="quiz-label">¿El otro cónyuge está de acuerdo?</span>
+          <div class="quiz-options">
+            <button class="quiz-option" data-step="1" data-val="si">
+              <span class="quiz-option-icon">✅</span>
+              Sí, estamos de acuerdo
+            </button>
+            <button class="quiz-option" data-step="1" data-val="no">
+              <span class="quiz-option-icon">❌</span>
+              No, o no sé dónde está
+            </button>
+            <button class="quiz-option" data-step="1" data-val="nose">
+              <span class="quiz-option-icon">🤔</span>
+              No estoy seguro/a
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="quiz-step" id="step2">
+          <span class="quiz-label">¿Tienen hijos menores o bienes en común?</span>
+          <div class="quiz-options">
+            <button class="quiz-option" data-step="2" data-val="solo">
+              <span class="quiz-option-icon">💍</span>
+              Solo el divorcio
+            </button>
+            <button class="quiz-option" data-step="2" data-val="hijos">
+              <span class="quiz-option-icon">👶</span>
+              Sí, hijos menores
+            </button>
+            <button class="quiz-option" data-step="2" data-val="bienes">
+              <span class="quiz-option-icon">🏠</span>
+              Sí, bienes o inmuebles
+            </button>
+            <button class="quiz-option" data-step="2" data-val="ambos">
+              <span class="quiz-option-icon">👨‍👩‍👧</span>
+              Hijos y bienes
+            </button>
+          </div>
+        </div>
+
+        <div class="quiz-card-footer">
+          <a href={WA_HERO} class="btn btn-wa w-full" id="quiz-cta" target="_blank" rel="noopener" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Ver precio para mi caso →
+          </a>
+          <div class="quiz-social">
+            <span class="quiz-social-item"><strong>+500</strong> divorcios tramitados</span>
+            <span class="quiz-social-item"><strong>$0</strong> primera consulta</span>
+            <span class="quiz-social-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              100% confidencial
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TRUST BAR ======================== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        Precio fijo por escrito
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        Cuotas sin interés
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        100% online
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        Matriculados CPACF
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PRECIOS ======================== -->
+<section class="section section-soft" id="precios">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-label">Honorarios 2026</p>
+      <h2 class="section-title">Cuánto cuesta el <em>divorcio en CABA</em></h2>
+      <p class="section-subtitle" style="margin:0 auto">Precios orientativos. El presupuesto definitivo se entrega en la primera consulta gratuita, sin compromiso.</p>
+    </div>
+
+    <div class="prices-grid">
+
+      <!-- Mutuo acuerdo -->
+      <div class="price-card featured">
+        <div class="price-badge">★ Mejor precio</div>
+        <p class="price-label">Los dos de acuerdo</p>
+        <h3 class="price-name">Mutuo Acuerdo</h3>
+        <p class="price-desc">Un solo abogado representa a ambos. Máximo ahorro.</p>
+        <div class="price-amount">
+          <p class="price-desde">honorarios desde</p>
+          <p class="price-number">$99.000</p>
+          <p class="price-period">/ mes</p>
+          <p class="price-cuotas">✓ Cuotas sin interés</p>
+        </div>
+        <ul class="price-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Un solo abogado para los dos
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Convenio regulador incluido
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin audiencias en el juzgado
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Proceso: 15 días a 6 meses
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Gestión 100% online
+          </li>
+        </ul>
+        <a href={WA_MUTUO} class="btn btn-primary w-full" target="_blank" rel="noopener">Consultar precio →</a>
+      </div>
+
+      <!-- Pago contado -->
+      <div class="price-card special">
+        <p class="price-label" style="color:rgba(255,255,255,.55)">Máximo ahorro</p>
+        <h3 class="price-name">Pago Contado</h3>
+        <p class="price-desc">Cualquier modalidad abonando en efectivo o hasta 2 cuotas.</p>
+        <div class="price-amount">
+          <p class="price-desde" style="color:rgba(255,255,255,.55)">bonificación especial</p>
+          <p class="price-number" style="font-size:1.8rem;letter-spacing:-.01em">Descuento<br>exclusivo</p>
+          <p class="price-cuotas">Consultá el ahorro disponible</p>
+        </div>
+        <ul class="price-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Bonificación sobre precio base
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Inicio inmediato del trámite
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Prioridad de gestión
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Aplica a cualquier tipo de divorcio
+          </li>
+        </ul>
+        <a href={WA_CONTADO} class="btn w-full" style="background:var(--accent);color:var(--primary);font-weight:700" target="_blank" rel="noopener">Consultar descuento →</a>
+      </div>
+
+      <!-- Unilateral -->
+      <div class="price-card">
+        <p class="price-label">El otro no coopera</p>
+        <h3 class="price-name">Unilateral</h3>
+        <p class="price-desc">Cuando el otro no quiere, no coopera o no se sabe dónde está.</p>
+        <div class="price-amount">
+          <p class="price-desde">honorarios desde</p>
+          <p class="price-number">$135.000</p>
+          <p class="price-period">/ mes</p>
+          <p class="price-cuotas">✓ Cuotas sin interés</p>
+        </div>
+        <ul class="price-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin necesitar conformidad del otro
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Notificación al cónyuge incluida
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Proceso: 6 a 12 meses
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Gestión 100% online
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Acceso directo al abogado
+          </li>
+        </ul>
+        <a href={WA_UNILATERAL} class="btn btn-primary w-full" target="_blank" rel="noopener">Consultar precio →</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:28px;font-size:.88rem;color:var(--text-light)">
+      <strong>¿Tienen hijos menores, inmuebles o deudas?</strong> El precio puede variar. En la primera consulta gratuita analizamos su situación exacta.<br>
+      En CABA los divorcios están <strong>exentos de tasa de justicia</strong> — sin gastos judiciales adicionales en la mayoría de los casos.
+    </p>
+  </div>
+</section>
+
+<!-- ======================== QUÉ INCLUYE ======================== -->
+<section class="section" id="incluye">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Transparencia total</p>
+      <h2 class="section-title">¿Qué <em>incluye el precio?</em></h2>
+      <p class="section-subtitle">El número que acordamos en la primera consulta es el precio final. Sin adicionales.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+        </div>
+        <div class="include-body">
+          <h3>Convenio de honorarios escrito</h3>
+          <p>El precio queda fijado antes de iniciar. No puede cambiar aunque el proceso lleve más tiempo del previsto.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="include-body">
+          <h3>Representación legal completa</h3>
+          <p>Gestión integral del expediente ante el juzgado de familia. Usted no tiene que hacer nada.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="include-body">
+          <h3>Convenio regulador</h3>
+          <p>Redacción del acuerdo sobre bienes, hijos y vivienda incluida en el precio base para casos sin complejidad patrimonial.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="include-body">
+          <h3>Seguimiento y novedades</h3>
+          <p>Le avisamos cada novedad del expediente por WhatsApp. Acceso directo al abogado responsable de su caso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== DESCARGA GRATUITA ======================== -->
+<section class="section download-section" id="guia">
+  <div class="container">
+    <div class="download-grid">
+      <div>
+        <p class="download-pretitle">Recurso gratuito · Sin registro</p>
+        <h2 class="download-title">Guía completa: "Cómo divorciarse<br>paso a paso en CABA 2026"</h2>
+        <p class="download-desc">Un PDF claro, sin tecnicismos, que explica todo el proceso: documentos necesarios, plazos reales, costos y qué esperar en cada etapa. Sin registro, sin spam. Lo descargás y es tuyo.</p>
+        <!-- COMPLETAR: reemplazar href con la URL real del PDF -->
+        <a href="/guia-divorcio-caba-2026.pdf" class="btn" style="background:var(--accent);color:var(--primary);font-weight:700;font-size:1rem;padding:14px 28px" download>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar guía gratuita →
+        </a>
+        <div class="download-meta">
+          <span class="download-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin registrarse
+          </span>
+          <span class="download-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin spam
+          </span>
+          <span class="download-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Actualizado 2026
+          </span>
+          <span class="download-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Redactado por abogados CPACF
+          </span>
+        </div>
+      </div>
+      <div class="download-visual">
+        <div class="pdf-mockup">
+          <div class="pdf-mockup-header"></div>
+          <div class="pdf-mockup-line"></div>
+          <div class="pdf-mockup-line short"></div>
+          <div class="pdf-mockup-line"></div>
+          <div class="pdf-mockup-line shorter"></div>
+          <div class="pdf-mockup-line"></div>
+          <div class="pdf-mockup-line short"></div>
+          <div class="pdf-mockup-line"></div>
+          <div class="pdf-mockup-logo">DIVORCIOS.AR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOGADOS ======================== -->
+<section class="section section-soft" id="abogados">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-label">El equipo</p>
+      <h2 class="section-title">Los abogados que trabajan <em>para usted</em></h2>
+      <p class="section-subtitle" style="margin:0 auto">Matrícula activa en el CPACF. Más de 10 años especializados en derecho de familia en CABA.</p>
+    </div>
+
+    <div class="lawyers-grid">
+
+      <!-- COMPLETAR: Abogado 1 — Santibáñez -->
+      <div class="lawyer-card">
+        <div class="lawyer-photo">
+          <!-- COMPLETAR: <img src="/fotos/santibañez.webp" alt="Dr. [Nombre] Santibáñez" width="90" height="90"> -->
+          <span>⚖️</span>
+        </div>
+        <!-- COMPLETAR: nombre completo -->
+        <h3 class="lawyer-name">Dr/a. [Nombre] Santibáñez</h3>
+        <p class="lawyer-title">Abogado/a de Familia · CABA</p>
+        <span class="lawyer-matricula">CPACF T°124 F°529</span>
+        <!-- COMPLETAR: frase personal del abogado -->
+        <p class="lawyer-quote">"[COMPLETAR: frase personal que refleje su filosofía de trabajo o compromiso con los clientes]"</p>
+        <a href={`${WA_BASE}?text=${encodeURIComponent("Hola, quisiera consultar con el Dr/a. Santibáñez sobre mi caso de divorcio.")}`} class="btn btn-wa w-full" target="_blank" rel="noopener">
+          Consultar con este abogado/a →
+        </a>
+      </div>
+
+      <!-- COMPLETAR: Abogado 2 — Almendras González -->
+      <div class="lawyer-card">
+        <div class="lawyer-photo">
+          <!-- COMPLETAR: <img src="/fotos/almendras.webp" alt="Dr. [Nombre] Almendras González" width="90" height="90"> -->
+          <span>⚖️</span>
+        </div>
+        <!-- COMPLETAR: nombre completo -->
+        <h3 class="lawyer-name">Dr/a. [Nombre] Almendras González</h3>
+        <p class="lawyer-title">Abogado/a de Familia · CABA</p>
+        <span class="lawyer-matricula">CPACF T°124 F°535</span>
+        <!-- COMPLETAR: frase personal del abogado -->
+        <p class="lawyer-quote">"[COMPLETAR: frase personal que refleje su filosofía de trabajo o compromiso con los clientes]"</p>
+        <a href={`${WA_BASE}?text=${encodeURIComponent("Hola, quisiera consultar con el Dr/a. Almendras González sobre mi caso de divorcio.")}`} class="btn btn-wa w-full" target="_blank" rel="noopener">
+          Consultar con este abogado/a →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROCESO ======================== -->
+<section class="section" id="como-funciona">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-label">Paso a paso</p>
+      <h2 class="section-title">Cómo <em>funciona</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-number">1</div>
+        <h3 class="process-step-title">Consulta gratuita</h3>
+        <p class="process-step-desc">Analizamos su situación y le entregamos el precio exacto por escrito. Sin compromiso, sin cargo.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">2</div>
+        <h3 class="process-step-title">Firmamos el convenio</h3>
+        <p class="process-step-desc">Precio fijo, plan de pago acordado. Iniciamos el trámite. El número no cambia.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">3</div>
+        <h3 class="process-step-title">Nosotros hacemos todo</h3>
+        <p class="process-step-desc">Gestionamos el expediente ante el juzgado. Usted se entera de cada novedad por WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section class="section section-soft" id="preguntas">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2 class="section-title">Todo sobre el <em>costo del divorcio</em></h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Cuánto cuesta un divorcio en CABA en 2026?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Un divorcio por mutuo acuerdo parte desde $99.000 por mes en cuotas sin interés. Un divorcio unilateral parte desde $135.000 por mes. El precio final depende de si hay hijos menores, bienes o deudas en común. En la primera consulta gratuita le damos el presupuesto exacto para su caso y lo fijamos por escrito antes de comenzar.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Hay costos adicionales además de los honorarios?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">En CABA, los divorcios están exentos de tasa de justicia. No hay sellados ni aranceles judiciales en la mayoría de los casos. Si hubiera algún gasto menor (por ejemplo, bienes inmuebles que requieren inscripción), lo informamos con anticipación y por escrito. El convenio de honorarios incluye todo lo que vamos a cobrar.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Por qué el mutuo acuerdo es más barato que el unilateral?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">En el divorcio por mutuo acuerdo, un solo abogado puede representar a ambos cónyuges, ya que no hay conflicto de intereses. Esto reduce significativamente el trabajo legal y, por lo tanto, el costo total. En un divorcio unilateral, el proceso es más largo y complejo porque requiere notificaciones al cónyuge y puede incluir audiencias.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Cuánto más cuesta si tenemos hijos o bienes?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Depende de la complejidad. Hijos menores generalmente implican acordar régimen de cuidado, alimentos y comunicación. Bienes implican liquidar la sociedad conyugal. En ambos casos el precio puede variar. Por eso ofrecemos la primera consulta gratuita: analizamos su situación específica y le damos el presupuesto exacto.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Tienen planes de pago?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Trabajamos con un anticipo inicial y cuotas mensuales durante el proceso. El plan de pago se acuerda en la primera reunión según su situación económica. El objetivo es que el costo no sea una barrera para iniciar el trámite.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿El precio puede subir una vez iniciado el trámite?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. Firmamos un convenio de honorarios antes de comenzar y ese precio es definitivo. No importa si el proceso demora más de lo previsto o si surgen complicaciones procesales ordinarias: el número acordado no cambia.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿La primera consulta tiene costo?
+          <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. La primera consulta es completamente gratuita y sin compromiso. En esa reunión analizamos su situación, le explicamos qué tipo de divorcio corresponde y cuál sería el costo exacto. No tiene que contratar nada para recibir esa información.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA FINAL ======================== -->
+<section class="section cta-final" id="contacto">
+  <div class="container" style="position:relative;z-index:1">
+    <p class="section-label" style="text-align:center">Sin compromiso</p>
+    <h2 class="cta-final-title">Conocé el precio exacto de su divorcio hoy</h2>
+    <p class="cta-final-sub">Primera consulta gratuita. Presupuesto por escrito. Respuesta en menos de 2 horas hábiles.</p>
+    <div class="cta-final-row">
+      <a href={WA_HERO} class="btn btn-wa" style="padding:15px 32px;font-size:1.05rem" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <a href={TEL} class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35);padding:15px 32px;font-size:1.05rem">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Llamar ahora
+      </a>
+    </div>
+    <div class="cta-final-badges">
+      <span class="cta-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        100% confidencial
+      </span>
+      <span class="cta-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Respuesta en 2 hs hábiles
+      </span>
+      <span class="cta-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Primera consulta sin cargo
+      </span>
+      <span class="cta-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Matriculados CPACF
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="site-footer">
+  <p>© 2026 Abogados AyG — Santibáñez &amp; Almendras González</p>
+  <p>CPACF T°124 F°529 y F°535</p>
+  <p style="margin-top:6px">
+    <a href="https://www.divorcios.ar/privacidad">Privacidad</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.divorcios.ar/terminos">Términos</a>
+  </p>
+</footer>
+
+<!-- ======================== WHATSAPP FLOTANTE (mobile) ======================== -->
+<a href={WA_HERO} class="wa-float" aria-label="Consultar por WhatsApp" target="_blank" rel="noopener">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // ── QUIZ LÓGICA ──
+  const WA = "https://wa.me/541159360995";
+  let answers = { step1: null, step2: null };
+
+  const msgs = {
+    si: {
+      solo:   "Hola, quisiera saber cuánto cuesta el divorcio. Somos dos y estamos de acuerdo. No tenemos hijos ni bienes.",
+      hijos:  "Hola, quisiera saber cuánto cuesta el divorcio. Estamos de acuerdo pero tenemos hijos menores.",
+      bienes: "Hola, quisiera saber cuánto cuesta el divorcio. Estamos de acuerdo pero tenemos bienes en común.",
+      ambos:  "Hola, quisiera saber cuánto cuesta el divorcio. Estamos de acuerdo y tenemos hijos y bienes.",
+    },
+    no: {
+      solo:   "Hola, necesito hacer un divorcio unilateral. El otro cónyuge no coopera. Sin hijos ni bienes.",
+      hijos:  "Hola, necesito hacer un divorcio unilateral. El otro no coopera y tenemos hijos menores.",
+      bienes: "Hola, necesito hacer un divorcio unilateral. El otro no coopera y tenemos bienes en común.",
+      ambos:  "Hola, necesito hacer un divorcio unilateral. El otro no coopera y tenemos hijos y bienes.",
+    },
+    nose: {
+      solo:   "Hola, quisiera consultar sobre mi divorcio. No sé si el otro estará de acuerdo. No tenemos hijos ni bienes.",
+      hijos:  "Hola, quisiera consultar sobre mi divorcio. No sé si el otro estará de acuerdo. Tenemos hijos menores.",
+      bienes: "Hola, quisiera consultar sobre mi divorcio. No sé si el otro estará de acuerdo. Tenemos bienes en común.",
+      ambos:  "Hola, quisiera consultar sobre mi divorcio. No sé si el otro estará de acuerdo. Tenemos hijos y bienes.",
+    },
+  };
+
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = btn.dataset.step;
+      const val  = btn.dataset.val;
+
+      // Deselect siblings
+      btn.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      if (step === '1') {
+        answers.step1 = val;
+        // Go to step 2
+        setTimeout(() => {
+          document.getElementById('step1').classList.remove('active');
+          document.getElementById('step2').classList.add('active');
+          document.getElementById('dot2').classList.add('done');
+        }, 200);
+      } else {
+        answers.step2 = val;
+        // Build WhatsApp URL
+        const msg = (msgs[answers.step1] || msgs['nose'])[val] || "Hola, quisiera consultar el costo de mi divorcio.";
+        const url = `${WA}?text=${encodeURIComponent(msg)}`;
+        const cta = document.getElementById('quiz-cta');
+        cta.href = url;
+        cta.style.display = 'flex';
+        // Auto-open after short delay
+        setTimeout(() => window.open(url, '_blank', 'noopener'), 400);
+      }
+    });
+  });
+
+  // ── FAQ ACORDEÓN ──
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item   = q.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+
+      // Open clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
