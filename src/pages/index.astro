@@ -10,6 +10,226 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>{title}</title>
 <meta name="description" content={description}/>
+<link rel="canonical" href="https://www.divorcios.ar/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.divorcios.ar/"/>
+<meta property="og:title" content={title}/>
+<meta property="og:description" content={description}/>
+<meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:site_name" content="Divorcios.ar — Abogados AyG"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content={title}/>
+<meta name="twitter:description" content={description}/>
+<meta name="twitter:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp"/>
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://www.divorcios.ar/#legalservice",
+      "name": "Abogados AyG — Divorcios.ar",
+      "alternateName": "Divorcios.ar",
+      "url": "https://www.divorcios.ar",
+      "telephone": "+5491159360995",
+      "email": "contacto@divorcios.ar",
+      "description": "Estudio jurídico especializado en divorcios express, divorcio por mutuo acuerdo y divorcio unilateral en la Ciudad Autónoma de Buenos Aires. Más de 250 casos resueltos.",
+      "slogan": "Sin audiencias, sin ir a Tribunales. Trámite 100% digital.",
+      "foundingDate": "2010",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 2 },
+      "areaServed": {
+        "@type": "City",
+        "name": "Ciudad Autónoma de Buenos Aires",
+        "sameAs": "https://www.wikidata.org/wiki/Q1486"
+      },
+      "serviceType": [
+        "Divorcio Express",
+        "Divorcio por Mutuo Acuerdo",
+        "Divorcio Unilateral",
+        "División de Bienes",
+        "Compensación Económica",
+        "Cuidado Personal y Alimentos"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de divorcio en CABA",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Divorcio Conjunto",
+              "description": "Divorcio por presentación conjunta (mutuo acuerdo). Convenio Regulador e inscripción incluidos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Divorcio Unilateral",
+              "description": "Divorcio sin necesidad de acuerdo del otro cónyuge. Patrocinio exclusivo e inscripción incluidos."
+            }
+          }
+        ]
+      },
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Héctor David Santibáñez",
+          "jobTitle": "Abogado — Derecho de Familia y Sucesiones",
+          "hasCredential": "CPACF Tomo 124 Folio 535"
+        },
+        {
+          "@type": "Person",
+          "name": "Nadia Almendras González",
+          "jobTitle": "Abogada — Derecho de Familia",
+          "hasCredential": "CPACF Tomo 124 Folio 529"
+        }
+      ],
+      "sameAs": [
+        "https://www.abogadosayg.com"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.divorcios.ar/#localbusiness",
+      "name": "Abogados AyG — Divorcios.ar",
+      "url": "https://www.divorcios.ar",
+      "telephone": "+5491159360995",
+      "image": "https://www.divorcios.ar/img/og-image-divorcios.webp",
+      "priceRange": "$$",
+      "currenciesAccepted": "ARS",
+      "paymentAccepted": "Efectivo, Transferencia bancaria",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad Autónoma de Buenos Aires",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.6037,
+        "longitude": -58.3816
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Ciudad Autónoma de Buenos Aires"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "250",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.divorcios.ar/#website",
+      "url": "https://www.divorcios.ar",
+      "name": "Divorcios.ar — Abogados AyG",
+      "description": "Estudio jurídico especializado en divorcios en CABA",
+      "inLanguage": "es-AR",
+      "publisher": { "@id": "https://www.divorcios.ar/#legalservice" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.divorcios.ar/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre divorcio de mutuo acuerdo y unilateral?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En el mutuo acuerdo, ambos cónyuges firman la petición y el convenio regulador, lo que lo hace más rápido y económico. En el unilateral, solo uno de los dos presenta la demanda; no hace falta el consentimiento del otro, pero los tiempos pueden extenderse debido a las notificaciones legales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo demora el trámite de divorcio en CABA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un divorcio bilateral (mutuo acuerdo) suele tardar entre 15 y 60 días hasta la sentencia. El unilateral depende de la rapidez con la que se logre notificar a la otra parte, pudiendo demorar algo más."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es obligatorio presentar una propuesta para los bienes y los hijos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Bajo el nuevo Código Civil, toda demanda de divorcio debe acompañarse de un Convenio Regulador que trate la vivienda, los bienes y, si hay hijos menores, el plan de parentalidad y alimentos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Debo asistir personalmente a Tribunales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normalmente no. El trámite es digital en Capital Federal. Es necesario venir a firmar la documentación a nuestro estudio, o en algunos casos coordinamos firma a distancia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué documentación mínima necesito para iniciar el divorcio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Necesitamos el DNI de quien inicia el trámite y la Partida de Matrimonio actualizada. Si hay hijos menores, sus partidas de nacimiento. Si la partida es de otra provincia debe estar timbrada; si es extranjera debe estar apostillada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo divorciarme si mi ex pareja no quiere firmar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutamente. El divorcio unilateral garantiza que nadie esté obligado a permanecer casado. Solo necesitamos tu voluntad de iniciar el trámite; el juez dictará la sentencia de todos modos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pagar el divorcio en cuotas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Trabajamos con cuotas fijas mensuales en pesos. Sabés exactamente cuánto pagás antes de empezar, sin ajustes ni sorpresas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo empiezo a pagar los honorarios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Al iniciar el trámite. La primera cuota se abona al comenzar y las siguientes mes a mes hasta completar los honorarios acordados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay costos adicionales fuera de los honorarios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La tasa de justicia que cobra el Poder Judicial no está incluida en los honorarios. Es el único costo adicional. Informamos el monto exacto antes de iniciar."
+          }
+        }
+      ]
+    }
+  ]
+})}
+</script>
 <!-- Fuentes locales — sin CDN externo -->
 <link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
 <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
