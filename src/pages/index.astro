@@ -31,7 +31,7 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
 
 <!-- Schema JSON-LD -->
 <script type="application/ld+json">
-{JSON.stringify({
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -45,7 +45,10 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
       "description": "Estudio jurídico especializado en divorcios express, divorcio por mutuo acuerdo y divorcio unilateral en la Ciudad Autónoma de Buenos Aires. Más de 250 casos resueltos.",
       "slogan": "Sin audiencias, sin ir a Tribunales. Trámite 100% digital.",
       "foundingDate": "2010",
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 2 },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 2
+      },
       "areaServed": {
         "@type": "City",
         "name": "Ciudad Autónoma de Buenos Aires",
@@ -127,7 +130,13 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
           "opens": "09:00",
           "closes": "18:00"
         }
@@ -147,7 +156,9 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
       "name": "Divorcios.ar — Abogados AyG",
       "description": "Estudio jurídico especializado en divorcios en CABA",
       "inLanguage": "es-AR",
-      "publisher": { "@id": "https://www.divorcios.ar/#legalservice" }
+      "publisher": {
+        "@id": "https://www.divorcios.ar/#legalservice"
+      }
     },
     {
       "@type": "FAQPage",
@@ -228,7 +239,7 @@ const description = "Más de 15 años defendiendo derechos. Honorarios transpare
       ]
     }
   ]
-})}
+}
 </script>
 <!-- Fuentes locales — sin CDN externo -->
 <link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
