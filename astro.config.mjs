@@ -9,6 +9,10 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  redirects: {
+    '/costo-de-un-divorcio': '/costo-divorcio-buenos-aires',
+  },
+
   integrations: [
     sitemap(), 
     // Eliminamos Partytown de aquí

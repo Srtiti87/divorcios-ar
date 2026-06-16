@@ -1,0 +1,56 @@
+---
+// src/pages/index.astro
+import LayoutPost from '../layouts/LayoutPost.astro';
+import Hero from '../components/Hero.astro';
+import Confianza from '../components/Confianza.astro';
+import Servicios from '../components/Servicios.astro';
+import PreciosDivorcio from '../components/PreciosDivorcio.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import ProcesoEtapas from '../components/ProcesoEtapas.astro';
+import InfoExpress from '../components/InfoExpress.astro';
+import ComparativaExpress from '../components/ComparativaExpress.astro';
+import Nosotros from '../components/Nosotros.astro';
+import Faq from '../components/Faq.astro';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Divorcios.ar | Abogados A&G",
+  "description": "Estudio jurídico especialista en divorcios express y derecho de familia en CABA.",
+  "url": "https://www.divorcios.ar",
+  "telephone": "+5491159360995",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Buenos Aires",
+    "addressRegion": "CABA",
+    "addressCountry": "AR"
+  }
+};
+---
+
+<LayoutPost 
+  title="Divorcios.ar | Abogados Divorcios Express"
+  description="Estudio jurídico líder en divorcios en Capital Federal. Atención profesional y confidencial en CABA."
+>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
+
+    <Hero fetchpriority="high" />
+    <ComparativaExpress />
+        
+    <section class="py-24 bg-slate-50 border-y border-slate-200" id="honorarios">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">Honorarios <span class="text-indigo-600">Mensuales</span></h2>
+                <div class="w-20 h-1.5 bg-amber-400 mx-auto mt-6 rounded-full"></div>
+            </div>
+            <PreciosDivorcio />
+        </div>
+    </section>
+    <ProcesoEtapas />
+    <Servicios />
+    <Faq />
+    <Nosotros />
+    <CookieBanner />
+</LayoutPost>

@@ -1,0 +1,813 @@
+---
+// divorcios-ar — requisitos-divorcio-caba.astro
+// Página AEO: documentación necesaria para el divorcio en CABA
+const title = "Requisitos para Divorciarse en CABA 2026 — Documentación Necesaria | Divorcios.ar";
+const description = "Los requisitos para un divorcio en CABA son: DNI de ambos cónyuges y Partida de Matrimonio actualizada. Eso es todo para empezar. Guía completa 2026.";
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{title}</title>
+<meta name="description" content={description}/>
+<link rel="canonical" href="https://www.divorcios.ar/requisitos-divorcio-caba"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.divorcios.ar/requisitos-divorcio-caba"/>
+<meta property="og:title" content={title}/>
+<meta property="og:description" content={description}/>
+<meta property="og:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:site_name" content="Divorcios.ar — Abogados AyG"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content={title}/>
+<meta name="twitter:description" content={description}/>
+<meta name="twitter:image" content="https://www.divorcios.ar/img/og-image-divorcios.webp"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.divorcios.ar/requisitos-divorcio-caba#webpage",
+      "url": "https://www.divorcios.ar/requisitos-divorcio-caba",
+      "name": "Requisitos para Divorciarse en CABA 2026 — Documentación Necesaria",
+      "description": "Guía completa de los documentos necesarios para iniciar un divorcio en la Ciudad Autónoma de Buenos Aires (CABA) en 2026.",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-06-01",
+      "isPartOf": { "@id": "https://www.divorcios.ar/#website" },
+      "about": { "@id": "https://www.divorcios.ar/#legalservice" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.divorcios.ar" },
+          { "@type": "ListItem", "position": 2, "name": "Requisitos para divorciarse en CABA", "item": "https://www.divorcios.ar/requisitos-divorcio-caba" }
+        ]
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://www.divorcios.ar/#legalservice",
+      "name": "Abogados AyG — Divorcios.ar",
+      "url": "https://www.divorcios.ar",
+      "telephone": "+5491159360995",
+      "areaServed": {
+        "@type": "City",
+        "name": "Ciudad Autónoma de Buenos Aires",
+        "sameAs": "https://www.wikidata.org/wiki/Q1486"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.divorcios.ar/requisitos-divorcio-caba#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué documentos necesito para divorciarme en CABA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para iniciar un divorcio en la Ciudad Autónoma de Buenos Aires (CABA) los documentos básicos son: DNI de quien inicia el trámite (y del otro cónyuge si es un divorcio conjunto) y la Partida de Matrimonio actualizada emitida por el Registro Civil donde se contrajo matrimonio. Si hay hijos menores de edad, también se necesitan sus partidas de nacimiento. Si hay bienes a distribuir, la documentación que acredite su titularidad. Con el DNI y la partida de matrimonio alcanza para empezar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es la Partida de Matrimonio actualizada y cómo la obtengo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La Partida de Matrimonio actualizada es un certificado emitido por el Registro Civil que acredita el matrimonio y su estado actual (es decir, que no hay una sentencia de divorcio anterior inscripta). 'Actualizada' significa que fue emitida recientemente — no vale una copia antigua. Se obtiene en el Registro Civil de la circunscripción donde se celebró el matrimonio. Si el matrimonio fue en CABA, puede solicitarse online a través de la plataforma del Gobierno de la Ciudad. Si fue en provincia, debe solicitarse en el registro de esa jurisdicción. Si fue en el extranjero, debe estar apostillada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito partidas de nacimiento de los hijos para divorciarme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solo si tienen hijos menores de edad o con capacidad restringida. Si hay hijos menores, sus partidas de nacimiento son necesarias para redactar el Convenio Regulador, que debe incluir el plan de parentalidad (cuidado personal, régimen de comunicación y alimentos). Si los hijos son todos mayores de edad y plenamente capaces, no se necesitan sus documentos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito demostrar causas o motivos para divorciarme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El divorcio en Argentina es incausado desde agosto de 2015 (Código Civil y Comercial, Ley 26.994). No hay que invocar ni demostrar infidelidad, abandono, violencia, ni ningún otro motivo. Tampoco hay que acreditar tiempo de separación previa. Basta con la voluntad de divorciarse, expresada mediante la petición al juzgado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el Convenio Regulador y quién lo redacta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Convenio Regulador es el documento que establece los efectos del divorcio: distribución de bienes, alimentos (si corresponde), cuidado personal de los hijos y régimen de comunicación. Es obligatorio presentarlo junto con la petición de divorcio, aunque su contenido puede ser mínimo cuando no hay bienes, hijos menores ni cuestiones económicas pendientes. En Abogados AyG lo redactamos nosotros como parte del servicio incluido en los honorarios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si me casé en el extranjero?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si se casaron en el extranjero, la Partida de Matrimonio debe estar debidamente legalizada o apostillada, y traducida por traductor público matriculado si está en otro idioma. El divorcio se tramita igualmente ante los juzgados de familia de CABA si uno o ambos cónyuges tienen domicilio en la ciudad. En Abogados AyG les indicamos el procedimiento específico para su situación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo empezar el trámite si todavía no tengo todos los documentos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Podés consultarnos aunque no tengas todos los documentos. La consulta es sin cargo y en ese momento les indicamos qué necesitan y cómo obtenerlo. En muchos casos podemos iniciar la gestión de obtención de la partida de matrimonio en paralelo a la preparación de los demás documentos, acortando los tiempos."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.divorcios.ar/requisitos-divorcio-caba#article",
+      "headline": "Requisitos para Divorciarse en CABA 2026 — Documentación Necesaria",
+      "description": "Guía completa de documentación requerida para el divorcio en CABA: DNI, Partida de Matrimonio, Convenio Regulador y más.",
+      "url": "https://www.divorcios.ar/requisitos-divorcio-caba",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-06-01",
+      "inLanguage": "es-AR",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor David Santibáñez",
+        "jobTitle": "Abogado — Derecho de Familia",
+        "hasCredential": "CPACF Tomo 124 Folio 535"
+      },
+      "publisher": { "@id": "https://www.divorcios.ar/#legalservice" },
+      "about": [
+        { "@type": "Thing", "name": "Requisitos divorcio CABA" },
+        { "@type": "Thing", "name": "Documentos para divorciarse Argentina" },
+        { "@type": "Thing", "name": "Partida de matrimonio actualizada" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('/fonts/cormorant-garamond-latin-300-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-latin-600-italic.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:700;font-display:swap;src:url('/fonts/cormorant-garamond-latin-700-italic.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/outfit-latin-300-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/outfit-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/outfit-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/outfit-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/outfit-latin-700-normal.woff2') format('woff2')}
+</style>
+
+<script is:inline>
+  function loadGTM() {
+    if (window.gtmLoaded) return;
+    window.gtmLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KPJP7PBP');
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-17919248557');
+  }
+  ['scroll', 'touchstart', 'click', 'mousemove'].forEach(event => {
+    window.addEventListener(event, loadGTM, { once: true, passive: true });
+  });
+  setTimeout(loadGTM, 3000);
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#14151f;--ink-2:#1c1e2b;--gold:#b8965a;--gold-light:#d4b07a;
+  --gold-faint:rgba(184,150,90,0.08);--cream:#f5f4f0;
+  --border:rgba(245,244,240,0.13);--border-gold:rgba(184,150,90,0.25);
+  --ff-serif:'Cormorant Garamond',Georgia,serif;
+  --ff-sans:'Outfit',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;background:var(--ink);font-size:16px}
+body{font-family:var(--ff-sans);background:var(--ink);color:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");opacity:0.4;}
+
+.topbar{background:var(--gold);color:var(--ink);text-align:center;padding:.55rem 1.5rem;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;position:relative;z-index:200;}
+.topbar span{opacity:.7;margin:0 .6rem}
+nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(20,21,31,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .3s var(--ease);}
+.nav-logo{text-decoration:none;display:flex;align-items:baseline;gap:.5rem}
+.logo-d{font-family:var(--ff-serif);font-size:1.9rem;font-weight:300;color:var(--cream);letter-spacing:-.03em;line-height:1}
+.logo-ar{font-family:var(--ff-serif);font-size:1.9rem;font-weight:600;color:var(--gold);letter-spacing:-.03em;line-height:1}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:rgba(245,244,240,0.72);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.04em;transition:color .2s;text-transform:uppercase}
+.nav-links a:hover{color:var(--cream)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-tel{color:rgba(245,244,240,0.62);font-size:.86rem;text-decoration:none;transition:color .2s}
+.nav-tel:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--ink);padding:.6rem 1.5rem;border-radius:2px;font-weight:700;font-size:.86rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .15s;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.breadcrumb{padding:.75rem 3rem;background:var(--ink-2);border-bottom:1px solid var(--border);position:relative;z-index:2;}
+.breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.42);}
+.breadcrumb a{color:rgba(245,244,240,0.42);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb-sep{opacity:.35}
+.breadcrumb-current{color:rgba(245,244,240,0.68)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* HERO */
+.hero-respuesta{padding:6rem 3rem 5rem;background:var(--ink);position:relative;overflow:hidden;border-bottom:1px solid var(--border);min-height:480px;display:flex;align-items:center;}
+.hero-img-wrap{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:75% 15%;filter:brightness(.80) contrast(1.05) saturate(.82);}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,21,31,0.97) 0%,rgba(20,21,31,0.92) 45%,rgba(20,21,31,0.55) 65%,rgba(20,21,31,0.15) 85%,rgba(20,21,31,0.05) 100%);}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center;position:relative;z-index:2;}
+.hero-kicker{font-size:.72rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:1.5rem;animation:fadeUp .8s var(--ease) both;}
+.hero-kicker::before{content:'';width:2rem;height:1px;background:var(--gold)}
+.hero-h1{font-family:var(--ff-serif);font-size:clamp(2.6rem,4.5vw,4.5rem);font-weight:300;line-height:1.0;letter-spacing:-.03em;color:var(--cream);margin-bottom:1.5rem;animation:fadeUp .8s .1s var(--ease) both;}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-answer{font-size:1.1rem;font-weight:300;color:rgba(245,244,240,0.82);line-height:1.75;margin-bottom:2rem;animation:fadeUp .8s .2s var(--ease) both;max-width:560px;}
+.hero-answer strong{color:var(--cream);font-weight:600}
+.hero-update{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(245,244,240,0.42);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .8s .3s var(--ease) both;}
+.hero-update::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:var(--gold);opacity:.6;}
+
+/* CHECKLIST CARD */
+.hero-check-card{background:rgba(14,16,24,0.9);border:1px solid var(--border-gold);border-radius:4px;padding:2.5rem 2rem;backdrop-filter:blur(16px);animation:fadeIn 1s .4s var(--ease) both;position:relative;z-index:2;}
+.hcc-tag{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;}
+.hcc-tag::before{content:'';width:1.5rem;height:1px;background:var(--gold)}
+.doc-item{display:flex;align-items:flex-start;gap:.75rem;padding:.85rem 0;border-bottom:1px solid var(--border);}
+.doc-item:last-of-type{border-bottom:none}
+.doc-check{width:1.5rem;height:1.5rem;border-radius:2px;background:var(--gold-faint);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.8rem;font-weight:700;margin-top:.1rem;}
+.doc-texto{flex:1}
+.doc-nombre{font-family:var(--ff-serif);font-size:.95rem;color:var(--cream);font-weight:400;line-height:1.2;}
+.doc-sub{font-size:.7rem;color:rgba(245,244,240,0.42);margin-top:.15rem;font-family:var(--ff-sans);}
+.doc-req{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border-radius:2px;}
+.doc-req.obligatorio{background:rgba(184,150,90,0.15);color:var(--gold);}
+.doc-req.condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.45);}
+.hcc-nota{font-size:.72rem;color:rgba(245,244,240,0.35);margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);line-height:1.5;}
+.hcc-cta{display:block;text-align:center;margin-top:1.25rem;padding:.85rem 1.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(184,150,90,0.18);}
+.hcc-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* CREDENTIALS */
+.credentials-band{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 3rem;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;background:var(--ink-2);}
+.cred-item{display:flex;align-items:center;gap:.6rem;color:rgba(245,244,240,0.52);font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
+.cred-item strong{color:rgba(242,237,228,0.7)}
+.cred-sep{width:1px;height:1.5rem;background:var(--border)}
+
+/* SHARED */
+.section-kicker{font-size:.72rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;}
+.section-kicker::before{content:'';width:2rem;height:1px;background:var(--gold)}
+.section-title-lg{font-family:var(--ff-serif);font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;color:var(--cream);}
+.section-title-lg em{font-style:italic;color:var(--gold)}
+
+/* DOCUMENTOS DETALLE */
+.docs-seccion{padding:7rem 3rem;background:var(--ink-2);border-top:1px solid var(--border);}
+.docs-inner{max-width:1200px;margin:0 auto}
+.docs-header{margin-bottom:4rem}
+.docs-categorias{display:flex;flex-direction:column;gap:3rem;}
+.doc-categoria-titulo{font-family:var(--ff-serif);font-size:1.5rem;color:var(--cream);font-weight:300;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;}
+.doc-categoria-titulo em{font-style:italic;color:var(--gold)}
+.doc-categoria-badge{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .65rem;border-radius:2px;}
+.badge-obligatorio{background:rgba(184,150,90,0.15);color:var(--gold);}
+.badge-condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.45);}
+.docs-lista{display:flex;flex-direction:column;gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;}
+.doc-entry{background:var(--ink-2);padding:1.75rem 2rem;display:grid;grid-template-columns:60px 1fr;gap:1.5rem;align-items:start;transition:background .25s;}
+.doc-entry:hover{background:rgba(20,22,34,1)}
+.doc-entry-num{font-family:var(--ff-serif);font-size:1.5rem;color:var(--gold);font-weight:300;line-height:1;}
+.doc-entry-contenido h4{font-size:.96rem;font-weight:600;color:var(--cream);margin-bottom:.4rem;}
+.doc-entry-contenido p{font-size:.88rem;font-weight:300;color:rgba(245,244,240,0.62);line-height:1.65;}
+.doc-entry-nota{margin-top:.65rem;font-size:.8rem;color:var(--gold);font-weight:500;}
+.doc-entry-alerta{margin-top:.65rem;padding:.75rem 1rem;background:var(--gold-faint);border:1px solid var(--border-gold);border-radius:2px;font-size:.82rem;color:rgba(245,244,240,0.65);line-height:1.5;}
+.doc-entry-alerta strong{color:var(--gold)}
+
+/* POR MODALIDAD */
+.por-modalidad{padding:7rem 3rem;background:var(--ink);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.por-modalidad::before{content:'REQUISITOS';position:absolute;font-family:var(--ff-serif);font-size:clamp(5rem,11vw,13rem);font-weight:300;color:rgba(242,237,228,0.018);letter-spacing:-.05em;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;line-height:1;}
+.pm-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.pm-header{margin-bottom:4rem}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;}
+.pm-col{background:var(--ink-2);padding:3rem 2.5rem;}
+.pm-col.featured{background:linear-gradient(160deg,rgba(184,150,90,0.06) 0%,var(--ink-2) 60%);border-top:2px solid var(--gold);}
+.pm-tipo{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.pm-nombre{font-family:var(--ff-serif);font-size:1.5rem;color:var(--cream);font-weight:300;margin-bottom:1.5rem;line-height:1.1;}
+.pm-docs{display:flex;flex-direction:column;gap:.85rem;}
+.pm-doc{display:flex;align-items:flex-start;gap:.75rem;}
+.pm-doc-icon{width:1.5rem;height:1.5rem;flex-shrink:0;background:var(--gold-faint);border:1px solid var(--border-gold);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold);font-weight:700;margin-top:.1rem;}
+.pm-doc-texto{font-size:.9rem;font-weight:300;color:rgba(245,244,240,0.76);line-height:1.45;}
+.pm-doc-texto strong{color:var(--cream);font-weight:500;}
+.pm-nota{margin-top:1.5rem;padding:1rem 1.25rem;background:var(--gold-faint);border:1px solid var(--border-gold);border-radius:2px;font-size:.82rem;color:rgba(245,244,240,0.65);line-height:1.55;}
+.pm-nota strong{color:var(--gold)}
+
+/* PARTIDA MATRIMONIO */
+.partida-section{padding:7rem 3rem;background:var(--ink-2);border-top:1px solid var(--border);}
+.partida-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.partida-left .section-kicker{margin-bottom:1.5rem}
+.partida-title{font-family:var(--ff-serif);font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;color:var(--cream);margin-bottom:1.25rem;}
+.partida-title em{font-style:italic;color:var(--gold)}
+.partida-body{font-size:.96rem;font-weight:300;color:rgba(245,244,240,0.72);line-height:1.75;margin-bottom:1.5rem;}
+.partida-alerta{padding:1.25rem 1.5rem;background:rgba(184,150,90,0.07);border:1px solid var(--border-gold);border-left:3px solid var(--gold);border-radius:2px;font-size:.88rem;color:rgba(245,244,240,0.72);line-height:1.6;}
+.partida-alerta strong{color:var(--gold)}
+.partida-right{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;}
+.partida-item{background:var(--ink-2);padding:1.5rem 1.75rem;transition:background .25s;}
+.partida-item:hover{background:rgba(20,22,34,1)}
+.partida-item-titulo{font-size:.88rem;font-weight:600;color:var(--cream);margin-bottom:.35rem;}
+.partida-item-desc{font-size:.82rem;font-weight:300;color:rgba(245,244,240,0.55);line-height:1.5;}
+.partida-item-link{font-size:.78rem;color:var(--gold);font-weight:500;margin-top:.4rem;display:block;}
+
+/* FAQ */
+.faq-section{padding:7rem 3rem;background:var(--ink);border-top:1px solid var(--border);}
+.faq-inner{max-width:900px;margin:0 auto}
+.faq-header{margin-bottom:3.5rem}
+.faq-grid{display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--ink-2);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .25s;}
+.faq-item:hover,.faq-item[open]{border-color:var(--border-gold)}
+.faq-q{list-style:none;cursor:pointer;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:1rem;font-weight:400;color:rgba(245,244,240,0.88);font-family:var(--ff-serif);transition:color .2s;}
+.faq-q::-webkit-details-marker{display:none}
+.faq-item[open] .faq-q{color:var(--cream)}
+.faq-icon{color:var(--gold);font-size:1.25rem;font-weight:300;flex-shrink:0;transition:transform .3s var(--ease);}
+.faq-item[open] .faq-icon{transform:rotate(45deg)}
+.faq-a{padding:0 1.5rem 1.25rem;font-size:.9rem;font-weight:300;color:rgba(245,244,240,0.65);line-height:1.7;}
+
+/* CTA */
+.cta-final{padding:8rem 3rem;background:var(--ink-2);border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden;}
+.cta-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(184,150,90,0.06) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+.cta-h2{font-family:var(--ff-serif);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.05;letter-spacing:-.03em;color:var(--cream);margin-bottom:1rem;}
+.cta-h2 em{font-style:italic;color:var(--gold)}
+.cta-lead{font-size:1rem;font-weight:300;color:rgba(245,244,240,0.65);line-height:1.7;margin-bottom:2.5rem;}
+.cta-actions{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
+.btn-lead{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.75rem;background:var(--gold);color:var(--ink);border-radius:2px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 24px rgba(184,150,90,0.2);}
+.btn-lead:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,150,90,0.3)}
+.btn-lead-text{display:flex;flex-direction:column;gap:.1rem}
+.btn-lead-main{font-weight:700;font-size:.95rem;letter-spacing:.01em}
+.btn-lead-sub{font-size:.75rem;font-weight:400;opacity:.7;letter-spacing:.04em}
+.btn-lead-arrow{font-size:1.2rem;flex-shrink:0;transition:transform .2s var(--ease)}
+.btn-lead:hover .btn-lead-arrow{transform:translateX(4px)}
+.btn-sec{color:rgba(245,244,240,0.82);padding:.85rem 2rem;border:1px solid rgba(242,237,228,0.12);border-radius:2px;font-size:.93rem;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.75rem;transition:border-color .2s,color .2s;}
+.btn-sec:hover{border-color:var(--border-gold);color:var(--cream)}
+.btn-sec-icon{color:var(--gold)}
+.cta-guarantee{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.38);letter-spacing:.06em;text-transform:uppercase;}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3rem 2rem;}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);}
+.footer-logo{text-decoration:none;font-family:var(--ff-serif);font-size:1.5rem;color:var(--cream);letter-spacing:-.03em;display:block;margin-bottom:1rem;}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-size:.82rem;font-weight:300;color:rgba(245,244,240,0.42);line-height:1.6;margin-bottom:1rem;}
+.footer-matricula-text{font-size:.72rem;letter-spacing:.05em;color:rgba(245,244,240,0.28);line-height:1.7;}
+.footer-col h5{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.footer-col ul a{font-size:.86rem;color:rgba(245,244,240,0.52);text-decoration:none;transition:color .2s;}
+.footer-col ul a:hover{color:var(--cream)}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;font-size:.78rem;color:rgba(245,244,240,0.28);}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{color:rgba(245,244,240,0.28);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:rgba(245,244,240,0.6)}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:500;width:3.5rem;height:3.5rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform .25s var(--ease),box-shadow .25s;}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
+.wa-float svg{width:1.75rem;height:1.75rem}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-check-card{max-width:480px}
+  .pm-grid{grid-template-columns:1fr}
+  .partida-inner{grid-template-columns:1fr;gap:3rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.nav-tel{display:none}
+  .breadcrumb{padding:.5rem 1.5rem}
+  .hero-respuesta{padding:3.5rem 1.5rem 3rem;min-height:auto;}
+  .hero-img-wrap img{object-position:65% 10%;filter:brightness(.40) contrast(1.05) saturate(.70);}
+  .hero-img-overlay{background:linear-gradient(180deg,rgba(20,21,31,0.60) 0%,rgba(20,21,31,0.75) 60%,rgba(20,21,31,0.92) 100%);}
+  .hero-h1{font-size:2.2rem}
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .hero-check-card{max-width:100%}
+  .docs-seccion,.por-modalidad,.partida-section,.faq-section,.cta-final{padding:4rem 1.5rem}
+  .credentials-band{padding:1.25rem 1.5rem;gap:1.25rem}
+  .cred-sep{display:none}
+  .doc-entry{grid-template-columns:1fr;gap:.75rem}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  footer{padding:3rem 1.5rem 1.5rem}
+  .footer-bottom{flex-direction:column;gap:.75rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Consulta sin cargo <span>·</span> Respuesta en minutos <span>·</span> 100% digital en CABA
+</div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <span class="logo-d">divorcios</span><span class="logo-ar">.ar</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/costo-divorcio-buenos-aires">Honorarios</a></li>
+    <li><a href="/#proceso">Proceso</a></li>
+    <li><a href="/#equipo">El Estudio</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:1159360995" class="nav-tel">11-5936-0995</a>
+    <a href="https://wa.me/5491159360995" class="nav-cta">Consultar</a>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Ubicación en el sitio">
+  <div class="breadcrumb-inner">
+    <a href="/">Divorcios.ar</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Requisitos para divorciarse en CABA</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-respuesta">
+  <div class="hero-img-wrap">
+    <img src="/img/hero-abogados.webp" alt="Abogados AyG — Divorcios en CABA" width="600" height="804" loading="eager" fetchpriority="high"/>
+    <div class="hero-img-overlay"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-kicker">Documentación · CABA 2026</div>
+      <h1 class="hero-h1">Requisitos para<br>divorciarse en <em>CABA</em></h1>
+      <p class="hero-answer">
+        Para iniciar un divorcio en la Ciudad Autónoma de Buenos Aires solo necesitás <strong>dos documentos</strong>: el <strong>DNI</strong> de quien inicia el trámite y la <strong>Partida de Matrimonio actualizada</strong>. Con eso alcanza para comenzar.<br><br>
+        No hay que demostrar causas, tiempo de separación ni motivos de ningún tipo. El divorcio en Argentina es <strong>incausado desde 2015</strong> (Código Civil, Ley 26.994).
+      </p>
+      <div class="hero-update">Actualizado junio 2026 · CABA exclusivamente</div>
+    </div>
+    <div class="hero-check-card" role="complementary" aria-label="Checklist de documentos">
+      <div class="hcc-tag">Documentos necesarios</div>
+      <div class="doc-item">
+        <div class="doc-check">✓</div>
+        <div class="doc-texto">
+          <div class="doc-nombre">DNI vigente</div>
+          <div class="doc-sub">Quien inicia. En conjunto, ambos cónyuges.</div>
+        </div>
+        <span class="doc-req obligatorio">Obligatorio</span>
+      </div>
+      <div class="doc-item">
+        <div class="doc-check">✓</div>
+        <div class="doc-texto">
+          <div class="doc-nombre">Partida de Matrimonio actualizada</div>
+          <div class="doc-sub">Del Registro Civil donde se celebró el matrimonio.</div>
+        </div>
+        <span class="doc-req obligatorio">Obligatorio</span>
+      </div>
+      <div class="doc-item">
+        <div class="doc-check" style="opacity:.45">○</div>
+        <div class="doc-texto">
+          <div class="doc-nombre">Partidas de nacimiento de hijos</div>
+          <div class="doc-sub">Solo si hay hijos menores de edad.</div>
+        </div>
+        <span class="doc-req condicional">Si corresponde</span>
+      </div>
+      <div class="doc-item">
+        <div class="doc-check" style="opacity:.45">○</div>
+        <div class="doc-texto">
+          <div class="doc-nombre">Documentación de bienes</div>
+          <div class="doc-sub">Solo si hay bienes a distribuir en el convenio.</div>
+        </div>
+        <span class="doc-req condicional">Si corresponde</span>
+      </div>
+      <p class="hcc-nota">¿No tenés todo? Consultanos igual — podemos empezar en paralelo.</p>
+      <a href="https://wa.me/5491159360995?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20documentos%20necesito%20para%20divorciarme" class="hcc-cta">
+        💬 Consultar mis documentos
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="credentials-band">
+  <div class="cred-item">⚖️ <strong>Más de 250</strong> divorcios resueltos</div>
+  <div class="cred-sep"></div>
+  <div class="cred-item">🏛️ CPACF <strong>T°124 F°535</strong></div>
+  <div class="cred-sep"></div>
+  <div class="cred-item">📱 Trámite <strong>100% digital</strong></div>
+  <div class="cred-sep"></div>
+  <div class="cred-item">📄 Solo <strong>2 documentos</strong> para empezar</div>
+</div>
+
+<!-- DOCUMENTOS DETALLADOS -->
+<section class="docs-seccion">
+  <div class="docs-inner">
+    <div class="docs-header reveal">
+      <div class="section-kicker">Documentación completa</div>
+      <h2 class="section-title-lg">Qué necesitás y<br>cómo <em>obtenerlo</em></h2>
+    </div>
+    <div class="docs-categorias">
+      <!-- Obligatorios siempre -->
+      <div class="reveal">
+        <h3 class="doc-categoria-titulo">Documentos obligatorios <em>siempre</em> <span class="doc-categoria-badge badge-obligatorio">Siempre requeridos</span></h3>
+        <div class="docs-lista">
+          <div class="doc-entry">
+            <div class="doc-entry-num">01</div>
+            <div class="doc-entry-contenido">
+              <h4>DNI vigente de quien inicia el trámite</h4>
+              <p>Documento Nacional de Identidad en formato físico o digital (app Mi Argentina). Debe estar vigente — no se acepta vencido. En el divorcio unilateral, solo es indispensable el DNI de quien inicia. En el conjunto, ambas partes deben presentar su DNI.</p>
+            </div>
+          </div>
+          <div class="doc-entry">
+            <div class="doc-entry-num">02</div>
+            <div class="doc-entry-contenido">
+              <h4>Partida de Matrimonio actualizada</h4>
+              <p>Es el documento más importante del trámite. Debe ser una copia emitida recientemente por el Registro Civil de la circunscripción donde se celebró el matrimonio. "Actualizada" significa que no puede ser una copia antigua — cada juzgado suele pedir que tenga menos de 90 días de antigüedad.</p>
+              <div class="doc-entry-alerta"><strong>¿Cómo obtenerla?</strong> Si el matrimonio fue en CABA: puede tramitarse online a través del portal del Gobierno de la Ciudad o en persona en cualquier Registro Civil. Si fue en provincia: en el registro del partido/municipio correspondiente. Si fue en el extranjero: debe estar apostillada y traducida (ver más abajo).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Condicionales -->
+      <div class="reveal">
+        <h3 class="doc-categoria-titulo">Documentos adicionales <em>según el caso</em> <span class="doc-categoria-badge badge-condicional">Solo si corresponde</span></h3>
+        <div class="docs-lista">
+          <div class="doc-entry">
+            <div class="doc-entry-num">03</div>
+            <div class="doc-entry-contenido">
+              <h4>Partidas de nacimiento de hijos menores (si los hay)</h4>
+              <p>Necesarias solo si existen hijos menores de edad o con capacidad restringida. Se usan para redactar el plan de parentalidad dentro del Convenio Regulador, que debe establecer el cuidado personal, el régimen de comunicación y los alimentos. Si todos los hijos son mayores de edad y plenamente capaces, no se necesita este documento.</p>
+              <div class="doc-entry-nota">→ Se obtienen en el Registro Civil del lugar de nacimiento o por internet en muchas jurisdicciones.</div>
+            </div>
+          </div>
+          <div class="doc-entry">
+            <div class="doc-entry-num">04</div>
+            <div class="doc-entry-contenido">
+              <h4>Documentación de bienes (si hay bienes a distribuir)</h4>
+              <p>Solo cuando el Convenio Regulador incluirá distribución de bienes. Dependiendo del tipo de bien: escrituras de inmuebles, títulos de automotores (informe de dominio del RNPA), extractos de cuentas bancarias, estados de cuentas de inversión, documentación de sociedades o acciones. Si no hay bienes en común o no se quieren distribuir en el convenio, no se necesita ningún documento adicional.</p>
+            </div>
+          </div>
+          <div class="doc-entry">
+            <div class="doc-entry-num">05</div>
+            <div class="doc-entry-contenido">
+              <h4>Domicilio actual del otro cónyuge (divorcio unilateral)</h4>
+              <p>No es un "documento" en sentido estricto, pero es información necesaria para el divorcio unilateral: el juzgado necesita el domicilio del demandado para notificarlo. Si no se conoce, el proceso continúa igualmente por edictos. Lo importante es informar lo que se sabe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Matrimonios en el extranjero -->
+      <div class="reveal">
+        <h3 class="doc-categoria-titulo">Si se casaron <em>en el extranjero</em> <span class="doc-categoria-badge badge-condicional">Caso especial</span></h3>
+        <div class="docs-lista">
+          <div class="doc-entry">
+            <div class="doc-entry-num">★</div>
+            <div class="doc-entry-contenido">
+              <h4>Partida de matrimonio extranjera apostillada y traducida</h4>
+              <p>Si el matrimonio se celebró en el exterior, la Partida de Matrimonio debe estar legalizada mediante la apostilla del Convenio de La Haya (o legalizada por vía consular si el país no adhirió al Convenio). Si está en un idioma diferente al español, debe ser traducida por traductor público matriculado en Argentina.</p>
+              <div class="doc-entry-nota">→ En Abogados AyG les indicamos el procedimiento específico según el país donde se casaron.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR MODALIDAD -->
+<section class="por-modalidad">
+  <div class="pm-inner">
+    <div class="pm-header reveal">
+      <div class="section-kicker">Según la modalidad</div>
+      <h2 class="section-title-lg">Documentos según si<br>es conjunto o <em>unilateral</em></h2>
+    </div>
+    <div class="pm-grid">
+      <div class="pm-col featured reveal">
+        <div class="pm-tipo">Divorcio Conjunto</div>
+        <div class="pm-nombre">Ambas partes presentan juntos</div>
+        <div class="pm-docs">
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>DNI de ambos cónyuges</strong> — ambos deben identificarse ante el estudio</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>Partida de Matrimonio actualizada</strong> — una copia es suficiente</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>Convenio Regulador firmado por ambos</strong> — lo redactamos nosotros</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">○</div>
+            <div class="pm-doc-texto"><strong>Partidas de hijos</strong> — solo si hay hijos menores</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">○</div>
+            <div class="pm-doc-texto"><strong>Documentación de bienes</strong> — solo si se van a distribuir</div>
+          </div>
+        </div>
+        <div class="pm-nota"><strong>Ventaja:</strong> un solo abogado para los dos reduce costos. Ambas partes firman una vez en el estudio.</div>
+      </div>
+      <div class="pm-col reveal">
+        <div class="pm-tipo">Divorcio Unilateral</div>
+        <div class="pm-nombre">Una sola parte inicia</div>
+        <div class="pm-docs">
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>DNI del peticionante</strong> — solo quien inicia el trámite</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>Partida de Matrimonio actualizada</strong> — una copia</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">✓</div>
+            <div class="pm-doc-texto"><strong>Domicilio del otro cónyuge</strong> — para la notificación judicial</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">○</div>
+            <div class="pm-doc-texto"><strong>Partidas de hijos</strong> — solo si hay hijos menores</div>
+          </div>
+          <div class="pm-doc">
+            <div class="pm-doc-icon">○</div>
+            <div class="pm-doc-texto"><strong>Documentación de bienes</strong> — solo si se incluyen en el convenio</div>
+          </div>
+        </div>
+        <div class="pm-nota"><strong>Sin firma del otro:</strong> no se necesita que el otro cónyuge firme nada para iniciar. Si el domicilio es desconocido, el proceso continúa por edictos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTIDA DE MATRIMONIO -->
+<section class="partida-section">
+  <div class="partida-inner">
+    <div class="partida-left reveal">
+      <div class="section-kicker">El documento clave</div>
+      <h2 class="partida-title">La <em>Partida de Matrimonio</em>:<br>cómo obtenerla</h2>
+      <p class="partida-body">
+        La Partida de Matrimonio actualizada es el único documento que no siempre está a mano y que requiere gestión. Todo lo demás (DNI, partidas de hijos) suele estar disponible de inmediato.
+      </p>
+      <p class="partida-body">
+        "Actualizada" significa emitida recientemente por el Registro Civil competente, no una copia antigua guardada en un cajón. Los juzgados suelen requerir que tenga menos de 90 días de antigüedad al momento de presentarla.
+      </p>
+      <div class="partida-alerta">
+        <strong>Cuánto tarda:</strong> en CABA, la partida puede obtenerse online en 1 a 3 días hábiles a través del portal del Gobierno de la Ciudad. En provincia, los tiempos varían según el registro. En Abogados AyG le asesoramos sobre cómo obtenerla según su caso.
+      </div>
+    </div>
+    <div class="partida-right reveal">
+      <div class="partida-item">
+        <div class="partida-item-titulo">Casados en CABA</div>
+        <div class="partida-item-desc">Se tramita online a través del portal del Gobierno de la Ciudad de Buenos Aires o en persona en cualquier Registro Civil porteño. Disponible en 1–3 días hábiles online.</div>
+        <span class="partida-item-link">→ gcba.gob.ar/tramites/partida-matrimonio</span>
+      </div>
+      <div class="partida-item">
+        <div class="partida-item-titulo">Casados en provincia de Buenos Aires</div>
+        <div class="partida-item-desc">Debe solicitarse en el Registro Civil del municipio/partido donde se celebró el matrimonio. Muchos ya tienen trámites online. El tiempo varía por registro.</div>
+      </div>
+      <div class="partida-item">
+        <div class="partida-item-titulo">Casados en otra provincia argentina</div>
+        <div class="partida-item-desc">Se solicita al Registro Civil de esa provincia. Puede requerir trámite presencial o por correo. Si viene de otra provincia, debe estar timbrada por el Colegio de Escribanos o habilitada para circular.</div>
+      </div>
+      <div class="partida-item">
+        <div class="partida-item-titulo">Casados en el extranjero</div>
+        <div class="partida-item-desc">Debe estar apostillada (Convenio de La Haya) o legalizada vía consular. Si no está en español, requiere traducción por traductor público matriculado en Argentina. Consultenos para el procedimiento específico según el país.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-kicker">Preguntas frecuentes</div>
+      <h2 class="section-title-lg" id="faq-title">Lo que preguntan sobre<br>los <em>requisitos</em></h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Qué documentos necesito para divorciarme en CABA?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">Los dos documentos básicos son el DNI (de quien inicia, y del otro cónyuge si es conjunto) y la Partida de Matrimonio actualizada. Con eso es suficiente para empezar en la mayoría de los casos. Si hay hijos menores o bienes, se necesita documentación adicional específica.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Necesito demostrar causas para divorciarme?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">No. El divorcio en Argentina es incausado desde 2015 (Código Civil y Comercial, Ley 26.994). No hay que invocar ni demostrar infidelidad, abandono, violencia, ni ningún otro motivo. Tampoco hay que acreditar tiempo de separación previa.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Puedo empezar aunque no tenga la partida de matrimonio todavía?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">Sí, podés consultarnos sin tenerla. En la consulta inicial le explicamos cómo obtenerla y podemos coordinar el trámite en paralelo con la preparación del resto de la documentación. En CABA, la partida online tarda 1–3 días hábiles.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Qué es el Convenio Regulador y tengo que redactarlo yo?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">El Convenio Regulador es el documento que establece los efectos del divorcio (bienes, alimentos, hijos). Es obligatorio presentarlo junto con la petición. En Abogados AyG lo redactamos nosotros — está incluido en los honorarios tanto del divorcio conjunto como del unilateral para casos sin bienes complejos.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Hay que ir a algún lugar en persona para hacer el divorcio?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">Solo hace falta ir al estudio una vez para firmar los documentos (o coordinarlos de forma remota). Todo lo demás — presentación ante el juzgado, seguimiento del expediente, notificación de la sentencia — es digital. No es necesario concurrir a Tribunales.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">¿Atienden si nos casamos en el extranjero?<span class="faq-icon">+</span></summary>
+        <p class="faq-a">Sí. Si uno o ambos cónyuges tienen domicilio en CABA, el divorcio puede tramitarse ante los juzgados de familia de la ciudad, aunque el matrimonio se haya celebrado en el exterior. Solo se requiere que la Partida de Matrimonio extranjera esté apostillada y, si corresponde, traducida.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner reveal">
+    <div class="section-kicker" style="justify-content:center">Consulta sin cargo</div>
+    <h2 class="cta-h2">¿Tenés los documentos?<br><em>Empecemos</em></h2>
+    <p class="cta-lead">Si ya tenés el DNI y la Partida de Matrimonio, podemos iniciar ahora mismo. Si todavía no tenés todo, le explicamos cómo obtenerlo. La consulta es gratuita y sin compromiso.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5491159360995?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20documentos%20necesito%20y%20c%C3%B3mo%20empezar%20mi%20divorcio%20en%20CABA" class="btn-lead" style="width:100%">
+        <div class="btn-lead-text">
+          <span class="btn-lead-main">💬 Consultar mis requisitos</span>
+          <span class="btn-lead-sub">Sin cargo · Sin compromiso · Respuesta en minutos</span>
+        </div>
+        <span class="btn-lead-arrow">→</span>
+      </a>
+      <a href="tel:1159360995" class="btn-sec" style="width:100%;justify-content:center">
+        <span class="btn-sec-icon">📞</span>
+        Llamar: 11-5936-0995
+      </a>
+    </div>
+    <div class="cta-guarantee">
+      <span>🔒</span>
+      Confidencialidad absoluta · Secreto profesional garantizado
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="footer-logo">D<span>.</span>AR</a>
+      <p class="footer-tagline">Estudio jurídico especializado en divorcios express y derecho de familia en la Ciudad Autónoma de Buenos Aires. Más de 250 divorcios resueltos en CABA.</p>
+      <p class="footer-matricula-text">
+        DR. HÉCTOR DAVID SANTIBÁÑEZ · T°124 F°535 C.P.A.C.F<br>
+        DRA. NADIA ALMENDRAS GONZÁLEZ · T°124 F°529 C.P.A.C.F
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="/servicios/divorcio-express">Divorcio Express</a></li>
+        <li><a href="/servicios/division-de-bienes">División de Bienes</a></li>
+        <li><a href="/servicios/compensacion-economica">Compensación Económica</a></li>
+        <li><a href="/servicios/cuidado-personal">Cuidado Personal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Recursos</h5>
+      <ul>
+        <li><a href="/costo-divorcio-buenos-aires">Costo del Divorcio</a></li>
+        <li><a href="/cuanto-tarda-un-divorcio-en-argentina">Plazos del Divorcio</a></li>
+        <li><a href="/requisitos-divorcio-caba">Requisitos</a></li>
+        <li><a href="/blog">Blog Jurídico</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="tel:1159360995">11-5936-0995</a></li>
+        <li><a href="mailto:contacto@divorcios.ar">contacto@divorcios.ar</a></li>
+        <li><a href="https://wa.me/5491159360995">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 divorcios.ar · Todos los derechos reservados</span>
+    <div class="footer-legal">
+      <a href="/privacidad">Privacidad</a>
+      <a href="/terminos">Términos</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491159360995" class="wa-float" title="Consultar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.10 });
+reveals.forEach(r => observer.observe(r));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.style.padding = window.scrollY > 60 ? '.75rem 3rem' : '1.1rem 3rem';
+}, { passive: true });
+</script>
+</body>
+</html>
