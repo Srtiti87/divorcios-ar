@@ -384,6 +384,25 @@ nav{
   transition:color .2s;
 }
 .nav-tel:hover{color:var(--gold)}
+
+/* HAMBURGER — oculto en desktop */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:2.4rem;height:2.4rem;background:transparent;border:1px solid var(--border);border-radius:2px;cursor:pointer;padding:0;flex-shrink:0}
+.nav-burger span{display:block;width:1.2rem;height:2px;background:var(--cream);margin:0 auto;transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE PANEL — oculto por defecto, se activa solo en mobile via JS+clase */
+.nav-mobile-panel{position:fixed;top:0;right:0;height:100vh;width:min(82vw,360px);background:var(--ink-2);border-left:1px solid var(--border);z-index:250;padding:5.5rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto}
+.nav-mobile-panel.open{transform:translateX(0)}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:1.5rem}
+.nav-mobile-links a{color:rgba(245,244,240,0.82);text-decoration:none;font-size:1.05rem;font-weight:500;letter-spacing:.02em;font-family:var(--ff-serif);transition:color .2s}
+.nav-mobile-links a:hover{color:var(--gold)}
+.nav-mobile-actions{display:flex;flex-direction:column;gap:.75rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-mobile-tel{color:rgba(245,244,240,0.62);text-decoration:none;font-size:.9rem;text-align:center;padding:.7rem;border:1px solid var(--border);border-radius:2px}
+.nav-mobile-cta{background:var(--gold);color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem;text-align:center;padding:.85rem;border-radius:2px;letter-spacing:.02em}
+.nav-mobile-overlay{position:fixed;inset:0;background:rgba(10,11,17,0.6);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.nav-mobile-overlay.open{opacity:1;pointer-events:auto}
 .nav-cta{
   background:var(--gold);
   color:var(--ink);
@@ -1627,6 +1646,7 @@ footer{
   .nav-links{display:none}
   .nav-tel{display:none}
   .nav-cta{padding:.5rem 1rem;font-size:.78rem}
+  .nav-burger{display:flex}
   .credentials-band{gap:1.5rem}
   /* Reducir padding vertical en todas las secciones para mobile */
   .why{padding:4rem 3rem}
@@ -1675,8 +1695,29 @@ footer{
   <div class="nav-right">
     <a href="tel:1159360995" class="nav-tel">📞 11-5936-0995</a>
     <a href="https://wa.me/5491159360995" class="nav-cta">Consultar ahora →</a>
+    <button id="nav-burger" class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile-panel">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- NAV MOBILE PANEL -->
+<div id="nav-mobile-panel" class="nav-mobile-panel" aria-hidden="true">
+  <ul class="nav-mobile-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#honorarios">Honorarios</a></li>
+    <li><a href="#equipo">El Estudio</a></li>
+    <li><a href="/blog">Blog Jurídico</a></li>
+    <li><a href="/costo-divorcio-buenos-aires">¿Cuánto cuesta un divorcio?</a></li>
+    <li><a href="/cuanto-tarda-un-divorcio-en-argentina">¿Cuánto tarda?</a></li>
+    <li><a href="/requisitos-divorcio-caba">Requisitos en CABA</a></li>
+  </ul>
+  <div class="nav-mobile-actions">
+    <a href="tel:1159360995" class="nav-mobile-tel">📞 11-5936-0995</a>
+    <a href="https://wa.me/5491159360995" class="nav-mobile-cta">💬 Consultar por WhatsApp</a>
+  </div>
+</div>
+<div id="nav-mobile-overlay" class="nav-mobile-overlay"></div>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -2215,7 +2256,7 @@ footer{
           ¿Es obligatorio presentar una propuesta para los bienes y los hijos?
           <span class="faq-icon">+</span>
         </summary>
-        <p class="faq-a">Sí. Bajo el nuevo Código Civil, toda demanda de divorcio debe acompañarse de un Convenio Regulador que trate la vivienda, los bienes y, si hay hijos menores, el plan de parentalidad y alimentos. <a href="/divorcio-con-hijos-buenos-aires" style="color:var(--gold);text-decoration:underline">Ver guía de divorcio con hijos →</a></p>
+        <p class="faq-a">Sí. Bajo el nuevo Código Civil, toda demanda de divorcio debe acompañarse de un Convenio Regulador que trate la vivienda, los bienes y, si hay hijos menores, el plan de parentalidad y alimentos. <a href="/divorcio-con-hijos-ciudad-buenos-aires" style="color:var(--gold);text-decoration:underline">Ver guía de divorcio con hijos →</a></p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
@@ -2357,7 +2398,7 @@ footer{
         <li><a href="/divorcio-express-caba">¿Qué es el divorcio express?</a></li>
         <li><a href="/puedo-divorciarme-sin-que-firme-mi-pareja">Divorcio sin que firme mi pareja</a></li>
         <li><a href="/requisitos-divorcio-caba">Requisitos en CABA</a></li>
-        <li><a href="/divorcio-con-hijos-buenos-aires">Divorcio con hijos</a></li>
+        <li><a href="/divorcio-con-hijos-ciudad-buenos-aires">Divorcio con hijos</a></li>
         <li><a href="/blog">Blog Jurídico</a></li>
       </ul>
     </div>
@@ -2423,6 +2464,39 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.style.padding = window.scrollY > 60 ? '.75rem 3rem' : '1.1rem 3rem';
 }, { passive: true });
+
+// Menú hamburguesa mobile
+const burger = document.getElementById('nav-burger');
+const mobilePanel = document.getElementById('nav-mobile-panel');
+const mobileOverlay = document.getElementById('nav-mobile-overlay');
+
+function closeMobileMenu() {
+  burger.setAttribute('aria-expanded', 'false');
+  mobilePanel.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  mobilePanel.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+function openMobileMenu() {
+  burger.setAttribute('aria-expanded', 'true');
+  mobilePanel.classList.add('open');
+  mobileOverlay.classList.add('open');
+  mobilePanel.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+if (burger) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+  mobilePanel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+}
 
 // Ticker hero — stat real
 const ticker = document.querySelector('.ticker-text');
