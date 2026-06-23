@@ -43,6 +43,7 @@ const description = "El costo de un divorcio en CABA en 2026: Conjunto desde $12
       "name": "¿Cuánto Cuesta un Divorcio en Buenos Aires? Honorarios 2026",
       "description": "Guía completa sobre el costo de un divorcio en CABA en 2026. Honorarios, tasas judiciales, tipos de divorcio y planes de pago.",
       "inLanguage": "es-AR",
+      "image": "https://www.divorcios.ar/img/og-image-divorcios.webp",
       "datePublished": "2026-01-01",
       "dateModified": "2026-06-01",
       "isPartOf": { "@id": "https://www.divorcios.ar/#website" },
@@ -61,6 +62,8 @@ const description = "El costo de un divorcio en CABA en 2026: Conjunto desde $12
       "name": "Abogados AyG — Divorcios.ar",
       "url": "https://www.divorcios.ar",
       "telephone": "+5491159360995",
+      "logo": "https://www.divorcios.ar/img/logo.png",
+      "image": "https://www.divorcios.ar/img/logo.png",
       "areaServed": {
         "@type": "City",
         "name": "Ciudad Autónoma de Buenos Aires",
@@ -200,6 +203,7 @@ const description = "El costo de un divorcio en CABA en 2026: Conjunto desde $12
       "datePublished": "2026-01-01",
       "dateModified": "2026-06-01",
       "inLanguage": "es-AR",
+      "image": "https://www.divorcios.ar/img/og-image-divorcios.webp",
       "author": {
         "@type": "Person",
         "name": "Héctor David Santibáñez",
@@ -340,6 +344,25 @@ nav{
   transition:background .2s,transform .15s;
 }
 .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* HAMBURGER — oculto en desktop */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:2.4rem;height:2.4rem;background:transparent;border:1px solid var(--border);border-radius:2px;cursor:pointer;padding:0;flex-shrink:0}
+.nav-burger span{display:block;width:1.2rem;height:2px;background:var(--cream);margin:0 auto;transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE PANEL */
+.nav-mobile-panel{position:fixed;top:0;right:0;height:100vh;width:min(82vw,360px);background:var(--ink-2);border-left:1px solid var(--border);z-index:250;padding:5.5rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto}
+.nav-mobile-panel.open{transform:translateX(0)}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:1.5rem}
+.nav-mobile-links a{color:rgba(245,244,240,0.82);text-decoration:none;font-size:1.05rem;font-weight:500;letter-spacing:.02em;font-family:var(--ff-serif);transition:color .2s}
+.nav-mobile-links a:hover{color:var(--gold)}
+.nav-mobile-actions{display:flex;flex-direction:column;gap:.75rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-mobile-tel{color:rgba(245,244,240,0.62);text-decoration:none;font-size:.9rem;text-align:center;padding:.7rem;border:1px solid var(--border);border-radius:2px}
+.nav-mobile-cta{background:var(--gold);color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem;text-align:center;padding:.85rem;border-radius:2px;letter-spacing:.02em}
+.nav-mobile-overlay{position:fixed;inset:0;background:rgba(10,11,17,0.6);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.nav-mobile-overlay.open{opacity:1;pointer-events:auto}
 
 /* ══════════════════════════════════════
    BREADCRUMB
@@ -1157,6 +1180,7 @@ footer{
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
   .nav-links,.nav-tel{display:none}
+  .nav-burger{display:flex}
   /* Breadcrumb compacto en mobile */
   .breadcrumb{padding:.5rem 1.5rem}
   /* Hero mobile: sin altura mínima, padding reducido */
@@ -1193,8 +1217,29 @@ footer{
   <div class="nav-right">
     <a href="tel:1159360995" class="nav-tel">11-5936-0995</a>
     <a href="https://wa.me/5491159360995" class="nav-cta">Consultar</a>
+    <button id="nav-burger" class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile-panel">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- NAV MOBILE PANEL -->
+<div id="nav-mobile-panel" class="nav-mobile-panel" aria-hidden="true">
+  <ul class="nav-mobile-links">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/costo-divorcio-buenos-aires">Honorarios</a></li>
+    <li><a href="/#proceso">Proceso</a></li>
+    <li><a href="/#equipo">El Estudio</a></li>
+    <li><a href="/cuanto-tarda-un-divorcio-en-argentina">¿Cuánto tarda?</a></li>
+    <li><a href="/requisitos-divorcio-caba">Requisitos en CABA</a></li>
+    <li><a href="/blog">Blog Jurídico</a></li>
+  </ul>
+  <div class="nav-mobile-actions">
+    <a href="tel:1159360995" class="nav-mobile-tel">📞 11-5936-0995</a>
+    <a href="https://wa.me/5491159360995" class="nav-mobile-cta">💬 Consultar por WhatsApp</a>
+  </div>
+</div>
+<div id="nav-mobile-overlay" class="nav-mobile-overlay"></div>
 
 <!-- BREADCRUMB -->
 <nav class="breadcrumb" aria-label="Ubicación en el sitio">
@@ -1741,6 +1786,39 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.style.padding = window.scrollY > 60 ? '.75rem 3rem' : '1.1rem 3rem';
 }, { passive: true });
+
+// Menú hamburguesa mobile
+const burger = document.getElementById('nav-burger');
+const mobilePanel = document.getElementById('nav-mobile-panel');
+const mobileOverlay = document.getElementById('nav-mobile-overlay');
+
+function closeMobileMenu() {
+  burger.setAttribute('aria-expanded', 'false');
+  mobilePanel.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  mobilePanel.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+function openMobileMenu() {
+  burger.setAttribute('aria-expanded', 'true');
+  mobilePanel.classList.add('open');
+  mobileOverlay.classList.add('open');
+  mobilePanel.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+if (burger) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+  mobilePanel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+}
 </script>
 </body>
 </html>
