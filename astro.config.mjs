@@ -11,6 +11,7 @@ export default defineConfig({
 
   redirects: {
     '/costo-de-un-divorcio': '/costo-divorcio-buenos-aires',
+    '/divorcio-con-hijos-buenos-aires': '/divorcio-con-hijos-ciudad-buenos-aires',
   },
 
   integrations: [
