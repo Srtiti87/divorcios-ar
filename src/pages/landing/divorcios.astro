@@ -1191,9 +1191,9 @@ document.getElementById('heroForm')?.addEventListener('submit', (e) => {
     window.dataLayer.push({ event: 'form_whatsapp_submit', form_id: 'heroForm' });
   }
 
-  const form = e.target as HTMLFormElement;
-  const tel = (form.querySelector('#h-tel') as HTMLInputElement).value.trim();
-  const tipoEl = form.querySelector('#h-tipo') as HTMLSelectElement;
+  const form = e.target;
+  const tel = form.querySelector('#h-tel').value.trim();
+  const tipoEl = form.querySelector('#h-tipo');
   const tipo = tipoEl.options[tipoEl.selectedIndex].text;
 
   const msg = `Hola, me contacto desde divorcios.ar.
@@ -1206,8 +1206,8 @@ document.getElementById('heroForm')?.addEventListener('submit', (e) => {
 Quisiera conocer el costo y proceso para mi caso.`;
 
   window.open(`https://wa.me/541159360995?text=${encodeURIComponent(msg)}`, '_blank');
-  document.getElementById('heroForm')!.style.display = 'none';
-  document.getElementById('heroSuccess')!.classList.add('show');
+  document.getElementById('heroForm').style.display = 'none';
+  document.getElementById('heroSuccess').classList.add('show');
 });
 </script>
 
