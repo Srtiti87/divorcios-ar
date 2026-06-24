@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import blogStyles from '../styles/blog.css?inline';
 
 interface Props {
@@ -50,11 +51,10 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
         window.gtag('config', 'AW-17919248557');
       }
 
-      ['scroll', 'touchstart', 'click', 'mousemove'].forEach(event => {
-        window.addEventListener(event, loadGTM, { once: true, passive: true });
-      });
-
-      setTimeout(loadGTM, 3000);
+      window.addEventListener('cookies-accepted', loadGTM, { once: true });
+      // Si ya hab√≠a aceptado en una visita anterior, el CookieBanner dispara
+      // 'cookies-accepted' inmediatamente al cargar. GTM ya no se autoejecuta
+      // por scroll/click/timeout sin consentimiento previo.
     </script>
 
     <style is:inline>
@@ -100,5 +100,6 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
 
     <Footer />
     <WhatsappFlotante />
+    <CookieBanner />
 </body>
 </html>
