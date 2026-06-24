@@ -1,32 +1,32 @@
 ---
-// src/pages/honorarios.astro (CÓDIGO CORREGIDO)
 import LayoutPost from '../layouts/LayoutPost.astro';
 import PreciosDivorcio from '../components/PreciosDivorcio.astro';
 ---
 
-<LayoutPost 
+<LayoutPost
   title="Honorarios Divorcio Express | Transparencia Económica"
   description="Información transparente sobre honorarios profesionales y gastos judiciales para divorcios en CABA."
 >
-    {/* Ya no necesitamos Header ni etiquetas <main> extra, el LayoutPost se encarga */}
     <div class="pt-32 pb-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
-            
+
             <div class="mb-8">
-                <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase">
-                    Divorcio <span class="text-indigo-400">Conjunto / Unilateral</span>
+                <div class="flex items-center gap-2 mb-4 justify-center">
+                    <span class="w-8 h-px bg-gold"></span>
+                    <p class="text-gold font-bold uppercase tracking-[0.25em] text-[11px]">Transparencia económica</p>
+                    <span class="w-8 h-px bg-gold"></span>
+                </div>
+                <h1 class="font-serif text-4xl md:text-6xl font-light text-cream mb-8 tracking-tight">
+                    Divorcio <em class="italic text-gold">Conjunto / Unilateral</em>
                 </h1>
-                <p class="text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] mb-8">
-                    Transparencia Económica
-                </p>
-                
-                <div class="max-w-2xl mx-auto bg-white/5 border-l-4 border-indigo-500 p-6 rounded-r-2xl text-left mb-12">
-                    <p class="text-white font-bold mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
-                        Bonificaciones Especiales
+
+                <div class="max-w-2xl mx-auto bg-ink-2 border border-white/10 border-l-3 border-l-gold p-6 rounded-sm text-left mb-12">
+                    <p class="text-cream font-semibold mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
+                        Bonificaciones especiales
                     </p>
-                    <p class="text-indigo-200/70 text-sm italic">
-                        Contamos con un <strong>mejor precio bonificado</strong> para pagos en efectivo o abonados en hasta dos cuotas. 
-                        <span class="block mt-1 font-bold text-indigo-300">Consulte el presupuesto final según la complejidad de su caso.</span>
+                    <p class="text-cream/65 text-sm font-light leading-relaxed">
+                        Contamos con un <strong class="text-gold font-semibold">mejor precio bonificado</strong> para pagos en efectivo o abonados en hasta dos cuotas.
+                        <span class="block mt-1 font-semibold text-cream/80">Consulte el presupuesto final según la complejidad de su caso.</span>
                     </p>
                 </div>
             </div>
@@ -35,26 +35,26 @@ import PreciosDivorcio from '../components/PreciosDivorcio.astro';
                 <PreciosDivorcio />
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mt-12 mb-20">
-                <section class="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-sm text-left">
-                    <h2 class="text-xl font-bold text-white mb-4 uppercase tracking-tight">Honorarios Profesionales</h2>
-                    <p class="text-indigo-100/70 text-sm leading-relaxed">
+            <div class="grid md:grid-cols-2 gap-6 mt-12 mb-20">
+                <section class="bg-ink-2 border border-white/10 p-8 rounded-sm text-left">
+                    <h2 class="font-serif text-xl font-semibold text-cream mb-4">Honorarios Profesionales</h2>
+                    <p class="text-cream/65 text-sm font-light leading-relaxed">
                         Nuestra labor se rige por la Ley de Honorarios Profesionales. Ofrecemos convenios cerrados y planes de pago en cuotas fijas mensuales para su tranquilidad.
                     </p>
                 </section>
 
-                <section class="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-sm text-left">
-                    <h2 class="text-xl font-bold text-white mb-4 uppercase tracking-tight">Gastos del Proceso</h2>
-                    <p class="text-indigo-100/70 text-sm leading-relaxed">
-                     Tasa de Justicia (a cargo del cliente). Bonos CPACF y aranceles de inscripción en el Registro Civil de Capital Federal INCLUIDOS.
+                <section class="bg-ink-2 border border-white/10 p-8 rounded-sm text-left">
+                    <h2 class="font-serif text-xl font-semibold text-cream mb-4">Gastos del Proceso</h2>
+                    <p class="text-cream/65 text-sm font-light leading-relaxed">
+                        Tasa de Justicia (a cargo del cliente). Bonos CPACF y aranceles de inscripción en el Registro Civil de Capital Federal incluidos.
                     </p>
                 </section>
             </div>
 
-            <div class="bg-indigo-600/20 border border-indigo-500/30 p-12 rounded-[3rem]">
-                <h2 class="text-3xl font-bold text-white mb-4">¿Desea iniciar hoy mismo?</h2>
-                <p class="text-indigo-200/60 mb-8 max-w-xl mx-auto text-sm italic">Realizamos una evaluación personalizada de su situación para brindarle el presupuesto más ajustado.</p>
-                <a href="https://wa.me/5491159360995" class="inline-block bg-indigo-500 hover:bg-indigo-400 text-white font-black uppercase tracking-widest px-10 py-4 rounded-2xl transition-all shadow-xl hover:scale-105">
+            <div class="bg-ink-2 border border-gold/20 p-12 rounded-sm">
+                <h2 class="font-serif text-3xl font-light text-cream mb-4">¿Desea iniciar hoy mismo?</h2>
+                <p class="text-cream/55 mb-8 max-w-xl mx-auto text-sm font-light">Realizamos una evaluación personalizada de su situación para brindarle el presupuesto más ajustado.</p>
+                <a href="https://wa.me/5491159360995" class="inline-block bg-gold hover:bg-gold-light text-ink font-bold uppercase tracking-widest text-xs px-10 py-4 rounded-sm transition-all shadow-xl hover:-translate-y-0.5">
                     Solicitar Presupuesto
                 </a>
             </div>

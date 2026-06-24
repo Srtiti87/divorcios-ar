@@ -24,6 +24,7 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur√
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{metaTitle} | divorcios.ar</title>
     <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, "https://www.divorcios.ar").toString()} />
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
