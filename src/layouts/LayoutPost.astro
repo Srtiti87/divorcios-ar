@@ -3,7 +3,6 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFlotante from '../components/WhatsappFlotante.astro';
-// ✅ ELIMINADO: import '@fontsource-variable/inter' — la fuente ahora está en public/fonts/
 import blogStyles from '../styles/blog.css?inline';
 
 interface Props {
@@ -30,8 +29,8 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- ✅ CORREGIDO: ruta estática, nunca más 404 ni hashes rotos -->
-    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" as="image" href="/images/bg-tribunales.webp" fetchpriority="high" />
 
     <script is:inline>
@@ -44,27 +43,28 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KPJP7PBP');
-        
+
         window.gtag = function(){ window.dataLayer.push(arguments); };
         window.gtag('js', new Date());
         window.gtag('config', 'AW-17919248557');
       }
-      
+
       ['scroll', 'touchstart', 'click', 'mousemove'].forEach(event => {
         window.addEventListener(event, loadGTM, { once: true, passive: true });
       });
 
-      setTimeout(loadGTM, 3000); 
+      setTimeout(loadGTM, 3000);
     </script>
 
     <style is:inline>
-      :root { 
-        font-family: 'Inter Variable', system-ui, -apple-system, sans-serif; 
-        font-display: swap; 
-        background-color: #05051a; 
+      :root {
+        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+        font-display: swap;
+        background-color: #14151f;
       }
       .hero-title { min-height: 1.1em; contain: layout; }
       body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");opacity:0.4}
     </style>
 
     {isPost && <style set:html={blogStyles} />}
@@ -72,17 +72,19 @@ const metaDescription = description || frontmatter?.description || "Estudio Jur�
     <slot name="head" />
 </head>
 
-<body class="flex flex-col min-h-screen bg-[#05051a] text-indigo-50 antialiased">
+<body class="relative flex flex-col min-h-screen bg-ink text-cream antialiased overflow-x-hidden">
     <Header />
-    
-    <main class="flex-grow">
+
+    <main class="flex-grow relative z-[2]">
         {isPost ? (
-            <article class="max-w-4xl mx-auto pt-32 pb-20 px-6">
-                <header class="mb-12">
-                    <p class="text-amber-400 font-black uppercase text-[10px] tracking-[0.3em] mb-4">
-                        {frontmatter.category} • {frontmatter.date}
-                    </p>
-                    <h1 class="text-4xl md:text-6xl font-black text-white uppercase leading-[0.9] tracking-tighter hero-title">
+            <article class="max-w-3xl mx-auto pt-32 pb-20 px-6">
+                <header class="mb-12 border-b border-white/10 pb-10">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">{frontmatter.category}</span>
+                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                        <span class="text-[11px] font-medium uppercase tracking-[0.15em] text-cream/40">{frontmatter.date}</span>
+                    </div>
+                    <h1 class="font-serif text-4xl md:text-5xl font-light text-cream leading-[1.05] tracking-tight hero-title">
                       {frontmatter.title}
                     </h1>
                 </header>

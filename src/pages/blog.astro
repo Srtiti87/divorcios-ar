@@ -1,33 +1,38 @@
 ---
 // src/pages/blog.astro
 import '../styles/global.css';
-import LayoutPost from '../layouts/LayoutPost.astro'; 
+import LayoutPost from '../layouts/LayoutPost.astro';
 
 const postFiles = import.meta.glob('./blog/*.md', { eager: true });
 const posts = Object.values(postFiles).map((post: any) => ({ url: post.url, frontmatter: post.frontmatter }));
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 ---
 
-<LayoutPost 
+<LayoutPost
   title="Blog Jurídico | Especialistas en Derecho de Familia"
   description="Artículos de actualidad sobre divorcio express y derecho de familia en Argentina."
 >
     <div class="max-w-6xl mx-auto pt-32 pb-20 px-6">
         <header class="mb-16">
-            <p class="text-indigo-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4">Recursos y Actualidad</p>
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">Blog <span class="text-indigo-400">Legal</span></h1>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="w-8 h-px bg-gold"></span>
+                <p class="text-gold font-bold uppercase tracking-[0.25em] text-[11px]">Recursos y Actualidad</p>
+            </div>
+            <h1 class="font-serif text-5xl md:text-6xl font-light text-cream tracking-tight leading-[1.0]">Blog <em class="italic text-gold">Legal</em></h1>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sortedPosts.map((post) => (
-                <a href={post.url} class="group bg-white/5 border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 hover:border-indigo-500 transition-all duration-500">
-                    <div class="flex items-center justify-between mb-8">
-                        <span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-black px-3 py-1 rounded-full uppercase">{post.frontmatter.category}</span>
-                        <span class="text-indigo-100/30 text-[10px] font-bold uppercase">{post.frontmatter.date}</span>
+                <a href={post.url} class="group bg-ink-2 border border-white/10 rounded-sm p-7 hover:border-gold/40 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-7">
+                        <span class="bg-gold/10 text-gold text-[10px] font-bold px-3 py-1 rounded-sm uppercase tracking-wide">{post.frontmatter.category}</span>
+                        <span class="text-cream/35 text-[10px] font-medium uppercase tracking-wide">{post.frontmatter.date}</span>
                     </div>
-                    <h2 class="text-2xl font-black text-white mb-4 group-hover:text-indigo-400 tracking-tight uppercase">{post.frontmatter.title}</h2>
-                    <p class="text-indigo-100/60 text-sm leading-relaxed mb-8">{post.frontmatter.description}</p>
-                    <div class="flex items-center gap-2 text-white font-black text-[10px] uppercase pt-6 border-t border-white/5">Leer Guía <span class="text-indigo-400 group-hover:translate-x-2 transition-transform">→</span></div>
+                    <h2 class="font-serif text-2xl font-medium text-cream mb-3 group-hover:text-gold transition-colors leading-tight">{post.frontmatter.title}</h2>
+                    <p class="text-cream/55 text-sm leading-relaxed mb-7 font-light">{post.frontmatter.description}</p>
+                    <div class="flex items-center gap-2 text-cream/85 font-bold text-[10px] uppercase tracking-widest pt-5 border-t border-white/10">
+                        Leer Guía <span class="text-gold group-hover:translate-x-1 transition-transform inline-block">→</span>
+                    </div>
                 </a>
             ))}
         </div>
