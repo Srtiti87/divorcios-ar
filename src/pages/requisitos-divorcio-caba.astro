@@ -266,13 +266,13 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .hero-update::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:var(--gold);opacity:.6;}
 
 /* CHECKLIST CARD */
-.hero-check-card{background:rgba(14,16,24,0.9);border:1px solid var(--border-gold);border-radius:4px;padding:2.5rem 2rem;backdrop-filter:blur(16px);animation:fadeIn 1s .4s var(--ease) both;position:relative;z-index:2;}
+.hero-check-card{background:rgba(14,16,24,0.9);border:1px solid var(--border-gold);border-radius:4px;padding:2.5rem 2rem;backdrop-filter:blur(16px);animation:fadeIn 1s .4s var(--ease) both;position:relative;z-index:2;overflow:hidden;}
 .hcc-tag{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;}
 .hcc-tag::before{content:'';width:1.5rem;height:1px;background:var(--gold)}
 .doc-item{display:flex;align-items:flex-start;gap:.75rem;padding:.85rem 0;border-bottom:1px solid var(--border);}
 .doc-item:last-of-type{border-bottom:none}
 .doc-check{width:1.5rem;height:1.5rem;border-radius:2px;background:var(--gold-faint);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.8rem;font-weight:700;margin-top:.1rem;}
-.doc-texto{flex:1}
+.doc-texto{flex:1;min-width:0}
 .doc-nombre{font-family:var(--ff-serif);font-size:.95rem;color:var(--cream);font-weight:400;line-height:1.2;}
 .doc-sub{font-size:.7rem;color:rgba(245,244,240,0.42);margin-top:.15rem;font-family:var(--ff-sans);}
 .doc-req{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border-radius:2px;}
