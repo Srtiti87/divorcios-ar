@@ -246,8 +246,8 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .nav-mobile-overlay{position:fixed;inset:0;background:rgba(10,11,17,0.6);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
 .nav-mobile-overlay.open{opacity:1;pointer-events:auto}
 .breadcrumb{padding:.75rem 3rem;background:var(--ink-2);border-bottom:1px solid var(--border);position:relative;z-index:2;}
-.breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.42);}
-.breadcrumb a{color:rgba(245,244,240,0.42);text-decoration:none;transition:color .2s}
+.breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.58);}
+.breadcrumb a{color:rgba(245,244,240,0.58);text-decoration:none;transition:color .2s}
 .breadcrumb a:hover{color:var(--gold)}
 .breadcrumb-sep{opacity:.35}
 .breadcrumb-current{color:rgba(245,244,240,0.68)}
@@ -268,7 +268,7 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .hero-h1 em{font-style:italic;color:var(--gold)}
 .hero-answer{font-size:1.1rem;font-weight:300;color:rgba(245,244,240,0.82);line-height:1.75;margin-bottom:2rem;animation:fadeUp .8s .2s var(--ease) both;max-width:560px;}
 .hero-answer strong{color:var(--cream);font-weight:600}
-.hero-update{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(245,244,240,0.42);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .8s .3s var(--ease) both;}
+.hero-update{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(245,244,240,0.58);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .8s .3s var(--ease) both;}
 .hero-update::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:var(--gold);opacity:.6;}
 
 /* CHECKLIST CARD */
@@ -280,11 +280,11 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .doc-check{width:1.5rem;height:1.5rem;border-radius:2px;background:var(--gold-faint);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.8rem;font-weight:700;margin-top:.1rem;}
 .doc-texto{flex:1;min-width:0}
 .doc-nombre{font-family:var(--ff-serif);font-size:.95rem;color:var(--cream);font-weight:400;line-height:1.2;}
-.doc-sub{font-size:.7rem;color:rgba(245,244,240,0.42);margin-top:.15rem;font-family:var(--ff-sans);}
+.doc-sub{font-size:.7rem;color:rgba(245,244,240,0.58);margin-top:.15rem;font-family:var(--ff-sans);}
 .doc-req{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border-radius:2px;}
 .doc-req.obligatorio{background:rgba(184,150,90,0.15);color:var(--gold);}
-.doc-req.condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.45);}
-.hcc-nota{font-size:.72rem;color:rgba(245,244,240,0.35);margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);line-height:1.5;}
+.doc-req.condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.58);}
+.hcc-nota{font-size:.72rem;color:rgba(245,244,240,0.54);margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);line-height:1.5;}
 .hcc-cta{display:block;text-align:center;margin-top:1.25rem;padding:.85rem 1.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(184,150,90,0.18);}
 .hcc-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
 
@@ -309,7 +309,7 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .doc-categoria-titulo em{font-style:italic;color:var(--gold)}
 .doc-categoria-badge{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .65rem;border-radius:2px;}
 .badge-obligatorio{background:rgba(184,150,90,0.15);color:var(--gold);}
-.badge-condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.45);}
+.badge-condicional{background:rgba(245,244,240,0.06);color:rgba(245,244,240,0.58);}
 .docs-lista{display:flex;flex-direction:column;gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;}
 .doc-entry{background:var(--ink-2);padding:1.75rem 2rem;display:grid;grid-template-columns:60px 1fr;gap:1.5rem;align-items:start;transition:background .25s;}
 .doc-entry:hover{background:rgba(20,22,34,1)}
@@ -386,22 +386,22 @@ nav{position:sticky;top:0;z-index:150;display:flex;align-items:center;justify-co
 .btn-sec{color:rgba(245,244,240,0.82);padding:.85rem 2rem;border:1px solid rgba(242,237,228,0.12);border-radius:2px;font-size:.93rem;font-weight:500;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.75rem;transition:border-color .2s,color .2s;}
 .btn-sec:hover{border-color:var(--border-gold);color:var(--cream)}
 .btn-sec-icon{color:var(--gold)}
-.cta-guarantee{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.38);letter-spacing:.06em;text-transform:uppercase;}
+.cta-guarantee{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.78rem;color:rgba(245,244,240,0.55);letter-spacing:.06em;text-transform:uppercase;}
 
 /* FOOTER */
 footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3rem 2rem;}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);}
 .footer-logo{text-decoration:none;font-family:var(--ff-serif);font-size:1.5rem;color:var(--cream);letter-spacing:-.03em;display:block;margin-bottom:1rem;}
 .footer-logo span{color:var(--gold)}
-.footer-tagline{font-size:.82rem;font-weight:300;color:rgba(245,244,240,0.42);line-height:1.6;margin-bottom:1rem;}
-.footer-matricula-text{font-size:.72rem;letter-spacing:.05em;color:rgba(245,244,240,0.28);line-height:1.7;}
-.footer-col h5{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.footer-tagline{font-size:.82rem;font-weight:300;color:rgba(245,244,240,0.58);line-height:1.6;margin-bottom:1rem;}
+.footer-matricula-text{font-size:.72rem;letter-spacing:.05em;color:rgba(245,244,240,0.52);line-height:1.7;}
+.footer-col h3{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .footer-col ul a{font-size:.86rem;color:rgba(245,244,240,0.52);text-decoration:none;transition:color .2s;}
 .footer-col ul a:hover{color:var(--cream)}
-.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;font-size:.78rem;color:rgba(245,244,240,0.28);}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;font-size:.78rem;color:rgba(245,244,240,0.52);}
 .footer-legal{display:flex;gap:1.5rem}
-.footer-legal a{color:rgba(245,244,240,0.28);text-decoration:none;transition:color .2s}
+.footer-legal a{color:rgba(245,244,240,0.52);text-decoration:none;transition:color .2s}
 .footer-legal a:hover{color:rgba(245,244,240,0.6)}
 .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:500;width:3.5rem;height:3.5rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform .25s var(--ease),box-shadow .25s;}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
@@ -477,6 +477,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3re
   </div>
 </div>
 <div id="nav-mobile-overlay" class="nav-mobile-overlay"></div>
+
+<main>
 
 <nav class="breadcrumb" aria-label="Ubicación en el sitio">
   <div class="breadcrumb-inner">
@@ -794,6 +796,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3re
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-grid">
@@ -806,7 +809,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3re
       </p>
     </div>
     <div class="footer-col">
-      <h5>Servicios</h5>
+      <h3>Servicios</h3>
       <ul>
         <li><a href="/servicios/divorcio-express">Divorcio Express</a></li>
         <li><a href="/servicios/division-de-bienes">División de Bienes</a></li>
@@ -815,7 +818,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3re
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Recursos</h5>
+      <h3>Recursos</h3>
       <ul>
         <li><a href="/costo-divorcio-buenos-aires">Costo del Divorcio</a></li>
         <li><a href="/cuanto-tarda-un-divorcio-en-argentina">Plazos del Divorcio</a></li>
@@ -824,7 +827,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:4rem 3re
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Contacto</h5>
+      <h3>Contacto</h3>
       <ul>
         <li><a href="tel:1159360995">11-5936-0995</a></li>
         <li><a href="mailto:contacto@divorcios.ar">contacto@divorcios.ar</a></li>
