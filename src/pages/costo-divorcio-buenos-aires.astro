@@ -1232,17 +1232,17 @@ footer{
 <!-- NAV MOBILE PANEL -->
 <div id="nav-mobile-panel" class="nav-mobile-panel" aria-hidden="true">
   <ul class="nav-mobile-links">
-    <li><a href="/#servicios">Servicios</a></li>
-    <li><a href="/costo-divorcio-buenos-aires">Honorarios</a></li>
-    <li><a href="/#proceso">Proceso</a></li>
-    <li><a href="/#equipo">El Estudio</a></li>
-    <li><a href="/cuanto-tarda-un-divorcio-en-argentina">¿Cuánto tarda?</a></li>
-    <li><a href="/requisitos-divorcio-caba">Requisitos en CABA</a></li>
-    <li><a href="/blog">Blog Jurídico</a></li>
+    <li><a href="/#servicios" tabindex="-1">Servicios</a></li>
+    <li><a href="/costo-divorcio-buenos-aires" tabindex="-1">Honorarios</a></li>
+    <li><a href="/#proceso" tabindex="-1">Proceso</a></li>
+    <li><a href="/#equipo" tabindex="-1">El Estudio</a></li>
+    <li><a href="/cuanto-tarda-un-divorcio-en-argentina" tabindex="-1">¿Cuánto tarda?</a></li>
+    <li><a href="/requisitos-divorcio-caba" tabindex="-1">Requisitos en CABA</a></li>
+    <li><a href="/blog" tabindex="-1">Blog Jurídico</a></li>
   </ul>
   <div class="nav-mobile-actions">
-    <a href="tel:1159360995" class="nav-mobile-tel">📞 11-5936-0995</a>
-    <a href="https://wa.me/5491159360995" class="nav-mobile-cta">💬 Consultar por WhatsApp</a>
+    <a href="tel:1159360995" class="nav-mobile-tel" tabindex="-1">📞 11-5936-0995</a>
+    <a href="https://wa.me/5491159360995" class="nav-mobile-cta" tabindex="-1">💬 Consultar por WhatsApp</a>
   </div>
 </div>
 <div id="nav-mobile-overlay" class="nav-mobile-overlay"></div>
@@ -1845,6 +1845,7 @@ function closeMobileMenu() {
   mobilePanel.classList.remove('open');
   mobileOverlay.classList.remove('open');
   mobilePanel.setAttribute('aria-hidden', 'true');
+  mobilePanel.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
   document.body.style.overflow = '';
 }
 function openMobileMenu() {
@@ -1852,6 +1853,7 @@ function openMobileMenu() {
   mobilePanel.classList.add('open');
   mobileOverlay.classList.add('open');
   mobilePanel.setAttribute('aria-hidden', 'false');
+  mobilePanel.querySelectorAll('a, button').forEach(el => el.removeAttribute('tabindex'));
   document.body.style.overflow = 'hidden';
 }
 if (burger) {
